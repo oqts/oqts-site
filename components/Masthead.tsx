@@ -37,9 +37,7 @@ export default function Masthead() {
           aria-label="Join"
           aria-current={pathname === '/join' ? 'page' : undefined}
         >
-          <span className="jgrid" aria-hidden="true">
-            <b>J</b><b>O</b><b>I</b><b>N</b>
-          </span>
+          <span className="jmark" aria-hidden="true" />
         </Link>
       </div>
     </header>
