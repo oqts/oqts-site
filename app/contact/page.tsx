@@ -14,7 +14,7 @@ export default function Contact() {
   const links = Object.entries(society.links).filter(([, url]) => url);
   return (
     <div className="wrap">
-      <section className="watermark v2">
+      <section className="watermark v3">
         <p className="eyebrow">Contact</p>
         <h1>Get in touch</h1>
         <p className="lede col">
