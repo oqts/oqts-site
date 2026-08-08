@@ -26,6 +26,7 @@ export type Sponsor = {
   url: string;
   blurb?: string;
   logo_height?: number; // per-firm override for marks that are not wide wordmarks
+  banner_height?: number; // height in the marquee; tuned so logos read optically equal
 };
 export type SponsorTier = {
   name: string;

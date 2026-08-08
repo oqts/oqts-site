@@ -161,7 +161,7 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 .sponsor-banner:hover .sponsor-track{animation-play-state:paused}
 .sponsor-track .group{display:flex;align-items:center;
   gap:var(--oqts-space-8);padding-right:var(--oqts-space-8)}
-.sponsor-track img{height:20px;width:auto;display:block;opacity:.8}
+.sponsor-track img{width:auto;display:block;opacity:.8}
 .sponsor-banner:hover img{opacity:1}
 @keyframes sponsor-drift{to{transform:translateX(-50%)}}
 

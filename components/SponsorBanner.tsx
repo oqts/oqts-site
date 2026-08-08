@@ -22,6 +22,7 @@ export default function SponsorBanner() {
                   key={`${rep}-${s.name}`}
                   src={s.logo}
                   alt={half === 0 && rep === 0 ? s.name : ''}
+                  style={{ height: s.banner_height ?? 20 }}
                 />
               ))
             )}

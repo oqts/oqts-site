@@ -21,6 +21,7 @@ tiers:
       - name: G-Research
         logo: /sponsors/g-research.svg
         url: https://www.gresearch.com
+        banner_height: 18
         blurb: >
           Quantitative research and machine learning firm, and the society's
           founding sponsor.
@@ -31,12 +32,14 @@ tiers:
       - name: Jane Street
         logo: /sponsors/jane-street.svg
         url: https://www.janestreet.com
+        banner_height: 22
         blurb: >
           Global liquidity provider and trading firm, trading a broad range
           of asset classes on more than 200 venues.
       - name: Optiver
         logo: /sponsors/optiver.svg
         url: https://optiver.com
+        banner_height: 20
         blurb: >
           Global market maker, improving markets by providing liquidity in
           exchange-traded instruments worldwide.
@@ -47,12 +50,14 @@ tiers:
       - name: Citadel
         logo: /sponsors/citadel.png
         url: https://www.citadel.com
+        banner_height: 17
         blurb: >
           Global alternative investment manager, running strategies across
           equities, fixed income, commodities and credit.
       - name: Hudson River Trading
         logo: /sponsors/hrt.svg
         url: https://www.hudsonrivertrading.com
+        banner_height: 26
         blurb: >
           Multi-asset quantitative trading firm, building automated systems
           that trade on markets around the world.
@@ -60,6 +65,7 @@ tiers:
         logo: /sponsors/five-rings.svg
         url: https://fiverings.com
         logo_height: 46   # square-ish rings mark; the tier cap is for wordmarks
+        banner_height: 34
         blurb: >
           Proprietary trading firm applying rigorous research and technology
           to markets old and new.
@@ -71,6 +77,7 @@ tiers:
         logo: /sponsors/marshall-wace.png
         url: https://www.mwam.com
         logo_height: 42   # the morse-dot MW mark + wordmark needs the height to read
+        banner_height: 30
         blurb: >
           Global alternative investment manager, a pioneer of systematic
           long-short equity investing.
