@@ -67,7 +67,7 @@ export default function Research() {
 
       <Section eyebrow="Projects" title="First cohort: Michaelmas 2026">
         <p className="col">{future.note}</p>
-        <div className="grid g3">
+        <div className="project-row">
           {Array.from({ length: future.count }, (_, i) => (
             <div className="org-card ghost" key={i} style={{ textAlign: 'center' }}>
               <span className="role-label">Project {i + 1}</span>

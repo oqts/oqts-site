@@ -199,9 +199,10 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 .org-card{background:var(--oqts-surface-2);padding:var(--oqts-space-4) var(--oqts-space-5);
   min-width:190px;transition:box-shadow .15s ease}
 .org-card:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
-.org-card .role-label{display:block;margin-bottom:4px}
-.org-card .name{font-family:var(--oqts-display);font-size:var(--oqts-label);
-  letter-spacing:var(--oqts-track-display)}
+.org-card .name{display:block;font-family:var(--oqts-display);
+  font-size:var(--oqts-label);letter-spacing:var(--oqts-track-display)}
+.org-card .role-label{display:block;margin-top:5px}
+.role-label .part{white-space:nowrap}
 .org-card.ghost{background:none;border:1px dashed var(--oqts-hairline);color:var(--oqts-ink-2)}
 .org-card.ghost:hover{box-shadow:none}
 .org-card.ghost .name{color:var(--oqts-ink-2);font-size:var(--oqts-data)}
@@ -212,8 +213,15 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 .org-stem.dashed{background:none;border-left:1px dashed var(--oqts-hairline)}
 /* equal-width cards, so the centre of the row is the gap between them
    and the stem below reads as hanging from both founders */
-.org-row.pair>li{flex:0 1 330px;display:flex}
+.org-row.pair>li{flex:0 1 380px;display:flex}
 .org-row.pair .org-card{flex:1}
+/* spread: divide the row equally so every card stays on one line */
+.org-row.spread{flex-wrap:nowrap}
+.org-row.spread>li{flex:1 1 0;min-width:0;display:flex}
+.org-row.spread .org-card{flex:1;min-width:0;padding-left:var(--oqts-space-3);
+  padding-right:var(--oqts-space-3)}
+.project-row{display:flex;gap:var(--oqts-space-4)}
+.project-row>*{flex:1 1 0;min-width:0}
 @media (min-width:681px){
   /* half-border connectors: each item draws its halves of the spanning rule
      plus its own drop stem, so the lines follow the real item positions */
@@ -236,6 +244,9 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
     padding-left:var(--oqts-space-4);margin-left:2px}
   .org-tier-label{margin-top:var(--oqts-space-5)}
   .org-card{flex:1 1 100%}
+  .org-row.spread{flex-wrap:wrap}
+  .org-row.spread>li{flex:1 1 100%}
+  .project-row{flex-direction:column}
 }
 
 /* ── events ── */
