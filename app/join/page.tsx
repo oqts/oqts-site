@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Join() {
   return (
     <div className="wrap">
-      <section className="watermark">
+      <section className="watermark v6">
         <p className="eyebrow">Join</p>
         <h1>Join the society</h1>
         <p className="lede col">

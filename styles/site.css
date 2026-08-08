@@ -293,9 +293,15 @@ footer .colophon{margin-top:var(--oqts-space-6);padding-top:var(--oqts-space-4);
    column. Ivory ground only — never on paper panels or navy. */
 .watermark{position:relative;z-index:0}
 .watermark::before{content:'';position:absolute;z-index:-1;inset:0 0 12px;
-  background:url('/brand/patterns/oqts-dots-right.svg') no-repeat right top;
+  background:url('/brand/patterns/oqts-dots-right-1.svg') no-repeat right top;
   background-size:auto; /* fixed intrinsic scale: dot size identical everywhere */
   pointer-events:none}
+/* seed variants — adjacent placements wear different numbers (brand.md §8) */
+.watermark.v2::before{background-image:url('/brand/patterns/oqts-dots-right-2.svg')}
+.watermark.v3::before{background-image:url('/brand/patterns/oqts-dots-right-3.svg')}
+.watermark.v4::before{background-image:url('/brand/patterns/oqts-dots-right-4.svg')}
+.watermark.v5::before{background-image:url('/brand/patterns/oqts-dots-right-5.svg')}
+.watermark.v6::before{background-image:url('/brand/patterns/oqts-dots-right-6.svg')}
 @media (max-width:680px){
   .watermark::before{display:none} /* phone hero is all text; keep it clean */
 }

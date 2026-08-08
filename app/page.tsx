@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <SponsorBanner />
       <div className="wrap">
-        <section className="watermark">
+        <section className="watermark v1">
           <p className="eyebrow">Oxford Quantitative Trading Society</p>
           <h1>Quantitative trading, learnt by doing</h1>
           <p className="lede col">
@@ -53,7 +53,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section eyebrow="The society" title="Built around real participation" textured>
+        <Section eyebrow="The society" title="Built around real participation" textured={3}>
           <p className="col">
             The society exists for one reason: the best way to understand
             markets is to participate in them, measure the result, and argue
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section eyebrow="Stay in touch" title="Hear when applications open" textured>
+        <Section eyebrow="Stay in touch" title="Hear when applications open" textured={5}>
           <div className="panel" style={{ maxWidth: 560 }}>
             <SignupForm source="home" />
           </div>

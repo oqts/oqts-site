@@ -6,13 +6,13 @@ type Props = {
   title?: string;
   id?: string;
   close?: boolean;
-  textured?: boolean; // dot field in the right whitespace (brand.md §8)
+  textured?: number; // dot-field seed variant 1-6 (brand.md §8): adjacent sections differ
   children: ReactNode;
 };
 
 export default function Section({ eyebrow, title, id, close = true, textured, children }: Props) {
   return (
-    <section id={id} className={textured ? 'watermark' : undefined}>
+    <section id={id} className={textured ? `watermark v${textured}` : undefined}>
       {(eyebrow || title) && (
         <div className="sec-head">
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}

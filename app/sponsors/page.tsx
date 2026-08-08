@@ -14,7 +14,7 @@ export default function SponsorsPage() {
   const { society } = getSociety();
   return (
     <div className="wrap">
-      <section className="watermark">
+      <section className="watermark v5">
         <p className="eyebrow">Sponsors</p>
         <h1>Backed by the firms that define the field</h1>
         <p className="lede col">
@@ -42,7 +42,7 @@ export default function SponsorsPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Partner with us" title="Sponsoring the society" textured>
+      <Section eyebrow="Partner with us" title="Sponsoring the society" textured={1}>
         <p className="col">
           If your firm would like to reach Oxford&apos;s quantitative talent
           through talks, competitions or the programme as a whole, write to{' '}

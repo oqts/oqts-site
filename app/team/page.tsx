@@ -13,7 +13,7 @@ export default function Team() {
   const { structure } = getSociety();
   return (
     <div className="wrap">
-      <section className="watermark">
+      <section className="watermark v2">
         <p className="eyebrow">Team &amp; structure</p>
         <h1>Who runs what</h1>
         <p className="lede col">
@@ -28,7 +28,7 @@ export default function Team() {
         <OrgTree structure={structure} />
       </Section>
 
-      <Section eyebrow="How it grows" title="From core team to research projects" textured>
+      <Section eyebrow="How it grows" title="From core team to research projects" textured={4}>
         <p className="col">{structure.future.note}</p>
         <p className="col">
           Research is overseen end to end by the Head of Research &amp;

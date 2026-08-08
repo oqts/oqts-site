@@ -16,7 +16,7 @@ export default function Events() {
   const { upcoming, past } = getEvents();
   return (
     <div className="wrap">
-      <section className="watermark">
+      <section className="watermark v5">
         <p className="eyebrow">Events</p>
         <h1>The term programme</h1>
         <p className="lede col">

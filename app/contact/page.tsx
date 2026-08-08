@@ -14,7 +14,7 @@ export default function Contact() {
   const links = Object.entries(society.links).filter(([, url]) => url);
   return (
     <div className="wrap">
-      <section className="watermark">
+      <section className="watermark v2">
         <p className="eyebrow">Contact</p>
         <h1>Get in touch</h1>
         <p className="lede col">
@@ -39,7 +39,7 @@ export default function Contact() {
         </Section>
       )}
 
-      <Section eyebrow="Sponsorship" title="Partner with the society" textured>
+      <Section eyebrow="Sponsorship" title="Partner with the society" textured={4}>
         <p className="col">
           If your firm is interested in sponsoring the society, whether talks,
           competitions, or the programme as a whole, write to{' '}

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Oxdaq() {
   return (
     <div className="wrap">
-      <section className="watermark">
+      <section className="watermark v4">
         <p className="eyebrow">OXDAQ</p>
         <h1>The society&apos;s own exchange</h1>
         <p className="lede col">
@@ -23,7 +23,7 @@ export default function Oxdaq() {
         <CloseRule />
       </section>
 
-      <Section eyebrow="Why" title="Why build an exchange?" textured>
+      <Section eyebrow="Why" title="Why build an exchange?" textured={6}>
         <p className="col">
           Because everything the society teaches becomes concrete on one. An
           order book stops being a diagram when your resting order is the one
@@ -60,7 +60,7 @@ export default function Oxdaq() {
         </div>
       </Section>
 
-      <Section eyebrow="Calendar" title="Through the year" textured>
+      <Section eyebrow="Calendar" title="Through the year" textured={2}>
         <p className="col">
           Competition rounds run through each term, building from simple
           market-making games to multi-instrument events. Dates land on the{' '}

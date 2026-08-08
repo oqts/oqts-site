@@ -14,7 +14,7 @@ export default function Research() {
   const { future } = getSociety().structure;
   return (
     <div className="wrap">
-      <section className="watermark">
+      <section className="watermark v3">
         <p className="eyebrow">Research</p>
         <h1>Small teams, real stakes</h1>
         <p className="lede col">
