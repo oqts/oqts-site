@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "eslint"
+    "predev": "node scripts/sync-brand.mjs",
+    "dev": "next dev --turbopack --hostname 0.0.0.0 --port 8002",
+    "prebuild": "node scripts/sync-brand.mjs",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0 --port 8002",
+    "lint": "eslint",
+    "screenshot": "node scripts/screenshot.mjs"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "react": "19.1.0",

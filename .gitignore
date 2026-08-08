@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# brand assets are synced from vendor/oqts-design at build time
+/public/brand/
+
+# playwright output
+/.screenshots/

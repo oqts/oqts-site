@@ -1,0 +1,3 @@
+[submodule "vendor/oqts-design"]
+	path = vendor/oqts-design
+	url = https://github.com/oqts/oqts-design.git
