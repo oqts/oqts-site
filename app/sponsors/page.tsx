@@ -20,8 +20,7 @@ export default function SponsorsPage() {
           <p className="eyebrow">Sponsors</p>
           <h1>Backed by the firms that define the field</h1>
           <p className="lede col">
-            Sponsorship funds the programme, the exchange and the events, and
-            keeps membership free for every student.
+            Sponsorship funds the programme, the exchange and the events that make the society run.
           </p>
           <div className="btn-row">
             <Btn href="mailto:oqts@oqts.org">Sponsor the society</Btn>

@@ -19,9 +19,7 @@ export default function Research() {
           <p className="eyebrow">Research</p>
           <h1>Small teams, real stakes</h1>
           <p className="lede col">
-            The society&apos;s research programme runs as a set of small project
-            teams, each pursuing one idea far enough to know whether it deserves
-            real capital.
+            The society&apos;s research programme runs as small project teams, each living with one idea, from systematic strategies to market microstructure, for long enough to know whether it deserves real capital.
           </p>
           <div className="btn-row">
             <Btn href="https://github.com/oqts">Society GitHub</Btn>
@@ -36,9 +34,7 @@ export default function Research() {
           <div className="panel">
             <h4>Projects</h4>
             <p className="note">
-              Around five projects run at a time, four members each. Every
-              project has a project lead who owns its direction and its
-              write-ups.
+              Around five projects run at a time, four members each, every one with a project lead. A team goes deep on its area over a term or a year and finishes with a research paper or article.
             </p>
           </div>
           <div className="panel">
@@ -52,9 +48,7 @@ export default function Research() {
           <div className="panel">
             <h4>Deployment</h4>
             <p className="note">
-              Projects that survive scrutiny may graduate to live strategies,
-              trading real capital under the society&apos;s live-fund
-              programme.
+              After review, strategies that look promising may be deployed live, trading real capital under the society&apos;s live-fund programme.
             </p>
           </div>
         </div>
@@ -63,8 +57,7 @@ export default function Research() {
       <Section eyebrow="The path" title="From idea to live capital">
         <div className="bracketed">
           <p style={{ marginBottom: 0 }}>
-            Research → backtest → review → paper trading on OXDAQ → live
-            deployment. Most ideas die on the way, and that is the point: the
+            Research → backtest → review → live deployment. Most ideas die on the way, and that is the point: the
             programme teaches the discipline of killing your own ideas with
             evidence before the market does it for you.
           </p>
@@ -73,6 +66,10 @@ export default function Research() {
 
       <Section eyebrow="Projects" title="First cohort: Michaelmas 2026">
         <p className="col">{future.note}</p>
+        <p className="col">
+          Down the line, a research competition may see teams present their
+          strategies and wider research for judging by our sponsors.
+        </p>
         <div className="project-row">
           {Array.from({ length: future.count }, (_, i) => (
             <div className="org-card ghost" key={i} style={{ textAlign: 'center' }}>

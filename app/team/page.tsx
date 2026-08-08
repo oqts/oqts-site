@@ -19,9 +19,7 @@ export default function Team() {
           <p className="eyebrow">Team &amp; structure</p>
           <h1>Who runs what</h1>
           <p className="lede col">
-            Two co-founders, a core team, and a research structure that grows
-            from Michaelmas. This chart is rendered from the society&apos;s own
-            records.
+            Two co-founders, a core team, and a research structure that grows from Michaelmas.
           </p>
           <div className="btn-row">
             <Btn href="/join">Join the team</Btn>
@@ -38,9 +36,7 @@ export default function Team() {
       <Section eyebrow="How it grows" title="From core team to research projects" textured={4}>
         <p className="col">{structure.future.note}</p>
         <p className="col">
-          Research is overseen end to end by the Head of Research &amp;
-          Technology. Project teams and leads will appear on this chart as
-          they are formed; the projects themselves live on the{' '}
+          A team lives with one research area for a term or a year, going deep enough to learn everything there is to know about it, and finishes by writing it up as a research paper or article. After review, a strategy that looks promising may be deployed live. Project teams and leads will appear on this chart as they are formed; the projects themselves live on the{' '}
           <a href="/research">Research</a> page.
         </p>
       </Section>

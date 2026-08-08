@@ -6,7 +6,7 @@ import Section from '../../components/Section';
 export const metadata: Metadata = {
   title: 'OXDAQ',
   description:
-    "OXDAQ is the Oxford Quantitative Trading Society's internal exchange: a matching engine built by members, hosting trading competitions through term.",
+    "OXDAQ is the Oxford Quantitative Trading Society's own live exchange: members write algorithmic strategies and compete in live rounds on a real order book.",
 };
 
 export default function Oxdaq() {
@@ -17,9 +17,7 @@ export default function Oxdaq() {
           <p className="eyebrow">OXDAQ</p>
           <h1>The society&apos;s own exchange</h1>
           <p className="lede col">
-            OXDAQ is an internal market built and operated by members: a matching
-            engine, market data, and a term calendar of competitions traded on
-            top of it.
+            A real-time exchange built by the society: write an algorithmic strategy, connect it to a live order book, and compete in rounds against everyone else&apos;s.
           </p>
           <div className="btn-row">
             <span className="btn" aria-disabled="true">OXDAQ platform</span>
@@ -31,36 +29,34 @@ export default function Oxdaq() {
 
       <Section eyebrow="Why" title="Why build an exchange?" textured={6}>
         <p className="col">
-          Because everything the society teaches becomes concrete on one. An
-          order book stops being a diagram when your resting order is the one
-          being picked off. Building the exchange teaches the infrastructure
-          half of quantitative trading; competing on it teaches the rest. The
-          exchange is built and run by the core team, with members joining the
-          build as the society grows.
+          Because real market making is normally out of students&apos; reach: the data and infrastructure it needs do not exist outside the firms themselves. OXDAQ closes that gap. It is a live exchange with real market mechanics, a price-time order book, and instruments whose fair value is never revealed; you infer it from the order flow, the way every real desk has to. The exchange is built by the core team, and members join the build as the society grows.
         </p>
       </Section>
 
       <Section eyebrow="How it works" title="Compete in three steps">
         <div className="grid g3">
           <div className="panel">
-            <h4>1 · Markets</h4>
+            <h4>1 · Write</h4>
             <p className="note">
-              Each competition defines instruments and rules: what trades, how
-              information arrives, and what winning means.
+              Write your strategy against the OXDAQ client library: a few event
+              handlers and you are on the book. The infrastructure is our
+              problem, not yours.
             </p>
           </div>
           <div className="panel">
-            <h4>2 · Trade</h4>
+            <h4>2 · Compete</h4>
             <p className="note">
-              Members connect manually or programmatically and trade against
-              each other on the live book. Play-money, real mechanics.
+              Rounds run live. Your algorithm trades against other members and
+              an ecosystem of bots, from market makers to noise traders, on
+              instruments that never stand still.
             </p>
           </div>
           <div className="panel">
-            <h4>3 · Results</h4>
+            <h4>3 · Iterate</h4>
             <p className="note">
-              Every round produces a ranking and a post-mortem: what worked,
-              what got run over, and why.
+              Track your performance live, pause your algorithm, change
+              something, and redeploy mid-round. The effect of every change is
+              visible immediately.
             </p>
           </div>
         </div>
@@ -78,9 +74,7 @@ export default function Oxdaq() {
       <Section eyebrow="Take part" title="Trade on it">
         <div className="bracketed">
           <p className="col" style={{ marginBottom: 'var(--oqts-space-5)' }}>
-            Membership is the way in. Every member can trade in every
-            competition, and the team that builds OXDAQ recruits from the
-            membership too.
+            Membership is the way in. Every member can compete in every round, and the team that builds OXDAQ recruits from the membership too.
           </p>
           <Btn href="/join">Join the society</Btn>
         </div>

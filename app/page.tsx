@@ -31,25 +31,19 @@ export default function Home() {
             <div className="panel">
               <h4>Education</h4>
               <p className="note">
-                A term programme of talks and workshops: market microstructure,
-                strategy design, and the mathematics underneath, pitched so
-                that no prior experience is needed to start.
+                Lectures and workshops from professionals at our sponsor firms, alongside our own in-house series, pitched so that no prior experience is needed to start.
               </p>
             </div>
             <div className="panel">
               <h4>Competition</h4>
               <p className="note">
-                OXDAQ, our internal exchange, hosts trading competitions where
-                members test strategies against each other on a real matching
-                engine, with real market mechanics.
+                OXDAQ, our own live exchange, where members write algorithmic strategies and compete in live rounds against each other and a market of bots.
               </p>
             </div>
             <div className="panel">
               <h4>Research</h4>
               <p className="note">
-                Small research projects, each with a project lead, working
-                towards strategies good enough to deploy live. The first
-                projects launch in Michaelmas 2026.
+                Small research teams that go deep on one area, from systematic strategies to market microstructure, and write up what they find. The first projects launch in Michaelmas 2026.
               </p>
             </div>
           </div>
@@ -67,9 +61,7 @@ export default function Home() {
           <p className="col">
             No particular degree is required, and no prior experience.
             Mathematicians, computer scientists, physicists, economists and
-            historians all trade side by side; curiosity and a willingness to
-            lose play-money in public are the only prerequisites. Sponsorship
-            from the firms that define the field keeps membership free.
+            historians all trade side by side; curiosity and a willingness to lose play-money in public are the only prerequisites.
           </p>
           <p style={{ marginTop: 'var(--oqts-space-5)' }}>
             <Btn href="/team" secondary>See who runs what</Btn>
@@ -79,10 +71,7 @@ export default function Home() {
         <Section eyebrow="OXDAQ" title="Our own exchange">
           <div className="bracketed">
             <p style={{ marginBottom: 'var(--oqts-space-5)' }}>
-              OXDAQ is the society&apos;s internal market: a matching engine and
-              market data stack built by members, for members. Competitions run
-              on it through term. Write a strategy, connect it, and find out
-              whether it survives contact with everyone else&apos;s.
+              OXDAQ is the society&apos;s own live exchange: a real order book, live rounds, and strategies written by members trading against each other. Real market making is normally out of students&apos; reach; OXDAQ exists to close that gap. Write a strategy, connect it, and find out whether it survives contact with everyone else&apos;s.
             </p>
             <Btn href="/oxdaq" secondary>How OXDAQ works</Btn>
           </div>

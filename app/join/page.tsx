@@ -78,12 +78,6 @@ export default function Join() {
             </p>
           </div>
           <div>
-            <h4>What does membership cost?</h4>
-            <p className="note">
-              Nothing. Sponsorship keeps membership free.
-            </p>
-          </div>
-          <div>
             <h4>What happens after I apply?</h4>
             <p className="note">
               We read everything, and reply to every application by email once
