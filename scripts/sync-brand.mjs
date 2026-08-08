@@ -32,5 +32,6 @@ for (const family of readdirSync(join(src, 'fonts'))) {
 
 cpSync(join(src, 'logo'), join(dst, 'logo'), { recursive: true });
 cpSync(join(src, 'favicon'), join(dst, 'favicon'), { recursive: true });
+cpSync(join(src, 'patterns'), join(dst, 'patterns'), { recursive: true });
 
 console.log('sync-brand: public/brand refreshed from vendor/oqts-design');

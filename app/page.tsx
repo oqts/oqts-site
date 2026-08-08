@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <SponsorBanner />
       <div className="wrap">
-        <section>
+        <section className="watermark">
           <p className="eyebrow">Oxford Quantitative Trading Society</p>
           <h1>Quantitative trading, learnt by doing</h1>
           <p className="lede col">

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Oxdaq() {
   return (
     <div className="wrap">
-      <section>
+      <section className="watermark">
         <p className="eyebrow">OXDAQ</p>
         <h1>The society&apos;s own exchange</h1>
         <p className="lede col">

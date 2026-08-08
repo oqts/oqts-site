@@ -13,7 +13,7 @@ export default function Team() {
   const { structure } = getSociety();
   return (
     <div className="wrap">
-      <section>
+      <section className="watermark">
         <p className="eyebrow">Team &amp; structure</p>
         <h1>Who runs what</h1>
         <p className="lede col">

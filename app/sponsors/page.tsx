@@ -14,7 +14,7 @@ export default function SponsorsPage() {
   const { society } = getSociety();
   return (
     <div className="wrap">
-      <section>
+      <section className="watermark">
         <p className="eyebrow">Sponsors</p>
         <h1>Backed by the firms that define the field</h1>
         <p className="lede col">
