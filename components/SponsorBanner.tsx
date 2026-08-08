@@ -1,20 +1,23 @@
 import Link from 'next/link';
 import { getAllSponsors } from '../lib/data';
 
-// Thin, static strip under the masthead: every sponsor, one quiet row.
+// Continuously drifting strip under the masthead; the whole band is one
+// link to the Sponsors page. Two identical groups make the loop seamless;
+// the second is decoration only. Under prefers-reduced-motion the drift
+// stops and the first group reads as a static row.
 export default function SponsorBanner() {
+  const sponsors = getAllSponsors();
   return (
-    <div className="sponsor-banner">
-      <div className="wrap inner">
-        {getAllSponsors().map((s) => (
-          <a key={s.name} href={s.url} rel="noopener" aria-label={s.name}>
-            <img src={s.logo} alt={s.name} />
-          </a>
+    <Link href="/sponsors" className="sponsor-banner" aria-label="Our sponsors">
+      <div className="sponsor-track">
+        {[0, 1].map((copy) => (
+          <div className="group" key={copy} aria-hidden={copy === 1}>
+            {sponsors.map((s) => (
+              <img key={s.name} src={s.logo} alt={copy === 0 ? s.name : ''} />
+            ))}
+          </div>
         ))}
-        <Link href="/sponsors" className="note" style={{ whiteSpace: 'nowrap' }}>
-          Our sponsors
-        </Link>
       </div>
-    </div>
+    </Link>
   );
 }
