@@ -61,7 +61,6 @@ code{font-family:var(--oqts-display);font-size:var(--oqts-micro);
   gap:var(--oqts-space-5);flex-wrap:wrap}
 .masthead .home{display:block}
 .masthead img{height:62px;width:auto;display:block}
-.masthead .logo-mark{display:none}
 .masthead nav ul{display:flex;gap:var(--oqts-space-2);list-style:none;margin:0;padding:0;flex-wrap:wrap}
 .masthead nav a{display:inline-block;font:400 var(--oqts-body-s)/1 var(--oqts-display);
   letter-spacing:var(--oqts-track-label);text-transform:uppercase;text-decoration:none;
@@ -291,10 +290,7 @@ footer .colophon{margin-top:var(--oqts-space-6);padding-top:var(--oqts-space-4);
      the tabs become a single scrollable strip beneath */
   .masthead{padding:var(--oqts-space-3) 0}
   .masthead .bar{justify-content:space-between;gap:var(--oqts-space-2) var(--oqts-space-4)}
-  .masthead .logo-full{display:none}
-  .masthead .logo-mark{display:block;height:48px}
   .masthead .join-cta{margin-left:0}
-  .masthead .join-cta .jmark{width:48px;height:48px}
   .masthead .bar nav{order:3;flex:1 1 100%;min-width:0;margin:0 calc(-1 * var(--oqts-gutter));
     -webkit-mask-image:linear-gradient(to right,#000 86%,transparent);
     mask-image:linear-gradient(to right,#000 86%,transparent)}

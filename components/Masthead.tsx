@@ -18,8 +18,7 @@ export default function Masthead() {
     <header className="masthead">
       <div className="wrap bar">
         <Link href="/" className="home" aria-label="Oxford Quantitative Trading Society, home">
-          <img className="logo-full" src="/brand/logo/oqts-lockup-reverse.svg" alt="" width={182} height={62} />
-          <img className="logo-mark" src="/brand/logo/oqts-mark-reverse.svg" alt="" width={48} height={48} />
+          <img src="/brand/logo/oqts-lockup-reverse.svg" alt="" width={182} height={62} />
         </Link>
         <nav aria-label="Primary">
           <ul>
