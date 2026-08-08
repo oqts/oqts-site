@@ -300,6 +300,9 @@ footer .colophon{margin-top:var(--oqts-space-6);padding-top:var(--oqts-space-4);
   background:url('/brand/patterns/oqts-dots-right-1.svg') no-repeat right top;
   background-size:auto; /* fixed intrinsic scale: dot size identical everywhere */
   pointer-events:none}
+/* inside a plate the field runs flush to the frame; the 12px bottom
+   exclusion only exists for open sections whose close-rule sits inside */
+.plate.watermark::before{inset:0}
 /* seed variants — adjacent placements wear different numbers (brand.md §8) */
 .watermark.v2::before{background-image:url('/brand/patterns/oqts-dots-right-2.svg')}
 .watermark.v3::before{background-image:url('/brand/patterns/oqts-dots-right-3.svg')}
