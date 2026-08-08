@@ -10,7 +10,6 @@ const NAV = [
   { href: '/events', label: 'Events' },
   { href: '/sponsors', label: 'Sponsors' },
   { href: '/contact', label: 'Contact' },
-  { href: '/join', label: 'Join', cta: true },
 ];
 
 export default function Masthead() {
@@ -23,19 +22,22 @@ export default function Masthead() {
         </Link>
         <nav aria-label="Primary">
           <ul>
-            {NAV.map(({ href, label, cta }) => (
+            {NAV.map(({ href, label }) => (
               <li key={href}>
-                <Link
-                  href={href}
-                  className={cta ? 'join-cta' : undefined}
-                  aria-current={pathname === href ? 'page' : undefined}
-                >
+                <Link href={href} aria-current={pathname === href ? 'page' : undefined}>
                   {label}
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
+        <Link
+          href="/join"
+          className="join-cta"
+          aria-current={pathname === '/join' ? 'page' : undefined}
+        >
+          Join
+        </Link>
       </div>
     </header>
   );

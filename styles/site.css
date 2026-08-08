@@ -68,12 +68,15 @@ code{font-family:var(--oqts-display);font-size:var(--oqts-micro);
 .masthead nav a:hover{color:var(--oqts-camel-rev)}
 .masthead nav a[aria-current]{color:var(--oqts-camel-rev);
   border-bottom:1px solid var(--oqts-camel-rev)}
-.masthead nav a.join-cta{background:var(--oqts-paper);color:var(--oqts-oxford);
-  font-weight:700;padding:15px 20px;border-radius:2px;margin-left:var(--oqts-space-3);
-  transition:background .15s ease}
-.masthead nav a.join-cta:hover{background:var(--oqts-camel-rev);color:var(--oqts-oxford)}
-.masthead nav a.join-cta[aria-current]{background:var(--oqts-camel-rev);
-  color:var(--oqts-oxford);border-bottom:0}
+/* the recruiting button: gold on navy, always hard right of the bar */
+.masthead .bar nav{margin-left:auto}
+.masthead .join-cta{display:inline-block;background:var(--oqts-camel-rev);
+  color:var(--oqts-oxford);font:700 var(--oqts-label)/1 var(--oqts-display);
+  letter-spacing:var(--oqts-track-label);text-transform:uppercase;
+  text-decoration:none;padding:16px 28px;border-radius:2px;
+  margin-left:var(--oqts-space-5);transition:background .15s ease}
+.masthead .join-cta:hover{background:var(--oqts-paper);color:var(--oqts-oxford)}
+.masthead .join-cta[aria-current]{background:var(--oqts-paper);color:var(--oqts-oxford)}
 .masthead :focus-visible{outline-color:var(--oqts-camel-rev)}
 
 section{padding-top:var(--oqts-space-8)}
@@ -268,7 +271,9 @@ footer .colophon{margin-top:var(--oqts-space-6);padding-top:var(--oqts-space-4);
   .bracketed{padding:var(--oqts-space-5) var(--oqts-space-5)}
   .bracketed::before,.bracketed::after{width:13px}
   .masthead .bar{justify-content:center}
+  .masthead .bar nav{margin-left:0}
   .masthead nav ul{justify-content:center}
+  .masthead .join-cta{flex:1 1 100%;text-align:center;margin-left:0}
   .event-list li{grid-template-columns:1fr;gap:var(--oqts-space-1)}
 }
 
