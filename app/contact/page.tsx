@@ -39,7 +39,7 @@ export default function Contact() {
         </Section>
       )}
 
-      <Section eyebrow="Sponsorship" title="Partner with the society">
+      <Section eyebrow="Sponsorship" title="Partner with the society" textured>
         <p className="col">
           If your firm is interested in sponsoring the society, whether talks,
           competitions, or the programme as a whole, write to{' '}

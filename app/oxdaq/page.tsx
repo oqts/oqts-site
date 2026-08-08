@@ -23,7 +23,7 @@ export default function Oxdaq() {
         <CloseRule />
       </section>
 
-      <Section eyebrow="Why" title="Why build an exchange?">
+      <Section eyebrow="Why" title="Why build an exchange?" textured>
         <p className="col">
           Because everything the society teaches becomes concrete on one. An
           order book stops being a diagram when your resting order is the one
@@ -60,7 +60,7 @@ export default function Oxdaq() {
         </div>
       </Section>
 
-      <Section eyebrow="Calendar" title="Through the year">
+      <Section eyebrow="Calendar" title="Through the year" textured>
         <p className="col">
           Competition rounds run through each term, building from simple
           market-making games to multi-instrument events. Dates land on the{' '}

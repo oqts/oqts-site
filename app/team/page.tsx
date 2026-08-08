@@ -28,7 +28,7 @@ export default function Team() {
         <OrgTree structure={structure} />
       </Section>
 
-      <Section eyebrow="How it grows" title="From core team to research projects">
+      <Section eyebrow="How it grows" title="From core team to research projects" textured>
         <p className="col">{structure.future.note}</p>
         <p className="col">
           Research is overseen end to end by the Head of Research &amp;

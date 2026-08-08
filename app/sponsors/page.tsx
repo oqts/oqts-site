@@ -42,7 +42,7 @@ export default function SponsorsPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Partner with us" title="Sponsoring the society">
+      <Section eyebrow="Partner with us" title="Sponsoring the society" textured>
         <p className="col">
           If your firm would like to reach Oxford&apos;s quantitative talent
           through talks, competitions or the programme as a whole, write to{' '}

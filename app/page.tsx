@@ -53,7 +53,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section eyebrow="The society" title="Built around real participation">
+        <Section eyebrow="The society" title="Built around real participation" textured>
           <p className="col">
             The society exists for one reason: the best way to understand
             markets is to participate in them, measure the result, and argue
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section eyebrow="Stay in touch" title="Hear when applications open">
+        <Section eyebrow="Stay in touch" title="Hear when applications open" textured>
           <div className="panel" style={{ maxWidth: 560 }}>
             <SignupForm source="home" />
           </div>
