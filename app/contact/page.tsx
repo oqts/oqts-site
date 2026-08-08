@@ -14,15 +14,17 @@ export default function Contact() {
   const links = Object.entries(society.links).filter(([, url]) => url);
   return (
     <div className="wrap">
-      <section className="watermark v3">
-        <p className="eyebrow">Contact</p>
-        <h1>Get in touch</h1>
-        <p className="lede col">
-          One address reaches the committee:{' '}
-          <a href={`mailto:${society.email}`}>{society.email}</a>.
-        </p>
-        <div className="btn-row">
-          <Btn href={`mailto:${society.email}`}>Email the society</Btn>
+      <section>
+        <div className="plate watermark v3">
+          <p className="eyebrow">Contact</p>
+          <h1>Get in touch</h1>
+          <p className="lede col">
+            One address reaches the committee:{' '}
+            <a href={`mailto:${society.email}`}>{society.email}</a>.
+          </p>
+          <div className="btn-row">
+            <Btn href={`mailto:${society.email}`}>Email the society</Btn>
+          </div>
         </div>
         <CloseRule />
       </section>

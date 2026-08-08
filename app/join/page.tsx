@@ -13,14 +13,16 @@ export const metadata: Metadata = {
 export default function Join() {
   return (
     <div className="wrap">
-      <section className="watermark v2">
-        <p className="eyebrow">Join</p>
-        <h1>Join the society</h1>
-        <p className="lede col">
-          One application, any degree, no experience required. What we look for
-          is evidence you will actually engage: with the programme, with OXDAQ,
-          and with everyone else trading on it.
-        </p>
+      <section>
+        <div className="plate watermark v2">
+          <p className="eyebrow">Join</p>
+          <h1>Join the society</h1>
+          <p className="lede col">
+            One application, any degree, no experience required. What we look for
+            is evidence you will actually engage: with the programme, with OXDAQ,
+            and with everyone else trading on it.
+          </p>
+        </div>
         <CloseRule />
       </section>
 

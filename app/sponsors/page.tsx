@@ -14,13 +14,15 @@ export default function SponsorsPage() {
   const { society } = getSociety();
   return (
     <div className="wrap">
-      <section className="watermark v6">
-        <p className="eyebrow">Sponsors</p>
-        <h1>Backed by the firms that define the field</h1>
-        <p className="lede col">
-          Sponsorship funds the programme, the exchange and the events, and
-          keeps membership free for every student.
-        </p>
+      <section>
+        <div className="plate watermark v6">
+          <p className="eyebrow">Sponsors</p>
+          <h1>Backed by the firms that define the field</h1>
+          <p className="lede col">
+            Sponsorship funds the programme, the exchange and the events, and
+            keeps membership free for every student.
+          </p>
+        </div>
         <CloseRule />
       </section>
 

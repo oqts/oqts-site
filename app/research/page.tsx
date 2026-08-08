@@ -14,14 +14,16 @@ export default function Research() {
   const { future } = getSociety().structure;
   return (
     <div className="wrap">
-      <section className="watermark v3">
-        <p className="eyebrow">Research</p>
-        <h1>Small teams, real stakes</h1>
-        <p className="lede col">
-          The society&apos;s research programme runs as a set of small project
-          teams, each pursuing one idea far enough to know whether it deserves
-          real capital.
-        </p>
+      <section>
+        <div className="plate watermark v3">
+          <p className="eyebrow">Research</p>
+          <h1>Small teams, real stakes</h1>
+          <p className="lede col">
+            The society&apos;s research programme runs as a set of small project
+            teams, each pursuing one idea far enough to know whether it deserves
+            real capital.
+          </p>
+        </div>
         <CloseRule />
       </section>
 

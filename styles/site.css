@@ -291,6 +291,10 @@ footer .colophon{margin-top:var(--oqts-space-6);padding-top:var(--oqts-space-4);
 /* ── whitespace texture (brand.md §8) ──
    The canonical dot field, ramped so density grows away from the reading
    column. Ivory ground only — never on paper panels or navy. */
+/* the plate: a chalk frame around the hero, texture inside, rule outside */
+.plate{border:1px solid var(--oqts-hairline);
+  padding:var(--oqts-space-7) var(--oqts-space-6)}
+
 .watermark{position:relative;z-index:0}
 .watermark::before{content:'';position:absolute;z-index:-1;inset:0 0 12px;
   background:url('/brand/patterns/oqts-dots-right-1.svg') no-repeat right top;

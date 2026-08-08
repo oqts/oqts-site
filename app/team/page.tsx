@@ -13,14 +13,16 @@ export default function Team() {
   const { structure } = getSociety();
   return (
     <div className="wrap">
-      <section className="watermark v2">
-        <p className="eyebrow">Team &amp; structure</p>
-        <h1>Who runs what</h1>
-        <p className="lede col">
-          Two co-founders, a core team, and a research structure that grows
-          from Michaelmas. This chart is rendered from the society&apos;s own
-          records.
-        </p>
+      <section>
+        <div className="plate watermark v2">
+          <p className="eyebrow">Team &amp; structure</p>
+          <h1>Who runs what</h1>
+          <p className="lede col">
+            Two co-founders, a core team, and a research structure that grows
+            from Michaelmas. This chart is rendered from the society&apos;s own
+            records.
+          </p>
+        </div>
         <CloseRule />
       </section>
 

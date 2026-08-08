@@ -9,17 +9,19 @@ export default function Home() {
     <>
       <SponsorBanner />
       <div className="wrap">
-        <section className="watermark v1">
-          <p className="eyebrow">Oxford Quantitative Trading Society</p>
-          <h1>Quantitative trading, learnt by doing</h1>
-          <p className="lede col">
-            We teach markets the only way that sticks: by trading them.
-            Education, competition and community for Oxford students who want
-            to understand how modern markets actually work.
-          </p>
-          <div className="btn-row">
-            <Btn href="/join">Join the society</Btn>
-            <Btn href="/oxdaq" secondary>Explore OXDAQ</Btn>
+        <section>
+          <div className="plate watermark v1">
+            <p className="eyebrow">Oxford Quantitative Trading Society</p>
+            <h1>Quantitative trading, learnt by doing</h1>
+            <p className="lede col">
+              We teach markets the only way that sticks: by trading them.
+              Education, competition and community for Oxford students who want
+              to understand how modern markets actually work.
+            </p>
+            <div className="btn-row">
+              <Btn href="/join">Join the society</Btn>
+              <Btn href="/oxdaq" secondary>Explore OXDAQ</Btn>
+            </div>
           </div>
           <CloseRule />
         </section>

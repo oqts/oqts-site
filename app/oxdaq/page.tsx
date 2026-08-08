@@ -12,14 +12,16 @@ export const metadata: Metadata = {
 export default function Oxdaq() {
   return (
     <div className="wrap">
-      <section className="watermark v4">
-        <p className="eyebrow">OXDAQ</p>
-        <h1>The society&apos;s own exchange</h1>
-        <p className="lede col">
-          OXDAQ is an internal market built and operated by members: a matching
-          engine, market data, and a term calendar of competitions traded on
-          top of it.
-        </p>
+      <section>
+        <div className="plate watermark v4">
+          <p className="eyebrow">OXDAQ</p>
+          <h1>The society&apos;s own exchange</h1>
+          <p className="lede col">
+            OXDAQ is an internal market built and operated by members: a matching
+            engine, market data, and a term calendar of competitions traded on
+            top of it.
+          </p>
+        </div>
         <CloseRule />
       </section>
 
