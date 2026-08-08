@@ -34,9 +34,12 @@ export default function Masthead() {
         <Link
           href="/join"
           className="join-cta"
+          aria-label="Join"
           aria-current={pathname === '/join' ? 'page' : undefined}
         >
-          Join
+          <span className="jgrid" aria-hidden="true">
+            <b>J</b><b>O</b><b>I</b><b>N</b>
+          </span>
         </Link>
       </div>
     </header>
