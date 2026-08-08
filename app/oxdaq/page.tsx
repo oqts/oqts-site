@@ -21,6 +21,10 @@ export default function Oxdaq() {
             engine, market data, and a term calendar of competitions traded on
             top of it.
           </p>
+          <div className="btn-row">
+            <span className="btn" aria-disabled="true">OXDAQ platform</span>
+            <span className="btn secondary" aria-disabled="true">Competition entry</span>
+          </div>
         </div>
         <CloseRule />
       </section>

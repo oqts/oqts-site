@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Btn from '../../components/Btn';
 import CloseRule from '../../components/CloseRule';
 import Section from '../../components/Section';
 import { getSociety, getSponsors } from '../../lib/data';
@@ -22,6 +23,9 @@ export default function SponsorsPage() {
             Sponsorship funds the programme, the exchange and the events, and
             keeps membership free for every student.
           </p>
+          <div className="btn-row">
+            <Btn href="mailto:oqts@oqts.org">Sponsor the society</Btn>
+          </div>
         </div>
         <CloseRule />
       </section>

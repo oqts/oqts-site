@@ -24,6 +24,10 @@ export default function Events() {
             Talks, workshops, OXDAQ competition rounds and socials. Everything is
             free for members.
           </p>
+          <div className="btn-row">
+            <Btn href="/join#mailing-list">Get event emails</Btn>
+            <span className="btn secondary" aria-disabled="true">Instagram</span>
+          </div>
         </div>
         <CloseRule />
       </section>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ApplicationForm from '../../components/ApplicationForm';
+import Btn from '../../components/Btn';
 import CloseRule from '../../components/CloseRule';
 import Section from '../../components/Section';
 import SignupForm from '../../components/SignupForm';
@@ -22,6 +23,10 @@ export default function Join() {
             is evidence you will actually engage: with the programme, with OXDAQ,
             and with everyone else trading on it.
           </p>
+          <div className="btn-row">
+            <Btn href="#apply">Apply now</Btn>
+            <Btn href="#mailing-list" secondary>Join the mailing list</Btn>
+          </div>
         </div>
         <CloseRule />
       </section>
@@ -39,7 +44,7 @@ export default function Join() {
         <CloseRule />
       </Section>
 
-      <Section eyebrow="Apply" title="Application">
+      <Section eyebrow="Apply" title="Application" id="apply">
         <div style={{ maxWidth: 720 }}>
           <ApplicationForm />
         </div>

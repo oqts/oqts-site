@@ -23,6 +23,10 @@ export default function Research() {
             teams, each pursuing one idea far enough to know whether it deserves
             real capital.
           </p>
+          <div className="btn-row">
+            <Btn href="https://github.com/oqts">Society GitHub</Btn>
+            <span className="btn secondary" aria-disabled="true">Papers &amp; writeups</span>
+          </div>
         </div>
         <CloseRule />
       </section>

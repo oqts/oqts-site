@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Btn from '../../components/Btn';
 import CloseRule from '../../components/CloseRule';
 import OrgTree from '../../components/OrgTree';
 import Section from '../../components/Section';
@@ -22,6 +23,10 @@ export default function Team() {
             from Michaelmas. This chart is rendered from the society&apos;s own
             records.
           </p>
+          <div className="btn-row">
+            <Btn href="/join">Join the team</Btn>
+            <Btn href="/research" secondary>Research programme</Btn>
+          </div>
         </div>
         <CloseRule />
       </section>
