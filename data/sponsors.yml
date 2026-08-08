@@ -1,15 +1,17 @@
 # Sponsor tiers: single source of truth, edited only here via GitHub.
-# logo_height is the display cap in px on the Sponsors page; rows reserve
-# their height so artwork can be swapped without reflow. slug picks the
-# tier card treatment (founder | gold | silver).
+# logo_height caps the display height in px on the Sponsors page; slug picks
+# the tier card treatment (founder | gold | silver | bronze).
 #
 # Artwork provenance (fetched 2026-08-08; replace with approved partner
 # assets when sponsors supply them):
-#   g-research.svg   https://www.gresearch.com/wp-content/themes/g-research/images/branding/logo--light.svg
-#                    (recoloured white -> black for light ground; -light kept beside it)
-#   jane-street.svg  https://www.janestreet.com/assets/logo_horizontal-*.svg
-#   optiver.svg      extracted from the inline sprite on https://optiver.com
-#   hrt.svg          https://www.hudsonrivertrading.com/wp-content/uploads/2024/04/01-HRT-Primary-Logo-with-®-Q2-2024.svg
+#   g-research.svg     https://www.gresearch.com/wp-content/themes/g-research/images/branding/logo--light.svg
+#                      (recoloured white -> black for light ground; -light kept beside it)
+#   jane-street.svg    https://www.janestreet.com/assets/logo_horizontal-*.svg
+#   optiver.svg        extracted from the inline sprite on https://optiver.com
+#   citadel.png        https://www.citadel.com/wp-content/uploads/2022/12/Citadel-Logo.png
+#   hrt.svg            https://www.hudsonrivertrading.com/wp-content/uploads/2024/04/01-HRT-Primary-Logo-with-®-Q2-2024.svg
+#   five-rings.svg     https://fiverings.com/wp-content/themes/five-rings/img/FiveRings-logo.svg
+#   marshall-wace.png  https://www.mwam.com/wp-content/themes/FoundationPress/dist/assets/images/logo-black.png
 
 tiers:
   - name: Founder sponsor
@@ -40,11 +42,35 @@ tiers:
           exchange-traded instruments worldwide.
   - name: Silver sponsors
     slug: silver
-    logo_height: 28
+    logo_height: 26
     sponsors:
+      - name: Citadel
+        logo: /sponsors/citadel.png
+        url: https://www.citadel.com
+        blurb: >
+          Global alternative investment manager, running strategies across
+          equities, fixed income, commodities and credit.
       - name: Hudson River Trading
         logo: /sponsors/hrt.svg
         url: https://www.hudsonrivertrading.com
         blurb: >
           Multi-asset quantitative trading firm, building automated systems
           that trade on markets around the world.
+      - name: Five Rings
+        logo: /sponsors/five-rings.svg
+        url: https://fiverings.com
+        logo_height: 46   # square-ish rings mark; the tier cap is for wordmarks
+        blurb: >
+          Proprietary trading firm applying rigorous research and technology
+          to markets old and new.
+  - name: Bronze sponsors
+    slug: bronze
+    logo_height: 22
+    sponsors:
+      - name: Marshall Wace
+        logo: /sponsors/marshall-wace.png
+        url: https://www.mwam.com
+        logo_height: 42   # the morse-dot MW mark + wordmark needs the height to read
+        blurb: >
+          Global alternative investment manager, a pioneer of systematic
+          long-short equity investing.

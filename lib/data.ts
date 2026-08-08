@@ -34,7 +34,7 @@ export function getSociety(): Society {
   return s;
 }
 
-const TIER_SLUGS = new Set(['founder', 'gold', 'silver']);
+const TIER_SLUGS = new Set(['founder', 'gold', 'silver', 'bronze']);
 
 export function getSponsors(): Sponsors {
   const s = load('sponsors.yml') as Sponsors;

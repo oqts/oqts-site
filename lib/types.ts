@@ -20,10 +20,16 @@ export type Society = {
   structure: Structure;
 };
 
-export type Sponsor = { name: string; logo: string; url: string; blurb?: string };
+export type Sponsor = {
+  name: string;
+  logo: string;
+  url: string;
+  blurb?: string;
+  logo_height?: number; // per-firm override for marks that are not wide wordmarks
+};
 export type SponsorTier = {
   name: string;
-  slug: 'founder' | 'gold' | 'silver';
+  slug: 'founder' | 'gold' | 'silver' | 'bronze';
   logo_height: number;
   sponsors: Sponsor[];
 };

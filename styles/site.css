@@ -170,25 +170,40 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 .sponsor-row a{display:flex;align-items:center;text-decoration:none}
 .sponsor-row img{width:auto;max-width:100%}
 
-/* tier cards on the Sponsors page: same family, different warmth.
-   Founder wears the double rule; gold a camel rule; silver a chalk rule. */
-.tier-card{position:relative;padding:var(--oqts-space-6) var(--oqts-space-5) var(--oqts-space-5);
-  transition:box-shadow .15s ease}
-.tier-card:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
-.tier-card.founder{background:var(--oqts-surface-2);border-top:1px solid var(--oqts-accent-rule)}
-.tier-card.founder::before{content:'';position:absolute;left:0;right:0;top:3px;
-  border-top:1px solid var(--oqts-accent-rule)}
-.tier-card.gold{background:#fff;border:1px solid var(--oqts-hairline);
-  border-top:1px solid var(--oqts-accent-rule)}
-.tier-card.silver{background:var(--oqts-surface);border:1px solid var(--oqts-hairline);
+/* sponsor tiers: each tier is a labelled band, one card per firm, the
+   treatment descending in warmth and weight from founder to bronze */
+.tier-block{margin-bottom:var(--oqts-space-7)}
+.tier-block:last-child{margin-bottom:0}
+.tier-block .tier-label{display:flex;align-items:center;gap:var(--oqts-space-4);
+  font:400 var(--oqts-micro)/1 var(--oqts-display);
+  letter-spacing:var(--oqts-track-eyebrow);text-transform:uppercase;
+  color:var(--oqts-accent-text);margin:0 0 var(--oqts-space-4)}
+.tier-block .tier-label::after{content:'';flex:1;
   border-top:1px solid var(--oqts-hairline)}
-.tier-card .tier-label{font:400 var(--oqts-micro)/1 var(--oqts-display);
-  letter-spacing:var(--oqts-track-eyebrow);text-transform:uppercase;color:var(--oqts-accent-text);
-  margin:0 0 var(--oqts-space-4)}
-.tier-card .firm{margin:var(--oqts-space-5) 0 0}
-.tier-card .firm:first-of-type{margin-top:0}
-.tier-card .firm img{width:auto;max-width:100%;display:block}
-.tier-card .firm .note{margin:var(--oqts-space-3) 0 0}
+.tier-grid{display:grid;gap:var(--oqts-space-4)}
+.tier-grid.founder{grid-template-columns:1fr}
+.tier-grid.gold{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.tier-grid.silver,
+.tier-grid.bronze{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.firm-card{position:relative;transition:box-shadow .15s ease}
+.firm-card:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
+.firm-card img{width:auto;max-width:100%;display:block}
+.firm-card .note{margin:var(--oqts-space-3) 0 0}
+.tier-grid.founder .firm-card{background:var(--oqts-surface-2);
+  border-top:1px solid var(--oqts-accent-rule);
+  padding:var(--oqts-space-6);display:flex;align-items:center;
+  gap:var(--oqts-space-7);flex-wrap:wrap}
+.tier-grid.founder .firm-card::before{content:'';position:absolute;left:0;right:0;top:3px;
+  border-top:1px solid var(--oqts-accent-rule)}
+.tier-grid.founder .firm-card .note{margin:0;max-width:44ch}
+.tier-grid.gold .firm-card{background:#fff;border:1px solid var(--oqts-hairline);
+  border-top:1px solid var(--oqts-accent-rule);padding:var(--oqts-space-5)}
+.tier-grid.silver .firm-card{background:var(--oqts-surface);
+  border:1px solid var(--oqts-hairline);padding:var(--oqts-space-5)}
+.tier-grid.bronze .firm-card{border-top:1px solid var(--oqts-hairline);
+  padding:var(--oqts-space-4) 0 0}
+.tier-grid.bronze .firm-card:hover{box-shadow:none}
+.tier-grid.bronze .firm-card .note{font-size:var(--oqts-micro)}
 
 /* ── org tree ── */
 .role-label{font:400 var(--oqts-micro)/1.4 var(--oqts-display);

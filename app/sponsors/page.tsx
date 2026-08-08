@@ -31,21 +31,21 @@ export default function SponsorsPage() {
       </section>
 
       <Section eyebrow="Tiers" title="Our sponsors">
-        <div className="grid g3">
-          {tiers.map((tier) => (
-            <div className={`tier-card ${tier.slug}`} key={tier.slug}>
-              <p className="tier-label">{tier.name}</p>
+        {tiers.map((tier) => (
+          <div className="tier-block" key={tier.slug}>
+            <p className="tier-label">{tier.name}</p>
+            <div className={`tier-grid ${tier.slug}`}>
               {tier.sponsors.map((s) => (
-                <div className="firm" key={s.name}>
+                <div className="firm-card" key={s.name}>
                   <a href={s.url} rel="noopener" aria-label={s.name}>
-                    <img src={s.logo} alt={s.name} style={{ height: tier.logo_height }} />
+                    <img src={s.logo} alt={s.name} style={{ height: s.logo_height ?? tier.logo_height }} />
                   </a>
                   {s.blurb && <p className="note">{s.blurb}</p>}
                 </div>
               ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </Section>
 
       <Section eyebrow="Partner with us" title="Sponsoring the society" textured={1}>

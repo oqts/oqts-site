@@ -7,7 +7,7 @@ import { getAllSponsors } from '../lib/data';
 // half repeats the logo set enough times to stay wider than any viewport,
 // so the belt is always full. Under prefers-reduced-motion the drift
 // stops and the strip reads as a static row.
-const REPEATS = 6; // ~4200px per half, wider than ultrawide monitors
+const REPEATS = 4; // seven logos x4 keeps each half wider than ultrawide monitors
 
 export default function SponsorBanner() {
   const sponsors = getAllSponsors();
