@@ -26,9 +26,9 @@ export default function Join() {
 
       <Section eyebrow="Timeline" title="Applications open September 2026" close={false}>
         <div className="bracketed">
-          <p className="col" style={{ marginBottom: 0 }}>
+          <p style={{ marginBottom: 0 }}>
             Applications for the live-fund cohort open in early September 2026,
-            ahead of Michaelmas term. Apply below — or, if you are not ready
+            ahead of Michaelmas term. Apply below, or, if you are not ready
             yet, join the mailing list and we will email you the moment the
             round opens. Worth preparing: a one-page CV, and honest answers.
             Polish matters less than evidence of interest.
@@ -73,7 +73,7 @@ export default function Join() {
           <div>
             <h4>What does membership cost?</h4>
             <p className="note">
-              Nothing — sponsorship keeps membership free.
+              Nothing. Sponsorship keeps membership free.
             </p>
           </div>
           <div>

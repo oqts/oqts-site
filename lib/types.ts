@@ -4,18 +4,10 @@ export type Person = {
   links?: Record<string, string>;
 };
 
-export type Subteam = {
-  name: string;
-  description?: string;
-  leads: Person[];
-};
-
-export type Team = {
-  name: string;
-  slug: string;
-  description: string;
-  leads: Person[];
-  subteams?: Subteam[];
+export type Structure = {
+  founders: Person[];
+  core: Person[];
+  future: { label: string; note: string; count: number };
 };
 
 export type Society = {
@@ -25,12 +17,16 @@ export type Society = {
     email: string;
     links: Record<string, string>;
   };
-  committee: { role: string; name: string; links?: Record<string, string> }[];
-  teams: Team[];
+  structure: Structure;
 };
 
-export type Sponsor = { name: string; logo: string; url: string };
-export type SponsorTier = { name: string; logo_height: number; sponsors: Sponsor[] };
+export type Sponsor = { name: string; logo: string; url: string; blurb?: string };
+export type SponsorTier = {
+  name: string;
+  slug: 'founder' | 'gold' | 'silver';
+  logo_height: number;
+  sponsors: Sponsor[];
+};
 export type Sponsors = { tiers: SponsorTier[] };
 
 export type EventTag = 'talk' | 'social' | 'competition' | 'workshop';

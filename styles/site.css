@@ -75,7 +75,11 @@ section{padding-top:var(--oqts-space-8)}
 .grid{display:grid;gap:var(--oqts-space-5)}
 .g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
 .g3{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
-.panel{background:var(--oqts-surface-2);padding:var(--oqts-space-5)}
+.panel{background:var(--oqts-surface-2);padding:var(--oqts-space-5);
+  transition:box-shadow .15s ease}
+.panel:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
+/* text inside a bracket fills it; the measure cap reads as a hole otherwise */
+.bracketed .col{max-width:none}
 figure{margin:0}
 figcaption{font:400 var(--oqts-micro)/1.5 var(--oqts-display);color:var(--oqts-ink-2);
   margin-top:var(--oqts-space-3);letter-spacing:.03em}
@@ -135,26 +139,91 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
   color:var(--oqts-paper)}
 
 /* ── sponsors ── */
-.sponsor-tier{margin-bottom:var(--oqts-space-6)}
-.sponsor-tier .tier-label{font:400 var(--oqts-micro)/1 var(--oqts-display);
-  letter-spacing:var(--oqts-track-eyebrow);text-transform:uppercase;color:var(--oqts-ink-2);
-  margin-bottom:var(--oqts-space-4)}
+.sponsor-banner{border-bottom:1px solid var(--oqts-hairline);
+  padding:var(--oqts-space-3) 0;background:var(--oqts-surface)}
+.sponsor-banner .inner{display:flex;gap:var(--oqts-space-4) var(--oqts-space-7);
+  align-items:center;justify-content:center;flex-wrap:wrap}
+.sponsor-banner a{display:flex;align-items:center}
+.sponsor-banner img{height:20px;width:auto;display:block;opacity:.8}
+.sponsor-banner a:hover img{opacity:1}
+
 .sponsor-row{display:flex;gap:var(--oqts-space-6) var(--oqts-space-8);
   flex-wrap:wrap;align-items:center}
 .sponsor-row a{display:flex;align-items:center;text-decoration:none}
 .sponsor-row img{width:auto;max-width:100%}
-.sponsor-name{font-family:var(--oqts-display);color:var(--oqts-ink);
-  letter-spacing:var(--oqts-track-label)} /* text fallback while artwork pending */
 
-/* ── team tree ── */
-.team-tree .team{margin-bottom:var(--oqts-space-7)}
-.team-tree .subteams{list-style:none;margin:var(--oqts-space-4) 0 0;padding:0}
-.team-tree .subteams li{border-left:1px solid var(--oqts-hairline);
-  padding:0 0 var(--oqts-space-4) var(--oqts-space-5);margin:0}
-.team-tree .subteams li:last-child{padding-bottom:0}
+/* tier cards on the Sponsors page: same family, different warmth.
+   Founder wears the double rule; gold a camel rule; silver a chalk rule. */
+.tier-card{position:relative;padding:var(--oqts-space-6) var(--oqts-space-5) var(--oqts-space-5);
+  transition:box-shadow .15s ease}
+.tier-card:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
+.tier-card.founder{background:var(--oqts-surface-2);border-top:1px solid var(--oqts-accent-rule)}
+.tier-card.founder::before{content:'';position:absolute;left:0;right:0;top:3px;
+  border-top:1px solid var(--oqts-accent-rule)}
+.tier-card.gold{background:#fff;border:1px solid var(--oqts-hairline);
+  border-top:1px solid var(--oqts-accent-rule)}
+.tier-card.silver{background:var(--oqts-surface);border:1px solid var(--oqts-hairline);
+  border-top:1px solid var(--oqts-hairline)}
+.tier-card .tier-label{font:400 var(--oqts-micro)/1 var(--oqts-display);
+  letter-spacing:var(--oqts-track-eyebrow);text-transform:uppercase;color:var(--oqts-accent-text);
+  margin:0 0 var(--oqts-space-4)}
+.tier-card .firm{margin:var(--oqts-space-5) 0 0}
+.tier-card .firm:first-of-type{margin-top:0}
+.tier-card .firm img{width:auto;max-width:100%;display:block}
+.tier-card .firm .note{margin:var(--oqts-space-3) 0 0}
+
+/* ── org tree ── */
 .role-label{font:400 var(--oqts-micro)/1.4 var(--oqts-display);
   letter-spacing:var(--oqts-track-label);text-transform:uppercase;color:var(--oqts-ink-2)}
 .person{font-size:var(--oqts-body);margin:2px 0 0}
+
+.org-tree{text-align:center}
+.org-tier-label{font:400 var(--oqts-micro)/1 var(--oqts-display);
+  letter-spacing:var(--oqts-track-eyebrow);text-transform:uppercase;
+  color:var(--oqts-ink-2);margin:0 0 var(--oqts-space-4)}
+.org-row{display:flex;justify-content:center;gap:var(--oqts-space-4);flex-wrap:wrap;
+  padding:0;margin:0;list-style:none;position:relative}
+.org-card{background:var(--oqts-surface-2);padding:var(--oqts-space-4) var(--oqts-space-5);
+  min-width:190px;transition:box-shadow .15s ease}
+.org-card:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
+.org-card .role-label{display:block;margin-bottom:4px}
+.org-card .name{font-family:var(--oqts-display);font-size:var(--oqts-label);
+  letter-spacing:var(--oqts-track-display)}
+.org-card.ghost{background:none;border:1px dashed var(--oqts-hairline);color:var(--oqts-ink-2)}
+.org-card.ghost:hover{box-shadow:none}
+.org-card.ghost .name{color:var(--oqts-ink-2);font-size:var(--oqts-data)}
+
+/* connectors (desktop only): a stem from the tier above, a spanning rule,
+   and a stem down into each card */
+.org-stem{width:1px;height:28px;background:var(--oqts-hairline);margin:0 auto}
+.org-stem.dashed{background:none;border-left:1px dashed var(--oqts-hairline)}
+/* equal-width cards, so the centre of the row is the gap between them
+   and the stem below reads as hanging from both founders */
+.org-row.pair>li{flex:0 1 330px;display:flex}
+.org-row.pair .org-card{flex:1}
+@media (min-width:681px){
+  /* half-border connectors: each item draws its halves of the spanning rule
+     plus its own drop stem, so the lines follow the real item positions */
+  .org-row.connected{gap:0}
+  .org-row.connected>li{position:relative;padding:28px var(--oqts-space-2) 0;
+    display:flex}
+  .org-row.connected>li::before,
+  .org-row.connected>li::after{content:'';position:absolute;top:0;right:50%;
+    width:50%;height:28px;border-top:1px solid var(--oqts-hairline)}
+  .org-row.connected>li::after{right:auto;left:50%;
+    border-left:1px solid var(--oqts-hairline)}
+  .org-row.connected>li:first-child::before{border-top:none}
+  .org-row.connected>li:last-child::after{border-top:none}
+}
+@media (max-width:680px){
+  .org-stem{display:none}
+  .org-tree{text-align:left}
+  .org-row{justify-content:flex-start}
+  .org-row.connected{border-left:1px solid var(--oqts-hairline);
+    padding-left:var(--oqts-space-4);margin-left:2px}
+  .org-tier-label{margin-top:var(--oqts-space-5)}
+  .org-card{flex:1 1 100%}
+}
 
 /* ── events ── */
 .event-list{list-style:none;margin:0;padding:0}

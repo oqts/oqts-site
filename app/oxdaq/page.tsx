@@ -2,17 +2,14 @@ import type { Metadata } from 'next';
 import Btn from '../../components/Btn';
 import CloseRule from '../../components/CloseRule';
 import Section from '../../components/Section';
-import TeamTree from '../../components/TeamTree';
-import { getSociety } from '../../lib/data';
 
 export const metadata: Metadata = {
   title: 'OXDAQ',
   description:
-    "OXDAQ is the Oxford Quantitative Trading Society's internal exchange — a matching engine built by members, hosting trading competitions through term.",
+    "OXDAQ is the Oxford Quantitative Trading Society's internal exchange: a matching engine built by members, hosting trading competitions through term.",
 };
 
 export default function Oxdaq() {
-  const oxdaqTeam = getSociety().teams.filter((t) => t.slug === 'oxdaq');
   return (
     <div className="wrap">
       <section>
@@ -31,7 +28,9 @@ export default function Oxdaq() {
           Because everything the society teaches becomes concrete on one. An
           order book stops being a diagram when your resting order is the one
           being picked off. Building the exchange teaches the infrastructure
-          half of quantitative trading; competing on it teaches the rest.
+          half of quantitative trading; competing on it teaches the rest. The
+          exchange is built and run by the core team, with members joining the
+          build as the society grows.
         </p>
       </Section>
 
@@ -40,7 +39,7 @@ export default function Oxdaq() {
           <div className="panel">
             <h4>1 · Markets</h4>
             <p className="note">
-              Each competition defines instruments and rules — what trades, how
+              Each competition defines instruments and rules: what trades, how
               information arrives, and what winning means.
             </p>
           </div>
@@ -54,7 +53,7 @@ export default function Oxdaq() {
           <div className="panel">
             <h4>3 · Results</h4>
             <p className="note">
-              Every round produces a ranking and a post-mortem — what worked,
+              Every round produces a ranking and a post-mortem: what worked,
               what got run over, and why.
             </p>
           </div>
@@ -70,14 +69,10 @@ export default function Oxdaq() {
         <Btn href="/events" secondary>See upcoming events</Btn>
       </Section>
 
-      <Section eyebrow="Who builds it" title="The OXDAQ team">
-        <TeamTree teams={oxdaqTeam} />
-      </Section>
-
       <Section eyebrow="Take part" title="Trade on it">
         <div className="bracketed">
           <p className="col" style={{ marginBottom: 'var(--oqts-space-5)' }}>
-            Membership is the way in — every member can trade in every
+            Membership is the way in. Every member can trade in every
             competition, and the team that builds OXDAQ recruits from the
             membership too.
           </p>

@@ -19,27 +19,29 @@ function fail(file: string, msg: string): never {
 export function getSociety(): Society {
   const s = load('society.yml') as Society;
   if (!s.society?.name || !s.society?.email) fail('society.yml', 'society.name and society.email are required');
-  if (!Array.isArray(s.committee) || s.committee.length === 0) fail('society.yml', 'committee must be a non-empty list');
-  for (const m of s.committee) {
-    if (!m.role || !m.name) fail('society.yml', `committee entries need role and name (got ${JSON.stringify(m)})`);
+  const st = s.structure;
+  if (!st || !Array.isArray(st.founders) || st.founders.length === 0) fail('society.yml', 'structure.founders must be a non-empty list');
+  for (const f of st.founders) {
+    if (!f.name || !f.role) fail('society.yml', `founders need name and role (got ${JSON.stringify(f)})`);
   }
-  if (!Array.isArray(s.teams)) fail('society.yml', 'teams must be a list');
-  for (const t of s.teams) {
-    if (!t.name || !t.slug || !t.description) fail('society.yml', `team entries need name, slug, description (got ${t.name ?? '?'})`);
-    t.leads ??= [];
-    for (const sub of t.subteams ?? []) {
-      if (!sub.name) fail('society.yml', `subteams need a name (team ${t.name})`);
-      sub.leads ??= [];
-    }
+  if (!Array.isArray(st.core)) fail('society.yml', 'structure.core must be a list');
+  for (const c of st.core) {
+    if (!c.name) fail('society.yml', 'core members need a name');
+  }
+  if (!st.future?.label || !st.future?.note || typeof st.future?.count !== 'number') {
+    fail('society.yml', 'structure.future needs label, note and numeric count');
   }
   return s;
 }
+
+const TIER_SLUGS = new Set(['founder', 'gold', 'silver']);
 
 export function getSponsors(): Sponsors {
   const s = load('sponsors.yml') as Sponsors;
   if (!Array.isArray(s.tiers) || s.tiers.length === 0) fail('sponsors.yml', 'tiers must be a non-empty list');
   for (const tier of s.tiers) {
     if (!tier.name || typeof tier.logo_height !== 'number') fail('sponsors.yml', `tiers need name and numeric logo_height (${tier.name ?? '?'})`);
+    if (!TIER_SLUGS.has(tier.slug)) fail('sponsors.yml', `bad tier slug: ${tier.slug}`);
     for (const sp of tier.sponsors ?? []) {
       if (!sp.name || !sp.logo || !sp.url) fail('sponsors.yml', `sponsors need name, logo, url (${sp.name ?? '?'})`);
       const onDisk = join(process.cwd(), 'public', sp.logo);
@@ -47,6 +49,10 @@ export function getSponsors(): Sponsors {
     }
   }
   return s;
+}
+
+export function getAllSponsors() {
+  return getSponsors().tiers.flatMap((t) => t.sponsors);
 }
 
 const TAGS = new Set(['talk', 'social', 'competition', 'workshop']);

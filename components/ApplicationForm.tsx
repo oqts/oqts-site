@@ -7,18 +7,21 @@ const MAX_CV_BYTES = 4 * 1024 * 1024; // Vercel's request-body ceiling is 4.5 MB
 type State = 'idle' | 'busy' | 'ok' | 'dup' | 'invalid' | 'toolarge' | 'offline';
 
 const MESSAGES: Record<Exclude<State, 'idle' | 'busy'>, string> = {
-  ok: 'Application received — thank you. We will reply by email.',
+  ok: 'Application received. Thank you; we will reply by email.',
   dup: 'We already have an application under that email address.',
-  invalid: 'Something in the form was rejected — please check each field and try again.',
-  toolarge: 'That CV is over 4 MB — please export a smaller PDF.',
-  offline: 'Applications are briefly offline — email your CV to oqts@oqts.org instead.',
+  invalid: 'Something in the form was rejected. Please check each field and try again.',
+  toolarge: 'That CV is over 4 MB. Please export a smaller PDF.',
+  offline: 'Applications are briefly offline. Email your CV to oqts@oqts.org instead.',
 };
 
-// Question set is a deliberate stub — wording will change before applications
-// open. Keys are stable identifiers; the backend stores answers as JSON.
-const QUESTIONS = [
-  { key: 'why_join', label: 'Why do you want to join the society?' },
-  { key: 'experience', label: 'Relevant experience, if any — none is required' },
+const YEARS = [
+  '1st year undergraduate',
+  '2nd year undergraduate',
+  '3rd year undergraduate',
+  '4th year undergraduate',
+  "Master's",
+  'DPhil',
+  'Other',
 ];
 
 export default function ApplicationForm() {
@@ -55,24 +58,41 @@ export default function ApplicationForm() {
           <input name="name" required autoComplete="name" />
         </label>
         <label className="field">
-          <span>Email address</span>
+          <span>Personal email address</span>
           <input name="email" type="email" required autoComplete="email" inputMode="email" />
         </label>
         <label className="field">
-          <span>College</span>
-          <input name="college" required />
+          <span>Oxford email address</span>
+          <input
+            name="oxford_email"
+            type="email"
+            required
+            inputMode="email"
+            placeholder="first.last@college.ox.ac.uk"
+            pattern=".*ox\.ac\.uk\s*$"
+            title="An @…ox.ac.uk address"
+          />
         </label>
         <label className="field">
-          <span>Course &amp; year</span>
-          <input name="course" required placeholder="e.g. Mathematics, 2nd year" />
+          <span>Course</span>
+          <input name="course" required placeholder="e.g. Mathematics" />
+        </label>
+        <label className="field">
+          <span>Year</span>
+          <select name="year" required defaultValue="">
+            <option value="" disabled>
+              Select year
+            </option>
+            {YEARS.map((y) => (
+              <option key={y} value={y}>{y}</option>
+            ))}
+          </select>
         </label>
       </div>
-      {QUESTIONS.map((q) => (
-        <label className="field" key={q.key}>
-          <span>{q.label}</span>
-          <textarea name={q.key} required={q.key === 'why_join'} maxLength={2000} />
-        </label>
-      ))}
+      <label className="field">
+        <span>Why do you want to join the society?</span>
+        <textarea name="why_join" required maxLength={2000} />
+      </label>
       <label className="field">
         <span>CV (PDF, up to 4 MB)</span>
         <input name="cv" type="file" accept="application/pdf" required />

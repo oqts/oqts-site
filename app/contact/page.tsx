@@ -41,8 +41,8 @@ export default function Contact() {
 
       <Section eyebrow="Sponsorship" title="Partner with the society">
         <p className="col">
-          If your firm is interested in sponsoring the society — talks,
-          competitions, or the programme as a whole — write to{' '}
+          If your firm is interested in sponsoring the society, whether talks,
+          competitions, or the programme as a whole, write to{' '}
           <a href={`mailto:${society.email}`}>{society.email}</a> and we will
           send the sponsorship prospectus.
         </p>

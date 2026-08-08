@@ -10,14 +10,15 @@ export default function Footer() {
             <div>
               <h4>Society</h4>
               <ul>
-                <li><Link href="/about">About</Link></li>
                 <li><Link href="/team">Team &amp; structure</Link></li>
+                <li><Link href="/sponsors">Sponsors</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
             <div>
               <h4>Programmes</h4>
               <ul>
+                <li><Link href="/research">Research</Link></li>
                 <li><Link href="/oxdaq">OXDAQ</Link></li>
                 <li><Link href="/events">Events</Link></li>
               </ul>

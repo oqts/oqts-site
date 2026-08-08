@@ -1,43 +1,41 @@
 import type { Metadata } from 'next';
 import CloseRule from '../../components/CloseRule';
+import OrgTree from '../../components/OrgTree';
 import Section from '../../components/Section';
-import TeamTree from '../../components/TeamTree';
 import { getSociety } from '../../lib/data';
 
 export const metadata: Metadata = {
   title: 'Team & structure',
-  description: 'The committee and teams of the Oxford Quantitative Trading Society.',
+  description: 'The founders, core team and research structure of the Oxford Quantitative Trading Society.',
 };
 
 export default function Team() {
-  const { committee, teams } = getSociety();
+  const { structure } = getSociety();
   return (
     <div className="wrap">
       <section>
         <p className="eyebrow">Team &amp; structure</p>
         <h1>Who runs what</h1>
         <p className="lede col">
-          An elected committee and standing teams. The structure below is the
-          live one — it is rendered from the society&apos;s own records.
+          Two co-founders, a core team, and a research structure that grows
+          from Michaelmas. This chart is rendered from the society&apos;s own
+          records.
         </p>
         <CloseRule />
       </section>
 
-      <Section eyebrow="Committee" title="Committee">
-        <div className="grid g3">
-          {committee.map((m) => (
-            <div className="panel" key={m.role}>
-              <p className="role-label">{m.role}</p>
-              <p className="person" style={{ fontSize: 'var(--oqts-label)' }}>
-                {m.links?.linkedin ? <a href={m.links.linkedin}>{m.name}</a> : m.name}
-              </p>
-            </div>
-          ))}
-        </div>
+      <Section eyebrow="Structure" title="The tree">
+        <OrgTree structure={structure} />
       </Section>
 
-      <Section eyebrow="Teams" title="Standing teams">
-        <TeamTree teams={teams} />
+      <Section eyebrow="How it grows" title="From core team to research projects">
+        <p className="col">{structure.future.note}</p>
+        <p className="col">
+          Research is overseen end to end by the Head of Research &amp;
+          Technology. Project teams and leads will appear on this chart as
+          they are formed; the projects themselves live on the{' '}
+          <a href="/research">Research</a> page.
+        </p>
       </Section>
     </div>
   );

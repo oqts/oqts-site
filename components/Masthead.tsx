@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const NAV = [
-  { href: '/about', label: 'About' },
-  { href: '/join', label: 'Join' },
   { href: '/team', label: 'Team' },
+  { href: '/research', label: 'Research' },
   { href: '/oxdaq', label: 'OXDAQ' },
   { href: '/events', label: 'Events' },
+  { href: '/sponsors', label: 'Sponsors' },
+  { href: '/join', label: 'Join' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -17,7 +18,7 @@ export default function Masthead() {
   return (
     <header className="masthead">
       <div className="wrap bar">
-        <Link href="/" className="home" aria-label="Oxford Quantitative Trading Society — home">
+        <Link href="/" className="home" aria-label="Oxford Quantitative Trading Society, home">
           <img src="/brand/logo/oqts-lockup-reverse.svg" alt="" width={182} height={62} />
         </Link>
         <nav aria-label="Primary">

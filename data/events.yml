@@ -1,17 +1,17 @@
-# Term programme — single source of truth, edited only here via GitHub.
+# Term programme: single source of truth, edited only here via GitHub.
 # date is ISO (YYYY-MM-DD) and decides upcoming vs past at build time.
 # tag: talk | social | competition | workshop
 # All entries below are placeholders for the Michaelmas 2026 programme.
 
 events:
-  - title: Freshers' introduction — what quantitative trading is
+  - title: Freshers' introduction to quantitative trading
     date: 2026-10-12
     time: "18:00"
     location: TBC, Oxford
     tag: talk
     description: >
       An hour on what quant trading actually is, what the society does,
-      and how to get involved — no background assumed.
+      and how to get involved. No background assumed.
   - title: OXDAQ demo night
     date: 2026-10-26
     time: "18:30"
@@ -26,4 +26,4 @@ events:
     location: TBC, Oxford
     tag: social
     description: >
-      Term social — members and anyone curious about joining.
+      Term social, for members and anyone curious about joining.

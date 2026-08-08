@@ -5,10 +5,10 @@ import { useState } from 'react';
 type State = 'idle' | 'busy' | 'ok' | 'dup' | 'invalid' | 'offline';
 
 const MESSAGES: Record<Exclude<State, 'idle' | 'busy'>, string> = {
-  ok: "You're on the list — we'll be in touch before applications open.",
+  ok: "You're on the list. We'll be in touch before applications open.",
   dup: 'That address is already on the list.',
-  invalid: "That doesn't look like an email address — please check it.",
-  offline: 'Signups are briefly offline — email oqts@oqts.org and we will add you.',
+  invalid: "That doesn't look like an email address. Please check it.",
+  offline: 'Signups are briefly offline. Email oqts@oqts.org and we will add you.',
 };
 
 export default function SignupForm({ source = 'site' }: { source?: string }) {

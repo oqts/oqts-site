@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://oqts.org'),
   title: {
     default: 'Oxford Quantitative Trading Society',
-    template: '%s — Oxford Quantitative Trading Society',
+    template: '%s · Oxford Quantitative Trading Society',
   },
   description:
-    'The Oxford Quantitative Trading Society teaches quantitative trading by doing — markets education, the OXDAQ trading competition, and a community of Oxford students who build and trade.',
+    'The Oxford Quantitative Trading Society teaches quantitative trading by doing: markets education, the OXDAQ trading competition, and a community of Oxford students who build and trade.',
   openGraph: {
     siteName: 'Oxford Quantitative Trading Society',
     images: ['/brand/favicon/og-card.png'],

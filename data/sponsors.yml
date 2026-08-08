@@ -1,6 +1,7 @@
-# Sponsor tiers — single source of truth, edited only here via GitHub.
-# logo_height is the display cap in px on the homepage strip; the layout
-# reserves the row height so artwork can be swapped without reflow.
+# Sponsor tiers: single source of truth, edited only here via GitHub.
+# logo_height is the display cap in px on the Sponsors page; rows reserve
+# their height so artwork can be swapped without reflow. slug picks the
+# tier card treatment (founder | gold | silver).
 #
 # Artwork provenance (fetched 2026-08-08; replace with approved partner
 # assets when sponsors supply them):
@@ -12,23 +13,38 @@
 
 tiers:
   - name: Founder sponsor
-    logo_height: 56
+    slug: founder
+    logo_height: 52
     sponsors:
       - name: G-Research
         logo: /sponsors/g-research.svg
         url: https://www.gresearch.com
+        blurb: >
+          Quantitative research and machine learning firm, and the society's
+          founding sponsor.
   - name: Gold sponsors
-    logo_height: 40
+    slug: gold
+    logo_height: 38
     sponsors:
       - name: Jane Street
         logo: /sponsors/jane-street.svg
         url: https://www.janestreet.com
+        blurb: >
+          Global liquidity provider and trading firm, trading a broad range
+          of asset classes on more than 200 venues.
       - name: Optiver
         logo: /sponsors/optiver.svg
         url: https://optiver.com
+        blurb: >
+          Global market maker, improving markets by providing liquidity in
+          exchange-traded instruments worldwide.
   - name: Silver sponsors
-    logo_height: 30
+    slug: silver
+    logo_height: 28
     sponsors:
       - name: Hudson River Trading
         logo: /sponsors/hrt.svg
         url: https://www.hudsonrivertrading.com
+        blurb: >
+          Multi-asset quantitative trading firm, building automated systems
+          that trade on markets around the world.

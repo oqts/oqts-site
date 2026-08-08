@@ -1,4 +1,4 @@
-# Society structure — the single source of truth the site renders.
+# Society structure: the single source of truth the site renders.
 # Edited only here, via GitHub; a merged change redeploys the site.
 # List order = render order everywhere.
 
@@ -10,41 +10,21 @@ society:
     linkedin: ""   # add profile URLs when live; empty entries are not rendered
     instagram: ""
 
-committee:
-  - role: President
-    name: TBC
-  - role: President of Research & Technology
-    name: Alec Mitchell-Thomson
-  - role: Treasurer
-    name: TBC
-  - role: Secretary
-    name: TBC
-
-teams:
-  - name: OXDAQ
-    slug: oxdaq
-    description: >
-      Builds and runs the society's internal exchange and its trading
-      competitions — the matching engine, market data, and the events
-      traded on top of them.
-    leads:
-      - name: Alec Mitchell-Thomson
-        role: Head of OXDAQ
-    subteams:
-      - name: Exchange & infrastructure
-        description: Core matching engine, market data and tooling.
-        leads: []
-      - name: Competitions & operations
-        description: Designs and referees the competitions run on OXDAQ.
-        leads: []
-  - name: Events & speakers
-    slug: events
-    description: >
-      The speaker series, workshops and socials that make up the term
-      programme.
-    leads: []
-  - name: Sponsorship & partnerships
-    slug: sponsorship
-    description: >
-      Relationships with the firms that back the society.
-    leads: []
+structure:
+  founders:
+    - name: Niko Dahl
+      role: Co-Founder · President
+    - name: Alec Mitchell-Thomson
+      role: Co-Founder · Head of Research & Technology
+  core:
+    - name: Andrej Ljubic
+    - name: Cameron Mackintosh
+    - name: Aleksandra Perelman
+    - name: Vid Homsak
+  future:
+    label: Research projects
+    note: >
+      From Michaelmas 2026: around five research projects of four members,
+      each with a project lead, overseen by the Head of Research & Technology.
+      Projects that perform may be deployed as live strategies.
+    count: 5
