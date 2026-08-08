@@ -1,0 +1,29 @@
+# Term programme — single source of truth, edited only here via GitHub.
+# date is ISO (YYYY-MM-DD) and decides upcoming vs past at build time.
+# tag: talk | social | competition | workshop
+# All entries below are placeholders for the Michaelmas 2026 programme.
+
+events:
+  - title: Freshers' introduction — what quantitative trading is
+    date: 2026-10-12
+    time: "18:00"
+    location: TBC, Oxford
+    tag: talk
+    description: >
+      An hour on what quant trading actually is, what the society does,
+      and how to get involved — no background assumed.
+  - title: OXDAQ demo night
+    date: 2026-10-26
+    time: "18:30"
+    location: TBC, Oxford
+    tag: competition
+    description: >
+      Live walkthrough of the society's internal exchange ahead of the
+      first competition round of term.
+  - title: Michaelmas social
+    date: 2026-11-06
+    time: "19:30"
+    location: TBC, Oxford
+    tag: social
+    description: >
+      Term social — members and anyone curious about joining.

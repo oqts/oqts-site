@@ -1,0 +1,34 @@
+# Sponsor tiers — single source of truth, edited only here via GitHub.
+# logo_height is the display cap in px on the homepage strip; the layout
+# reserves the row height so artwork can be swapped without reflow.
+#
+# Artwork provenance (fetched 2026-08-08; replace with approved partner
+# assets when sponsors supply them):
+#   g-research.svg   https://www.gresearch.com/wp-content/themes/g-research/images/branding/logo--light.svg
+#                    (recoloured white -> black for light ground; -light kept beside it)
+#   jane-street.svg  https://www.janestreet.com/assets/logo_horizontal-*.svg
+#   optiver.svg      extracted from the inline sprite on https://optiver.com
+#   hrt.svg          https://www.hudsonrivertrading.com/wp-content/uploads/2024/04/01-HRT-Primary-Logo-with-®-Q2-2024.svg
+
+tiers:
+  - name: Founder sponsor
+    logo_height: 56
+    sponsors:
+      - name: G-Research
+        logo: /sponsors/g-research.svg
+        url: https://www.gresearch.com
+  - name: Gold sponsors
+    logo_height: 40
+    sponsors:
+      - name: Jane Street
+        logo: /sponsors/jane-street.svg
+        url: https://www.janestreet.com
+      - name: Optiver
+        logo: /sponsors/optiver.svg
+        url: https://optiver.com
+  - name: Silver sponsors
+    logo_height: 30
+    sponsors:
+      - name: Hudson River Trading
+        logo: /sponsors/hrt.svg
+        url: https://www.hudsonrivertrading.com
