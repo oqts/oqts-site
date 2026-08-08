@@ -9,8 +9,8 @@ const NAV = [
   { href: '/oxdaq', label: 'OXDAQ' },
   { href: '/events', label: 'Events' },
   { href: '/sponsors', label: 'Sponsors' },
-  { href: '/join', label: 'Join' },
   { href: '/contact', label: 'Contact' },
+  { href: '/join', label: 'Join', cta: true },
 ];
 
 export default function Masthead() {
@@ -23,9 +23,13 @@ export default function Masthead() {
         </Link>
         <nav aria-label="Primary">
           <ul>
-            {NAV.map(({ href, label }) => (
+            {NAV.map(({ href, label, cta }) => (
               <li key={href}>
-                <Link href={href} aria-current={pathname === href ? 'page' : undefined}>
+                <Link
+                  href={href}
+                  className={cta ? 'join-cta' : undefined}
+                  aria-current={pathname === href ? 'page' : undefined}
+                >
                   {label}
                 </Link>
               </li>

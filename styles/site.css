@@ -68,6 +68,12 @@ code{font-family:var(--oqts-display);font-size:var(--oqts-micro);
 .masthead nav a:hover{color:var(--oqts-camel-rev)}
 .masthead nav a[aria-current]{color:var(--oqts-camel-rev);
   border-bottom:1px solid var(--oqts-camel-rev)}
+.masthead nav a.join-cta{background:var(--oqts-paper);color:var(--oqts-oxford);
+  font-weight:700;padding:15px 20px;border-radius:2px;margin-left:var(--oqts-space-3);
+  transition:background .15s ease}
+.masthead nav a.join-cta:hover{background:var(--oqts-camel-rev);color:var(--oqts-oxford)}
+.masthead nav a.join-cta[aria-current]{background:var(--oqts-camel-rev);
+  color:var(--oqts-oxford);border-bottom:0}
 .masthead :focus-visible{outline-color:var(--oqts-camel-rev)}
 
 section{padding-top:var(--oqts-space-8)}
