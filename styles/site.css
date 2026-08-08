@@ -71,18 +71,20 @@ code{font-family:var(--oqts-display);font-size:var(--oqts-micro);
 /* the recruiting mark: [JO/IN] mirrors the logo's bracket matrix on the
    other end of the bar - drawn, not filled, so it sits at the logo's weight */
 .masthead .bar nav{margin-left:auto}
+/* geometry mirrors the mark at its 62px masthead size: bracket ink 54px,
+   stroke ~2.4px, arms ~5.5px, letter caps ~15.5px on 25px centres */
 .masthead .join-cta{position:relative;display:flex;align-items:center;
+  justify-content:center;width:62px;height:62px;
   color:var(--oqts-paper);text-decoration:none;
-  padding:7px 12px;margin-left:var(--oqts-space-5);
-  transition:color .15s ease}
+  margin-left:var(--oqts-space-5);transition:color .15s ease}
 .masthead .join-cta::before,
-.masthead .join-cta::after{content:'';position:absolute;top:0;bottom:0;width:8px;
-  border:2px solid currentColor}
+.masthead .join-cta::after{content:'';position:absolute;top:4px;bottom:4px;
+  width:5.5px;border:2.4px solid currentColor}
 .masthead .join-cta::before{left:0;border-right:0}
 .masthead .join-cta::after{right:0;border-left:0}
 .masthead .join-cta .jgrid{display:grid;grid-template-columns:auto auto;
-  gap:4px 9px;justify-items:center}
-.masthead .join-cta b{font:700 15px/1 var(--oqts-display)}
+  gap:0 10px;justify-items:center}
+.masthead .join-cta b{font:700 25px/25px var(--oqts-display)}
 .masthead .join-cta:hover,
 .masthead .join-cta[aria-current]{color:var(--oqts-camel-rev)}
 .masthead :focus-visible{outline-color:var(--oqts-camel-rev)}
