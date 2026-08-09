@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import ApplicationForm from '../../components/ApplicationForm';
 import Btn from '../../components/Btn';
 import CloseRule from '../../components/CloseRule';
 import Section from '../../components/Section';
@@ -45,8 +44,12 @@ export default function Join() {
       </Section>
 
       <Section eyebrow="Apply" title="Application" id="apply">
-        <div style={{ maxWidth: 720 }}>
-          <ApplicationForm />
+        <div className="bracketed" style={{ maxWidth: 720 }}>
+          <p style={{ marginBottom: 0 }}>
+            The application form will appear here when applications open in
+            early September 2026. Join the mailing list below and we will
+            email you the moment it does.
+          </p>
         </div>
       </Section>
 
@@ -60,32 +63,6 @@ export default function Join() {
         </div>
       </Section>
 
-      <Section eyebrow="Questions" title="Asked often enough">
-        <div className="grid g2">
-          <div>
-            <h4>Do I need to know how to code?</h4>
-            <p className="note">
-              No. The programme starts from foundations, and OXDAQ can be traded
-              through tools that do not require writing code. Members who want
-              to build strategies programmatically get help doing so.
-            </p>
-          </div>
-          <div>
-            <h4>Which degrees are eligible?</h4>
-            <p className="note">
-              All of them, at any level. The society selects for engagement, not
-              for course.
-            </p>
-          </div>
-          <div>
-            <h4>What happens after I apply?</h4>
-            <p className="note">
-              We read everything, and reply to every application by email once
-              the round closes.
-            </p>
-          </div>
-        </div>
-      </Section>
     </div>
   );
 }

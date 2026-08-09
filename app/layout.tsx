@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import '../styles/site.css';
 import Masthead from '../components/Masthead';
 import Footer from '../components/Footer';
+import Track from '../components/Track';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://oqts.org'),
@@ -57,6 +59,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Masthead />
         <main id="main">{children}</main>
         <Footer />
+        <Track />
+        <Analytics />
       </body>
     </html>
   );
