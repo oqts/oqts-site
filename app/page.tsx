@@ -11,7 +11,7 @@ export default function Home() {
       <div className="wrap">
       <div className="ground g4" aria-hidden="true" />
         <section>
-          <div className="plate watermark v1">
+          <div className="plate">
             <p className="eyebrow">Oxford Quantitative Trading Society</p>
             <h1>Quantitative trading, learnt by doing</h1>
             <p className="lede col">
@@ -24,8 +24,7 @@ export default function Home() {
               <Btn href="/oxdaq" secondary>Explore OXDAQ</Btn>
             </div>
           </div>
-          <CloseRule />
-        </section>
+                  </section>
 
         <Section eyebrow="What we do" title="Three things, done properly">
           <div className="grid g3">

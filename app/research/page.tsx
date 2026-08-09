@@ -16,7 +16,7 @@ export default function Research() {
     <div className="wrap">
       <div className="ground g6" aria-hidden="true" />
       <section>
-        <div className="plate watermark v3">
+        <div className="plate">
           <p className="eyebrow">Research</p>
           <h1>Small teams, real stakes</h1>
           <p className="lede col">
@@ -27,8 +27,7 @@ export default function Research() {
             <span className="btn secondary" aria-disabled="true">Papers &amp; writeups</span>
           </div>
         </div>
-        <CloseRule />
-      </section>
+              </section>
 
       <Section eyebrow="The model" title="How research is organised">
         <div className="grid g3">

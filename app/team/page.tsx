@@ -16,7 +16,7 @@ export default function Team() {
     <div className="wrap">
       <div className="ground g5" aria-hidden="true" />
       <section>
-        <div className="plate watermark v2">
+        <div className="plate">
           <p className="eyebrow">Team &amp; structure</p>
           <h1>Who runs what</h1>
           <p className="lede col">
@@ -27,8 +27,7 @@ export default function Team() {
             <Btn href="/research" secondary>Research programme</Btn>
           </div>
         </div>
-        <CloseRule />
-      </section>
+              </section>
 
       <Section eyebrow="Structure" title="The tree">
         <OrgTree structure={structure} />

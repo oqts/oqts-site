@@ -17,7 +17,7 @@ export default function SponsorsPage() {
     <div className="wrap">
       <div className="ground g3" aria-hidden="true" />
       <section>
-        <div className="plate watermark v6">
+        <div className="plate">
           <p className="eyebrow">Sponsors</p>
           <h1>Backed by field-defining firms</h1>
           <p className="lede col">
@@ -27,8 +27,7 @@ export default function SponsorsPage() {
             <Btn href="mailto:oqts@oqts.org">Sponsor the society</Btn>
           </div>
         </div>
-        <CloseRule />
-      </section>
+              </section>
 
       <Section eyebrow="Tiers" title="Our sponsors">
         {tiers.map((tier) => (

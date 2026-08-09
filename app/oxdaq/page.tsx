@@ -14,7 +14,7 @@ export default function Oxdaq() {
     <div className="wrap">
       <div className="ground g1" aria-hidden="true" />
       <section>
-        <div className="plate watermark v4">
+        <div className="plate">
           <p className="eyebrow">OXDAQ</p>
           <h1>The society&apos;s own exchange</h1>
           <p className="lede col">
@@ -25,8 +25,7 @@ export default function Oxdaq() {
             <span className="btn secondary" aria-disabled="true">Competition entry</span>
           </div>
         </div>
-        <CloseRule />
-      </section>
+              </section>
 
       <Section eyebrow="Why" title="Why build an exchange?">
         <p className="col">

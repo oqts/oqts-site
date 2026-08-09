@@ -18,7 +18,7 @@ export default function Events() {
     <div className="wrap">
       <div className="ground g2" aria-hidden="true" />
       <section>
-        <div className="plate watermark v5">
+        <div className="plate">
           <p className="eyebrow">Events</p>
           <h1>The term programme</h1>
           <p className="lede col">
@@ -29,8 +29,7 @@ export default function Events() {
             <span className="btn secondary" aria-disabled="true">Instagram</span>
           </div>
         </div>
-        <CloseRule />
-      </section>
+              </section>
 
       <Section eyebrow="Upcoming" title="Next up">
         {upcoming.length > 0 ? (

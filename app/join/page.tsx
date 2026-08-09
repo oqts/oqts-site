@@ -16,7 +16,7 @@ export default function Join() {
     <div className="wrap">
       <div className="ground g5" aria-hidden="true" />
       <section>
-        <div className="plate watermark v2">
+        <div className="plate">
           <p className="eyebrow">Join</p>
           <h1>Join the society</h1>
           <p className="lede col">
@@ -29,8 +29,7 @@ export default function Join() {
             <Btn href="#mailing-list" secondary>Join the mailing list</Btn>
           </div>
         </div>
-        <CloseRule />
-      </section>
+              </section>
 
       <Section eyebrow="Timeline" title="Applications open September 2026" close={false}>
         <div className="bracketed">

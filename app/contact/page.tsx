@@ -16,7 +16,7 @@ export default function Contact() {
     <div className="wrap">
       <div className="ground g6" aria-hidden="true" />
       <section>
-        <div className="plate watermark v3">
+        <div className="plate">
           <p className="eyebrow">Contact</p>
           <h1>Get in touch</h1>
           <p className="lede col">
@@ -27,8 +27,7 @@ export default function Contact() {
             <Btn href={`mailto:${society.email}`}>Email the society</Btn>
           </div>
         </div>
-        <CloseRule />
-      </section>
+              </section>
 
       {links.length > 0 && (
         <Section eyebrow="Elsewhere" title="Social">
