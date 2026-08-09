@@ -268,7 +268,9 @@ button.org-card{font:inherit;color:inherit;text-align:inherit;cursor:pointer;wid
   box-shadow:0 0 0 3px var(--oqts-surface),0 0 0 4px var(--oqts-accent-rule);
   padding:0;width:min(560px,calc(100vw - 2*var(--oqts-gutter) - 8px));
   max-height:calc(100dvh - 2*var(--oqts-space-6));overflow:auto}
-.person-dialog::backdrop{background:var(--oqts-oxford);opacity:.6}
+.person-dialog::backdrop{background:rgba(251,248,241,.45); /* ivory mist */
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.person-dialog strong{font-weight:600} /* STIX SemiBold; the 700 cut is too heavy here */
 .person-dialog .body{padding:var(--oqts-space-6);text-align:left}
 .person-dialog .head{display:flex;justify-content:space-between;align-items:baseline;
   gap:var(--oqts-space-4)}

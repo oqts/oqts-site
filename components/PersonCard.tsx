@@ -24,6 +24,11 @@ function Role({ role }: { role: string }) {
   );
 }
 
+// Bios are plain YAML text; **key phrase** is the one bit of markup allowed.
+function Bold({ text }: { text: string }) {
+  return <>{text.split('**').map((seg, i) => (i % 2 ? <strong key={i}>{seg}</strong> : seg))}</>;
+}
+
 // A person in the org tree. With a bio the card becomes a button that opens
 // a profile dialog; without one it stays a plain card, so people render the
 // same before their profile is written.
@@ -67,7 +72,9 @@ export default function PersonCard({ person, fallbackRole }: { person: Person; f
             {meta && <span className="meta">{meta}</span>}
           </div>
           {person.bio.split(/\n{2,}/).map((para) => (
-            <p key={para.slice(0, 40)}>{para.trim()}</p>
+            <p key={para.slice(0, 40)}>
+              <Bold text={para.trim()} />
+            </p>
           ))}
           {links.length > 0 && (
             <p className="person-links">

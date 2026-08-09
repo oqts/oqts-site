@@ -12,11 +12,12 @@ society:
 
 # Every person below also takes optional profile fields:
 #   course: MPhys Physics          # shown on the card under the role
-#   year: 2nd year                 # shown next to the course
 #   bio: >                         # adding a bio makes the card clickable and
-#     A short paragraph about      # opens their profile dialog; blank line
-#     them, written from their CV. # inside = paragraph break
+#     A short paragraph with       # opens their profile dialog; blank line
+#     **key phrases** in bold.     # inside = paragraph break
 #   links: { linkedin: "https://..." }   # rendered in the open profile
+# (year: is also supported but currently unused; cards read more compact
+# without it and it would need bumping every Michaelmas)
 structure:
   founders:
     - name: Niko Dahl
@@ -26,16 +27,14 @@ structure:
     - name: Alec Mitchell-Thomson
       role: Co-Founder · Head of Research & Technology
       course: MEng Engineering Science
-      year: 3rd year
       bio: >
-        Alec reads Engineering Science at New College, ranked 7th of 180 in
-        first-year examinations, and spent summer 2026 as a macro quantitative
-        intern at Brevan Howard. Alongside the society, Alec is a quantitative
-        analyst with the Oxford Alpha Fund; personal research spans a
-        real-time pipeline turning ship-tracking data from the global LNG
-        fleet into macro trading signals, and a hidden Markov model for macro
-        regime detection. Within OQTS, Alec heads research and technology and
-        is building OXDAQ, the society's exchange simulator, where members
+        Alec reads Engineering Science at New College, **ranked 7th of 180 in
+        first-year examinations**, and spent summer 2026 as a **Quant Trading
+        Intern at Brevan Howard**. Personal research spans a real-time
+        pipeline turning ship-tracking data from the global LNG fleet into
+        macro trading signals, and a hidden Markov model for macro regime
+        detection. Within OQTS, Alec heads research and technology and is
+        building **OXDAQ, the society's exchange simulator**, where members
         run and test their own trading algorithms live.
       links:
         linkedin: "https://www.linkedin.com/in/alecmitchell-thomson"
@@ -49,30 +48,28 @@ structure:
         [Profile to follow.]
     - name: Aleksandra Perelman
       course: MSc Mathematical & Computational Finance
-      year: 2026–27
       bio: >
         Aleksandra is reading for the MSc in Mathematical and Computational
-        Finance at the Mathematical Institute, funded by the Squarepoint
-        Foundation Scholarship, one of four awarded each year. Before Oxford,
-        Aleksandra took a BSc in Economics and Data Science at IE University,
-        writing a thesis on quantum-inspired machine learning for short-term
-        asset price prediction, and has worked across a $350M secondaries
-        book at LaunchBay Capital and an investment banking summer at UBS.
-        Within the society, Aleksandra works on the systematic fund: strategy
-        design, signal research and backtesting.
+        Finance at the Mathematical Institute, funded by the **Squarepoint
+        Foundation Scholarship**, one of four awarded each year. Before
+        Oxford, Aleksandra took a BSc in Economics and Data Science at IE
+        University, writing a thesis on **quantum-inspired machine learning**
+        for short-term asset price prediction, and has worked across a $350M
+        secondaries book at LaunchBay Capital and an **investment banking
+        summer at UBS**. Within the society, Aleksandra works on the
+        systematic fund: strategy design, signal research and backtesting.
     - name: Vid Homsak
       course: DPhil Particle Physics
-      year: 4th year
       bio: >
-        Vid is a DPhil student in particle physics and a Clarendon Scholar,
-        building machine learning for the ATLAS experiment at CERN:
-        transformer-based classifiers and a tagger calibration method now
-        used across the collaboration's flavour-tagging analyses. Vid
+        Vid is a DPhil student in particle physics and a **Clarendon
+        Scholar**, building machine learning for the ATLAS experiment at
+        CERN: transformer-based classifiers and a tagger calibration method
+        now used across the collaboration's flavour-tagging analyses. Vid
         graduated in the top 3% of the MSci Physics with Theoretical Physics
-        cohort at Imperial College London, with a first-authored paper in
-        Physical Review D. Since 2024 Vid has built and run a live systematic
-        portfolio of ten strategies across twenty crypto pairs, trading real
-        capital since June 2025.
+        cohort at Imperial College London, with a **first-authored paper in
+        Physical Review D**. Since 2024 Vid has built and run a live
+        systematic portfolio of ten strategies across twenty crypto pairs,
+        **trading real capital since June 2025**.
       links:
         linkedin: "https://www.linkedin.com/in/vid-homsak"
         github: "https://github.com/vidh2000"
