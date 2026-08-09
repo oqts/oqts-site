@@ -31,7 +31,7 @@ export default function Home() {
             <div className="panel">
               <h4>Education</h4>
               <p className="note">
-                Lectures and workshops from professionals at our sponsor firms, alongside our own in-house series, pitched so that no prior experience is needed to start.
+                Lectures and workshops from professionals at our sponsor firms, alongside our own in-house series, built to take a strong quantitative background into the specifics of modern markets fast.
               </p>
             </div>
             <div className="panel">
@@ -59,9 +59,10 @@ export default function Home() {
             in a talk gets used on OXDAQ within weeks.
           </p>
           <p className="col">
-            No particular degree is required, and no prior experience.
-            Mathematicians, computer scientists, physicists, economists and
-            historians all trade side by side; curiosity and a willingness to lose play-money in public are the only prerequisites.
+            We recruit for quantitative strength above all else. Mathematics,
+            computer science, physics, statistics and engineering are the
+            natural homes; what we ask for is exceptionally strong technical
+            ability and the willingness to test it on a live market in public.
           </p>
           <p style={{ marginTop: 'var(--oqts-space-5)' }}>
             <Btn href="/team" secondary>See who runs what</Btn>

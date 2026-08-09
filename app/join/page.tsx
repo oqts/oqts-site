@@ -19,9 +19,10 @@ export default function Join() {
           <p className="eyebrow">Join</p>
           <h1>Join the society</h1>
           <p className="lede col">
-            One application, any degree, no experience required. What we look for
-            is evidence you will actually engage: with the programme, with OXDAQ,
-            and with everyone else trading on it.
+            One application. We select for quantitative degrees and
+            exceptionally strong technical skills, and for evidence you will
+            actually engage: with the programme, with OXDAQ, and with everyone
+            else trading on it.
           </p>
           <div className="btn-row">
             <Btn href="#apply">Apply now</Btn>
