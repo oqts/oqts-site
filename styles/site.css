@@ -170,37 +170,37 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 .sponsor-row a{display:flex;align-items:center;text-decoration:none}
 .sponsor-row img{width:auto;max-width:100%}
 
-/* sponsor tiers: identical ivory cards with a chalk frame; the tier is
-   carried by colour alone, on each card's top rule and the label's rule.
-   Metals map to tokens: founder/gold camel, silver slate, bronze bronze;
-   all used as rules only, never text. Founder keeps the double rule. */
+/* sponsor tiers: identical neutral cards (ivory fill, chalk frame); the
+   tier lives entirely in the medal pin on the label. Metals are the
+   scoped --oqts-tier-* tokens; founder wears camel with a ringed pin. */
 .tier-block{margin-bottom:var(--oqts-space-7)}
 .tier-block:last-child{margin-bottom:0}
-.tier-block .tier-label{display:flex;align-items:center;gap:var(--oqts-space-4);
+.tier-block .tier-label{display:flex;align-items:center;gap:var(--oqts-space-3);
   font:400 var(--oqts-micro)/1 var(--oqts-display);
   letter-spacing:var(--oqts-track-eyebrow);text-transform:uppercase;
   color:var(--oqts-accent-text);margin:0 0 var(--oqts-space-4)}
+.tier-block .tier-label::before{content:'';width:11px;height:11px;
+  border-radius:50%;background:var(--tier-metal);flex:none}
 .tier-block .tier-label::after{content:'';flex:1;
-  border-top:1px solid var(--tier-colour,var(--oqts-hairline))}
-.tier-block.founder,.tier-block.gold{--tier-colour:var(--oqts-camel)}
-.tier-block.silver{--tier-colour:var(--oqts-slate)}
-.tier-block.bronze{--tier-colour:var(--oqts-bronze)}
+  border-top:1px solid var(--oqts-hairline);margin-left:var(--oqts-space-2)}
+.tier-block.founder{--tier-metal:var(--oqts-camel)}
+.tier-block.founder .tier-label::before{
+  box-shadow:0 0 0 2px var(--oqts-surface),0 0 0 3px var(--oqts-camel)}
+.tier-block.gold{--tier-metal:var(--oqts-tier-gold)}
+.tier-block.silver{--tier-metal:var(--oqts-tier-silver)}
+.tier-block.bronze{--tier-metal:var(--oqts-tier-bronze)}
 .tier-grid{display:grid;gap:var(--oqts-space-4)}
 .tier-grid.founder{grid-template-columns:1fr}
 .tier-grid.gold{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
 .tier-grid.silver,
 .tier-grid.bronze{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.firm-card{position:relative;background:var(--oqts-surface);
-  border:1px solid var(--oqts-hairline);
-  border-top:1px solid var(--tier-colour,var(--oqts-hairline));
+.firm-card{background:var(--oqts-surface);border:1px solid var(--oqts-hairline);
   padding:var(--oqts-space-5);transition:box-shadow .15s ease}
 .firm-card:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
 .firm-card img{width:auto;max-width:100%;display:block}
 .firm-card .note{margin:var(--oqts-space-3) 0 0}
 .tier-grid.founder .firm-card{padding:var(--oqts-space-6);display:flex;
   align-items:center;gap:var(--oqts-space-7);flex-wrap:wrap}
-.tier-grid.founder .firm-card::before{content:'';position:absolute;left:0;right:0;top:2px;
-  border-top:1px solid var(--tier-colour)}
 .tier-grid.founder .firm-card .note{margin:0;max-width:44ch}
 
 /* ── org tree ── */
