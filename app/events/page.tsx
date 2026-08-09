@@ -16,6 +16,7 @@ export default function Events() {
   const { upcoming, past } = getEvents();
   return (
     <div className="wrap">
+      <div className="ground g2" aria-hidden="true" />
       <section>
         <div className="plate watermark v5">
           <p className="eyebrow">Events</p>

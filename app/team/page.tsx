@@ -14,6 +14,7 @@ export default function Team() {
   const { structure } = getSociety();
   return (
     <div className="wrap">
+      <div className="ground g5" aria-hidden="true" />
       <section>
         <div className="plate watermark v2">
           <p className="eyebrow">Team &amp; structure</p>

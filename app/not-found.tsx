@@ -4,6 +4,7 @@ import CloseRule from '../components/CloseRule';
 export default function NotFound() {
   return (
     <div className="wrap">
+      <div className="ground g1" aria-hidden="true" />
       <section>
         <p className="eyebrow">404</p>
         <h1>No such page</h1>

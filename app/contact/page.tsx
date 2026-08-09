@@ -14,6 +14,7 @@ export default function Contact() {
   const links = Object.entries(society.links).filter(([, url]) => url);
   return (
     <div className="wrap">
+      <div className="ground g6" aria-hidden="true" />
       <section>
         <div className="plate watermark v3">
           <p className="eyebrow">Contact</p>

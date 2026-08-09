@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Join() {
   return (
     <div className="wrap">
+      <div className="ground g5" aria-hidden="true" />
       <section>
         <div className="plate watermark v2">
           <p className="eyebrow">Join</p>

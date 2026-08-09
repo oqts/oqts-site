@@ -9,6 +9,7 @@ export default function Home() {
     <>
       <SponsorBanner />
       <div className="wrap">
+      <div className="ground g4" aria-hidden="true" />
         <section>
           <div className="plate watermark v1">
             <p className="eyebrow">Oxford Quantitative Trading Society</p>

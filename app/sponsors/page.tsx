@@ -15,6 +15,7 @@ export default function SponsorsPage() {
   const { society } = getSociety();
   return (
     <div className="wrap">
+      <div className="ground g3" aria-hidden="true" />
       <section>
         <div className="plate watermark v6">
           <p className="eyebrow">Sponsors</p>
