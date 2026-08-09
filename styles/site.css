@@ -129,6 +129,12 @@ figcaption{font:400 var(--oqts-micro)/1.5 var(--oqts-display);color:var(--oqts-i
 .field input:focus-visible,.field textarea:focus-visible,.field select:focus-visible{
   border-color:var(--oqts-ink)}
 .field textarea{resize:vertical;min-height:120px}
+.field input[type=file]{padding:9px 11px;font-size:var(--oqts-body-s)}
+.field input[type=file]::file-selector-button{font:500 var(--oqts-body-s)/1 var(--oqts-text);
+  background:none;color:var(--oqts-ink);border:1px solid var(--oqts-ink);
+  border-radius:2px;padding:8px 14px;margin-right:var(--oqts-space-3);cursor:pointer}
+.field input[type=file]::file-selector-button:hover{
+  background:var(--oqts-ink);color:var(--oqts-surface)}
 form .field{max-width:none}
 .form-note{font:400 var(--oqts-micro)/1.6 var(--oqts-display);color:var(--oqts-ink-2);
   letter-spacing:.02em}
