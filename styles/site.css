@@ -171,17 +171,22 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
   color:var(--oqts-paper)}
 
 /* ── sponsors ── */
-.sponsor-banner{display:block;overflow:hidden;
+/* The belt scrolls natively (trackpad, wheel, finger) and drifts on its own
+   between gestures — see SponsorBelt.tsx. overscroll-behavior keeps a swipe
+   from turning into the browser's back gesture; the scrollbar is hidden
+   because the band is only a logo tall. */
+.sponsor-banner{display:block;overflow-x:auto;overflow-y:hidden;
+  overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;-webkit-touch-callout:none;
   border-bottom:1px solid var(--oqts-hairline);
   padding:var(--oqts-space-3) 0;background:var(--oqts-surface-2)}
-.sponsor-track{display:flex;width:max-content;will-change:transform;
-  animation:sponsor-drift 240s linear infinite}
-.sponsor-banner:hover .sponsor-track{animation-play-state:paused}
+.sponsor-banner::-webkit-scrollbar{display:none}
+.sponsor-track{display:flex;width:max-content}
 .sponsor-track .group{display:flex;align-items:center;
   gap:var(--oqts-space-8);padding-right:var(--oqts-space-8)}
-.sponsor-track img{width:auto;display:block;opacity:.8}
+.sponsor-track img{width:auto;display:block;opacity:.8;
+  user-select:none;-webkit-user-drag:none}
 .sponsor-banner:hover img{opacity:1}
-@keyframes sponsor-drift{to{transform:translateX(-50%)}}
 
 .sponsor-row{display:flex;gap:var(--oqts-space-6) var(--oqts-space-8);
   flex-wrap:wrap;align-items:center}
