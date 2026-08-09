@@ -1,6 +1,9 @@
 export type Person = {
   name: string;
   role?: string;
+  course?: string;
+  year?: string;
+  bio?: string; // a bio makes the person's org-tree card open a profile dialog
   links?: Record<string, string>;
 };
 

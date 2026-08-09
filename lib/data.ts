@@ -28,6 +28,13 @@ export function getSociety(): Society {
   for (const c of st.core) {
     if (!c.name) fail('society.yml', 'core members need a name');
   }
+  for (const p of [...st.founders, ...st.core]) {
+    for (const key of ['course', 'year', 'bio'] as const) {
+      if (p[key] !== undefined && (typeof p[key] !== 'string' || !p[key].trim())) {
+        fail('society.yml', `${key} on ${p.name} must be non-empty text`);
+      }
+    }
+  }
   if (!st.future?.label || !st.future?.note || typeof st.future?.count !== 'number') {
     fail('society.yml', 'structure.future needs label, note and numeric count');
   }

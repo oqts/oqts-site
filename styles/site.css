@@ -251,6 +251,40 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 .org-card.ghost:hover{box-shadow:none}
 .org-card.ghost .name{color:var(--oqts-ink-2);font-size:var(--oqts-data)}
 
+/* people with a written profile: the same card as a button; the PROFILE
+   micro-label is the affordance that this one opens */
+button.org-card{font:inherit;color:inherit;text-align:inherit;cursor:pointer;width:100%}
+.org-card .meta{display:block;font:400 var(--oqts-micro)/1.4 var(--oqts-display);
+  color:var(--oqts-ink-2);margin-top:4px}
+.org-card .profile-hint{display:block;margin-top:var(--oqts-space-3);
+  font:400 var(--oqts-micro)/1 var(--oqts-display);
+  letter-spacing:var(--oqts-track-label);text-transform:uppercase;
+  color:var(--oqts-accent-text)}
+
+/* the profile dialog: the plate device lifted onto a navy scrim; no
+   animation (brand.md — the page-load reveal is the only motion) */
+.person-dialog{border:1px solid var(--oqts-accent-rule);background:var(--oqts-surface);
+  color:var(--oqts-ink);
+  box-shadow:0 0 0 3px var(--oqts-surface),0 0 0 4px var(--oqts-accent-rule);
+  padding:0;width:min(560px,calc(100vw - 2*var(--oqts-gutter) - 8px));
+  max-height:calc(100dvh - 2*var(--oqts-space-6));overflow:auto}
+.person-dialog::backdrop{background:var(--oqts-oxford);opacity:.6}
+.person-dialog .body{padding:var(--oqts-space-6);text-align:left}
+.person-dialog .head{display:flex;justify-content:space-between;align-items:baseline;
+  gap:var(--oqts-space-4)}
+.person-dialog .head h3{margin-bottom:var(--oqts-space-2)}
+.person-dialog .ident{margin-bottom:var(--oqts-space-4)}
+.person-dialog .ident .role-label{display:block}
+.person-dialog .ident .meta{display:block;font:400 var(--oqts-micro)/1.4 var(--oqts-display);
+  color:var(--oqts-ink-2);margin-top:4px}
+.person-dialog p:last-child{margin-bottom:0}
+.dialog-close{font:400 var(--oqts-micro)/1 var(--oqts-display);
+  letter-spacing:var(--oqts-track-label);text-transform:uppercase;
+  background:none;border:0;padding:6px 0;color:var(--oqts-ink-2);cursor:pointer;flex:none}
+.dialog-close:hover{color:var(--oqts-accent-text)}
+.person-links{display:flex;gap:var(--oqts-space-4);flex-wrap:wrap;
+  margin-top:var(--oqts-space-4)}
+
 /* connectors (desktop only): a stem from the tier above, a spanning rule,
    and a stem down into each card */
 .org-stem{width:1px;height:28px;background:var(--oqts-hairline);margin:0 auto}
@@ -269,9 +303,12 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 @media (min-width:681px){
   /* half-border connectors: each item draws its halves of the spanning rule
      plus its own drop stem, so the lines follow the real item positions */
-  .org-row.connected{gap:0}
+  .org-row.connected{gap:0;flex-wrap:nowrap}
+  /* divide the row equally so the tier never wraps (wrapping would redraw
+     the connectors as a false sub-tier); long course lines wrap inside */
   .org-row.connected>li{position:relative;padding:28px var(--oqts-space-2) 0;
-    display:flex}
+    display:flex;flex:1 1 0;min-width:0}
+  .org-row.connected .org-card{flex:1;min-width:0}
   .org-row.connected>li::before,
   .org-row.connected>li::after{content:'';position:absolute;top:0;right:50%;
     width:50%;height:28px;border-top:1px solid var(--oqts-hairline)}

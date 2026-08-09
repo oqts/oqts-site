@@ -1,29 +1,5 @@
 import type { Structure } from '../lib/types';
-
-// A role like "Co-Founder · Head of Research & Technology" may wrap at the
-// separator but never inside a part, so each part renders as one line.
-function Role({ role }: { role: string }) {
-  const parts = role.split(' · ');
-  return (
-    <span className="role-label">
-      {parts.map((part, i) => (
-        <span key={part}>
-          {i > 0 && ' · '}
-          <span className="part">{part}</span>
-        </span>
-      ))}
-    </span>
-  );
-}
-
-function Card({ title, role }: { title: string; role: string }) {
-  return (
-    <div className="org-card">
-      <span className="name">{title}</span>
-      <Role role={role} />
-    </div>
-  );
-}
+import PersonCard from './PersonCard';
 
 // The society structure as a connected tree: founders, a stem down to the
 // core team, and a dashed tier for the research projects to come.
@@ -35,7 +11,7 @@ export default function OrgTree({ structure }: { structure: Structure }) {
       <ul className="org-row pair">
         {founders.map((f) => (
           <li key={f.name}>
-            <Card title={f.name} role={f.role ?? 'Co-Founder'} />
+            <PersonCard person={f} fallbackRole="Co-Founder" />
           </li>
         ))}
       </ul>
@@ -44,7 +20,7 @@ export default function OrgTree({ structure }: { structure: Structure }) {
       <ul className="org-row connected">
         {core.map((c) => (
           <li key={c.name}>
-            <Card title={c.name} role={c.role ?? 'Core member'} />
+            <PersonCard person={c} fallbackRole="Core member" />
           </li>
         ))}
       </ul>
