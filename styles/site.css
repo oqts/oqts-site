@@ -329,9 +329,12 @@ footer .colophon{margin-top:var(--oqts-space-6);padding-top:var(--oqts-space-4);
 /* ── whitespace texture (brand.md §8) ──
    The canonical dot field, ramped so density grows away from the reading
    column. Ivory ground only — never on paper panels or navy. */
-/* the plate: a chalk frame around the hero, its own field inside, rule
-   outside; the ivory fill occludes the ground tile beneath */
-.plate{border:1px solid var(--oqts-hairline);background:var(--oqts-surface);
+/* the plate: a camel frame around the hero with its own field inside, the
+   rule outside. The ivory fill occludes the ground tile, and the halo (a
+   clean ivory moat) keeps the two textures from ever touching, so the
+   plate reads as an object laid on the ground rather than a patch of it. */
+.plate{border:1px solid var(--oqts-accent-rule);background:var(--oqts-surface);
+  box-shadow:0 0 0 18px var(--oqts-surface);
   padding:var(--oqts-space-7) var(--oqts-space-6)}
 
 .watermark{position:relative;z-index:0}
