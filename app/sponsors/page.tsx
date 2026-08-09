@@ -31,7 +31,7 @@ export default function SponsorsPage() {
 
       <Section eyebrow="Tiers" title="Our sponsors">
         {tiers.map((tier) => (
-          <div className="tier-block" key={tier.slug}>
+          <div className={`tier-block ${tier.slug}`} key={tier.slug}>
             <p className="tier-label">{tier.name}</p>
             <div className={`tier-grid ${tier.slug}`}>
               {tier.sponsors.map((s) => (
