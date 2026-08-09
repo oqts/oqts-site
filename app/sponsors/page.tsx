@@ -18,7 +18,7 @@ export default function SponsorsPage() {
       <section>
         <div className="plate watermark v6">
           <p className="eyebrow">Sponsors</p>
-          <h1>Backed by the firms that define the field</h1>
+          <h1>Backed by field-defining firms</h1>
           <p className="lede col">
             Sponsorship funds the programme, the exchange and the events that make the society run.
           </p>
