@@ -27,7 +27,7 @@ export default function Oxdaq() {
         <CloseRule />
       </section>
 
-      <Section eyebrow="Why" title="Why build an exchange?" textured={6}>
+      <Section eyebrow="Why" title="Why build an exchange?">
         <p className="col">
           Because real market making is normally out of students&apos; reach: the data and infrastructure it needs do not exist outside the firms themselves. OXDAQ closes that gap. It is a live exchange with real market mechanics, a price-time order book, and instruments whose fair value is never revealed; you infer it from the order flow, the way every real desk has to. The exchange is built by the core team, and members join the build as the society grows.
         </p>
@@ -62,7 +62,7 @@ export default function Oxdaq() {
         </div>
       </Section>
 
-      <Section eyebrow="Calendar" title="Through the year" textured={2}>
+      <Section eyebrow="Calendar" title="Through the year">
         <p className="col">
           Competition rounds run through each term, building from simple
           market-making games to multi-instrument events. Dates land on the{' '}

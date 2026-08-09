@@ -33,7 +33,7 @@ export default function Team() {
         <OrgTree structure={structure} />
       </Section>
 
-      <Section eyebrow="How it grows" title="From core team to research projects" textured={4}>
+      <Section eyebrow="How it grows" title="From core team to research projects">
         <p className="col">{structure.future.note}</p>
         <p className="col">
           A team lives with one research area for a term or a year, going deep enough to learn everything there is to know about it, and finishes by writing it up as a research paper or article. After review, a strategy that looks promising may be deployed live. Project teams and leads will appear on this chart as they are formed; the projects themselves live on the{' '}
