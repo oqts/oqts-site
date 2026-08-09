@@ -100,8 +100,9 @@ section{padding-top:var(--oqts-space-8)}
 .grid{display:grid;gap:var(--oqts-space-5)}
 .g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
 .g3{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+/* paper cards always carry the camel frame (brand.md §4) */
 .panel{background:var(--oqts-surface-2);padding:var(--oqts-space-5);
-  transition:box-shadow .15s ease}
+  border:1px solid var(--oqts-accent-rule);transition:box-shadow .15s ease}
 .panel:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
 /* text inside a bracket fills it; the measure cap reads as a hole otherwise */
 .bracketed .col{max-width:none}
@@ -238,6 +239,7 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 .org-row{display:flex;justify-content:center;gap:var(--oqts-space-4);flex-wrap:wrap;
   padding:0;margin:0;list-style:none;position:relative}
 .org-card{background:var(--oqts-surface-2);padding:var(--oqts-space-4) var(--oqts-space-5);
+  border:1px solid var(--oqts-accent-rule);
   min-width:190px;transition:box-shadow .15s ease}
 .org-card:hover{box-shadow:0 0 0 1px var(--oqts-ink)}
 .org-card .name{display:block;font-family:var(--oqts-display);
