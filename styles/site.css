@@ -233,7 +233,8 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
   font-size:var(--oqts-label);letter-spacing:var(--oqts-track-display)}
 .org-card .role-label{display:block;margin-top:5px}
 .role-label .part{white-space:nowrap}
-.org-card.ghost{background:none;border:1px dashed var(--oqts-hairline);color:var(--oqts-ink-2)}
+.org-card.ghost{background:var(--oqts-surface);
+  border:1px dashed var(--oqts-slate);color:var(--oqts-ink-2)}
 .org-card.ghost:hover{box-shadow:none}
 .org-card.ghost .name{color:var(--oqts-ink-2);font-size:var(--oqts-data)}
 
