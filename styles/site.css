@@ -15,7 +15,7 @@ body{
 /* the universal ground: a seamless, quiet dot tile (brand.md §8) spanning
    the whole ivory region; each page wears its own seed. Panels and cards
    occlude it. */
-main{position:relative;z-index:0}
+main{position:relative;z-index:0;padding-bottom:var(--oqts-space-9)}
 .ground{position:absolute;inset:0;z-index:-1;pointer-events:none;
   background-repeat:repeat;background-size:auto;
   background-image:url('/brand/patterns/oqts-dots-ground-1.svg')}
@@ -293,7 +293,7 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 
 /* ── footer ── */
 footer{background:var(--oqts-oxford);color:var(--oqts-paper);
-  padding:var(--oqts-space-8) 0 var(--oqts-space-7);margin-top:var(--oqts-space-9)}
+  padding:var(--oqts-space-8) 0 var(--oqts-space-7)}
 footer img{height:150px;width:auto;display:block}
 footer .cols{display:grid;grid-template-columns:auto 1fr;gap:var(--oqts-space-8);align-items:start}
 footer h4{color:var(--oqts-camel-rev);font-size:var(--oqts-micro)}
