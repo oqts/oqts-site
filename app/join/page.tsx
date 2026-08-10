@@ -54,7 +54,7 @@ export default function Join() {
         </div>
       </Section>
 
-      <Section eyebrow="Mailing list" title="Not ready to apply?" id="mailing-list">
+      <Section eyebrow="Mailing list" title="Keep up to date" id="mailing-list">
         <div className="panel" style={{ maxWidth: 560 }}>
           <p className="note">
             Get one email when applications open, and occasional term-programme
