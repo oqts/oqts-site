@@ -15,9 +15,10 @@ export default function Home() {
             <p className="eyebrow">Oxford Quantitative Trading Society</p>
             <h1>Quantitative trading, learnt by doing</h1>
             <p className="lede col">
-              We teach markets the only way that sticks: by trading them.
-              Education, competition and community for Oxford students who want
-              to understand how modern markets actually work.
+              Education, competition and research for Oxford students with
+              serious quantitative ability. Members learn the mechanics of
+              modern markets and test what they build on OXDAQ, the
+              society&apos;s own live exchange.
             </p>
             <div className="btn-row">
               <Btn href="/join">Join the society</Btn>
