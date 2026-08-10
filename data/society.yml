@@ -22,8 +22,18 @@ structure:
   founders:
     - name: Niko Dahl
       role: Co-Founder · President
+      course: Physics
       bio: >
-        [Profile to follow.]
+        Niko is a second-year physicist and co-founder and president of OQTS.
+        Before Oxford, he took a year out to work at the Institute for
+        Functional Intelligent Materials in Singapore, working directly under
+        **Professor Sir Konstantin Novoselov** to refine a novel experimental
+        technique he had previously developed. That research is what pulled
+        him towards quantitative work, and he has spent this summer in
+        **Quant Research at Systematica Investments**. He also runs a small
+        personal semi-systematic equity strategy. Outside of that, Niko cooks
+        (he is an accredited pasta chef), plays cricket, and is happiest
+        doing something out on the water.
     - name: Alec Mitchell-Thomson
       role: Co-Founder · Head of Research & Technology
       course: MEng Engineering Science
@@ -45,20 +55,28 @@ structure:
       bio: >
         [Profile to follow.]
     - name: Cameron Mackintosh
+      course: DPhil Physics
       bio: >
-        [Profile to follow.]
+        Cameron is a DPhil student in Physics, studying **ultrafast
+        charge-carrier dynamics in low-dimensional semiconductors**. His
+        research uses **multidimensional spectroscopy** and quantitative
+        modelling to resolve stochastic processes in these systems from
+        complex experimental data.
     - name: Aleksandra Perelman
       course: MSc Mathematical & Computational Finance
       bio: >
-        Aleksandra is reading for the MSc in Mathematical and Computational
-        Finance at the Mathematical Institute, funded by the **Squarepoint
-        Foundation Scholarship**, one of four awarded each year. Before
-        Oxford, Aleksandra took a BSc in Economics and Data Science at IE
-        University, writing a thesis on **quantum-inspired machine learning**
-        for short-term asset price prediction, and has worked across a $350M
-        secondaries book at LaunchBay Capital and an **investment banking
-        summer at UBS**. Within the society, Aleksandra works on the
-        systematic fund: strategy design, signal research and backtesting.
+        Aleksandra is a Mathematical and Computational Finance MSc candidate
+        at the University of Oxford, where she holds one of four **Squarepoint
+        Scholarships**. She currently works as a **Technology & Investment
+        Analyst at Launchbay Capital**. Her independent research includes
+        ongoing work applying **tensor network methods to derivatives
+        pricing**, alongside a PCA-based statistical arbitrage strategy
+        combining factor decomposition with OU mean reversion. Her
+        undergraduate thesis benchmarked quantum-inspired machine learning
+        against classical models for short-term asset price prediction. She
+        previously interned on UBS's Natural Resources investment banking
+        team. She is fluent in English, Spanish, and Russian, with native
+        proficiency in Belarusian.
     - name: Vid Homsak
       course: DPhil Particle Physics
       bio: >
