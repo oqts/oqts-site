@@ -52,8 +52,21 @@ structure:
         github: "https://github.com/amitchell-thomson"
   core:
     - name: Andrej Ljubic
+      course: MMath Mathematics
       bio: >
-        [Profile to follow.]
+        Andrej reads Mathematics at Oxford and works in cybersecurity
+        research. He **represented the UK at the 2025 European Cybersecurity
+        Challenge**, ranked third internationally and first in Europe in that
+        year's CSAW undergraduate finals, and spent the summer as a
+        vulnerability research intern at Interrupt Labs. He designed **Hack
+        The Box's Coding and Secure Coding challenge categories**, delivered
+        to over 3.8 million members, and writes a technical blog drawing
+        **more than 20,000 visits a month**. Andrej has built convolutional
+        neural networks from scratch in NumPy and has competed in IMC
+        Prosperity and Quantihack.
+      links:
+        github: "https://github.com/ir0nstone"
+        website: "https://ir0nstone.gitbook.io"
     - name: Cameron Mackintosh
       course: DPhil Physics
       bio: >
