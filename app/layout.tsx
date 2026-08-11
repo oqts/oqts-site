@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
   icons: {
     icon: [
-      { url: '/brand/favicon/favicon.ico', sizes: 'any' },
-      { url: '/brand/favicon/favicon-32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/brand/favicon/favicon-mark-navy.ico', sizes: 'any' },
+      { url: '/brand/favicon/favicon-mark-navy-32.png', type: 'image/png', sizes: '32x32' },
       { url: '/brand/favicon/icon-512.png', type: 'image/png', sizes: '512x512' },
     ],
     apple: '/brand/favicon/apple-touch-icon.png',
