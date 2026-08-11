@@ -13,6 +13,11 @@ export default function Footer() {
                 <li><Link href="/team">Team &amp; structure</Link></li>
                 <li><Link href="/sponsors">Sponsors</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
+                {/* Back office. Footer rather than the masthead on purpose:
+                    it serves a dozen committee members, and promoting it
+                    would invite every applicant to click something that can
+                    only tell them they are not a member. */}
+                <li><a href="https://platform.oqts.org">Members</a></li>
               </ul>
             </div>
             <div>
