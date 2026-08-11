@@ -5,6 +5,7 @@ import type { Person } from '../lib/types';
 const LINK_LABELS: Record<string, string> = {
   linkedin: 'LinkedIn',
   github: 'GitHub',
+  scholar: 'Google Scholar',
   website: 'Website',
 };
 

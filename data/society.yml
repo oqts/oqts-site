@@ -70,15 +70,22 @@ structure:
         github: "https://github.com/ir0nstone"
         website: "https://ir0nstone.gitbook.io"
     - name: Cameron Mackintosh
-      course: DPhil Physics
+      course: DPhil Condensed Matter Physics
       bio: >
-        Cameron is a DPhil student in Physics, studying **ultrafast
-        charge-carrier dynamics in low-dimensional semiconductors**. His
-        research uses **multidimensional spectroscopy** and quantitative
-        modelling to resolve stochastic processes in these systems from
-        complex experimental data.
+        Cameron is a DPhil student in Condensed Matter Physics, studying
+        **ultrafast charge-carrier dynamics in low-dimensional
+        semiconductors**. His research uses multidimensional spectroscopy and
+        quantitative modelling to resolve stochastic processes in these
+        systems from complex experimental data. He graduated in the **top 5
+        of his cohort at the University of Bristol**, with the prize for best
+        Master's research; using time-dependent density functional theory and
+        femtosecond resolved measurements to model the dynamics of exciton
+        state coupling in organic semiconductor systems. His work has
+        resulted in publications in leading physical science journals
+        including **PNAS and JACS**.
       links:
         linkedin: "https://www.linkedin.com/in/cameron-bembe-m"
+        scholar: "https://scholar.google.com/citations?user=1o-Muu0AAAAJ&hl=en"
     - name: Aleksandra Perelman
       course: MSc Mathematical & Computational Finance
       bio: >
