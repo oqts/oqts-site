@@ -21,10 +21,11 @@ society:
 structure:
   founders:
     - name: Niko Dahl
-      role: Co-Founder · President
+      role: President · Chief Investment Officer
       course: MPhys Physics
       bio: >
-        Niko is a second-year physicist and co-founder and president of OQTS.
+        Niko is a second-year physicist and the president and chief
+        investment officer of OQTS.
         Before Oxford, he took a year out to work at the Institute for
         Functional Intelligent Materials in Singapore, working directly under
         **Professor Sir Konstantin Novoselov** to refine a novel experimental
@@ -37,7 +38,7 @@ structure:
       links:
         linkedin: "https://www.linkedin.com/in/niko-dahl-205611252"
     - name: Alec Mitchell-Thomson
-      role: Co-Founder · Head of Research & Technology
+      role: Vice President · Head of Research & Technology
       course: MEng Engineering Science
       bio: >
         Alec reads Engineering Science at New College, **ranked 7th of 180 in
@@ -46,9 +47,10 @@ structure:
         at the Oxford Quantum Device Lab. Personal research spans a real-time
         pipeline turning ship-tracking data from the global LNG fleet into
         macro trading signals, and a hidden Markov model for macro regime
-        detection. Within OQTS, Alec heads research and technology and is
-        building **OXDAQ, the society's exchange simulator**, where members
-        run and test their own trading algorithms live.
+        detection. Within OQTS, Alec is vice president and head of research
+        and technology, and is building **OXDAQ, the society's exchange
+        simulator**, where members run and test their own trading
+        algorithms live.
       links:
         linkedin: "https://www.linkedin.com/in/alecmitchell-thomson"
         github: "https://github.com/amitchell-thomson"
