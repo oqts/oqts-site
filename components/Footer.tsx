@@ -17,7 +17,7 @@ export default function Footer() {
                     it serves a dozen committee members, and promoting it
                     would invite every applicant to click something that can
                     only tell them they are not a member. */}
-                <li><a href="https://platform.oqts.org">Members</a></li>
+                <li><a href="https://platform.oqts.org" target="_blank" rel="noopener">Members</a></li>
               </ul>
             </div>
             <div>
