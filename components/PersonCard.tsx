@@ -9,16 +9,14 @@ const LINK_LABELS: Record<string, string> = {
   website: 'Website',
 };
 
-// A role like "Co-Founder · Head of Research & Technology" may wrap at the
-// separator but never inside a part, so each part renders as one line.
+// A role like "President · Chief Investment Officer" is a title and an
+// office: each part gets its own centered line, never wrapping internally.
 function Role({ role }: { role: string }) {
-  const parts = role.split(' · ');
   return (
     <span className="role-label">
-      {parts.map((part, i) => (
-        <span key={part}>
-          {i > 0 && ' · '}
-          <span className="part">{part}</span>
+      {role.split(' · ').map((part) => (
+        <span key={part} className="part">
+          {part}
         </span>
       ))}
     </span>

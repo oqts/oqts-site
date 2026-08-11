@@ -245,7 +245,7 @@ tr.total td{border-bottom:0;border-top:1px solid var(--oqts-accent-rule);
 .org-card .name{display:block;font-family:var(--oqts-display);
   font-size:var(--oqts-label);letter-spacing:var(--oqts-track-display)}
 .org-card .role-label{display:block;margin-top:5px}
-.role-label .part{white-space:nowrap}
+.role-label .part{display:block;white-space:nowrap}
 .org-card.ghost{background:var(--oqts-surface);
   border:1px dashed var(--oqts-slate);color:var(--oqts-ink-2)}
 .org-card.ghost:hover{box-shadow:none}
