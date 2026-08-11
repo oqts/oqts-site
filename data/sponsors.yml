@@ -12,6 +12,8 @@
 #   hrt.svg            https://www.hudsonrivertrading.com/wp-content/uploads/2024/04/01-HRT-Primary-Logo-with-®-Q2-2024.svg
 #   five-rings.svg     https://fiverings.com/wp-content/themes/five-rings/img/FiveRings-logo.svg
 #   marshall-wace.png  https://www.mwam.com/wp-content/themes/FoundationPress/dist/assets/images/logo-black.png
+#   da-vinci.svg       https://davincitrading.com/wp-content/uploads/2025/02/DaVinci-Trading-logo-icon-purple.svg
+#                      (fetched 2026-08-11; brand-purple wordmark, dark enough for light ground)
 
 tiers:
   - name: Founder sponsor
@@ -61,6 +63,13 @@ tiers:
         blurb: >
           Multi-asset quantitative trading firm, building automated systems
           that trade on markets around the world.
+      - name: Da Vinci
+        logo: /sponsors/da-vinci.svg
+        url: https://davincitrading.com
+        banner_height: 17
+        blurb: >
+          Amsterdam-based derivatives trading firm, making markets in options
+          on exchanges around the world.
       - name: Five Rings
         logo: /sponsors/five-rings.svg
         url: https://fiverings.com
