@@ -22,7 +22,7 @@ export default function Events() {
           <p className="eyebrow">Events</p>
           <h1>The term programme</h1>
           <p className="lede col">
-            Talks, workshops, OXDAQ competition rounds and socials.
+            Talks, workshops, OXDAQ competition rounds, and socials.
           </p>
           <div className="btn-row">
             <Btn href="/join#mailing-list">Get event emails</Btn>
