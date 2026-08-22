@@ -4,10 +4,14 @@ import CloseRule from '../../components/CloseRule';
 import Section from '../../components/Section';
 import { getSociety, getSponsors } from '../../lib/data';
 
+// Built from sponsors.yml so the description never goes stale as tiers change.
+const sponsorNames = getSponsors().tiers.flatMap((t) => t.sponsors.map((s) => s.name));
+
 export const metadata: Metadata = {
   title: 'Sponsors',
-  description:
-    'The firms backing the Oxford Quantitative Trading Society: G-Research, Jane Street, Optiver and Hudson River Trading.',
+  description: `The firms backing the Oxford Quantitative Trading Society: ${sponsorNames
+    .slice(0, -1)
+    .join(', ')}, and ${sponsorNames.at(-1)}.`,
 };
 
 export default function SponsorsPage() {
