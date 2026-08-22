@@ -14,6 +14,8 @@
 #   marshall-wace.png  https://www.mwam.com/wp-content/themes/FoundationPress/dist/assets/images/logo-black.png
 #   da-vinci.svg       https://davincitrading.com/wp-content/uploads/2025/02/DaVinci-Trading-logo-icon-purple.svg
 #                      (fetched 2026-08-11; brand-purple wordmark, dark enough for light ground)
+#   jump-trading.webp  https://www.jumptrading.com/cdn/68af4da447dcf4db12fcb35f/68af4da447dcf4db12fcb4bd_jump%20logo%20red.webp
+#                      (fetched 2026-08-22; official stacked red/black lockup, no SVG published)
 
 tiers:
   - name: Founder sponsor
@@ -38,6 +40,14 @@ tiers:
         blurb: >
           Global liquidity provider and trading firm, trading a broad range
           of asset classes on more than 200 venues.
+      - name: Jump Trading
+        logo: /sponsors/jump-trading.webp
+        url: https://www.jumptrading.com
+        logo_height: 48   # stacked Jump/TRADING lockup; the tier cap is for wordmarks
+        banner_height: 28
+        blurb: >
+          Research-driven proprietary trading firm, trading across major
+          asset classes on markets around the world.
       - name: Optiver
         logo: /sponsors/optiver.svg
         url: https://optiver.com
@@ -63,13 +73,6 @@ tiers:
         blurb: >
           Multi-asset quantitative trading firm, building automated systems
           that trade on markets around the world.
-      - name: Da Vinci
-        logo: /sponsors/da-vinci.svg
-        url: https://davincitrading.com
-        banner_height: 17
-        blurb: >
-          Amsterdam-based derivatives trading firm, making markets in options
-          on exchanges around the world.
       - name: Five Rings
         logo: /sponsors/five-rings.svg
         url: https://fiverings.com
@@ -90,3 +93,10 @@ tiers:
         blurb: >
           Global alternative investment manager, a pioneer of systematic
           long-short equity investing.
+      - name: Da Vinci
+        logo: /sponsors/da-vinci.svg
+        url: https://davincitrading.com
+        banner_height: 17
+        blurb: >
+          Amsterdam-based derivatives trading firm, making markets in options
+          on exchanges around the world.
