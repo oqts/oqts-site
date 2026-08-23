@@ -19,9 +19,9 @@ export default function Join() {
           <p className="eyebrow">Join</p>
           <h1>Join the society</h1>
           <p className="lede col">
-            One application. We select for quantitative degrees and
-            exceptionally strong technical skills, and for evidence you will
-            actually engage: with the programme, with OXDAQ, and with everyone
+            Membership is by application. We select for quantitative degrees
+            and exceptionally strong technical skills, and for evidence that
+            you will engage with the programme, with OXDAQ, and with everyone
             else trading on it.
           </p>
           <div className="btn-row">

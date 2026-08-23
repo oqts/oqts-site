@@ -32,7 +32,7 @@ export default function Home() {
             <div className="panel">
               <h4>Education</h4>
               <p className="note">
-                Lectures and workshops from professionals at our sponsor firms, alongside our own in-house series, designed to build on a strong quantitative background with the specifics of modern markets, fast.
+                Lectures and workshops from professionals at our sponsor firms, alongside our own in-house series, designed to build on a strong quantitative background with the specifics of modern markets.
               </p>
             </div>
             <div className="panel">
@@ -50,11 +50,10 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section eyebrow="The society" title="Built around real participation">
+        <Section eyebrow="The society" title="Built around participation">
           <p className="col">
-            The society exists for one reason: the best way to understand
-            markets is to participate in them, measure the result, and argue
-            about why. Members follow a programme that moves from foundations,
+            We think the best way to understand markets is to participate in
+            them, measure the result, and argue about why. Members follow a programme that moves from foundations,
             like how an order book works and what a market maker actually does,
             to building and testing strategies of their own.
           </p>
@@ -72,7 +71,7 @@ export default function Home() {
         <Section eyebrow="OXDAQ" title="Our own exchange">
           <div className="bracketed">
             <p style={{ marginBottom: 'var(--oqts-space-5)' }}>
-              OXDAQ is the society&apos;s own live exchange: a real order book, live rounds, and strategies written by members trading against each other. Real market making is normally out of students&apos; reach. OXDAQ exists to close that gap. Write a strategy, connect it, and find out whether it survives contact with everyone else&apos;s.
+              OXDAQ is the society&apos;s own live exchange: a real order book, live rounds, and strategies written by members trading against each other. Market making is normally out of students&apos; reach. OXDAQ exists to close that gap. Write a strategy, connect it, and find out whether it survives contact with everyone else&apos;s.
             </p>
             <Btn href="/oxdaq" secondary>How OXDAQ works</Btn>
           </div>

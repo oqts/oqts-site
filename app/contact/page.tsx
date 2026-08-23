@@ -20,7 +20,7 @@ export default function Contact() {
           <p className="eyebrow">Contact</p>
           <h1>Get in touch</h1>
           <p className="lede col">
-            One address reaches the committee:{' '}
+            The fastest way to reach the committee is{' '}
             <a href={`mailto:${society.email}`}>{society.email}</a>.
           </p>
           <div className="btn-row">

@@ -29,7 +29,7 @@ export default function Oxdaq() {
 
       <Section eyebrow="Why" title="Why build an exchange?">
         <p className="col">
-          Because real market making is normally out of students&apos; reach: the data and infrastructure it needs do not exist outside the firms themselves. OXDAQ closes that gap. It is a live exchange with real market mechanics, a price-time order book, and instruments whose fair value is never revealed; you infer it from the order flow, the way every real desk has to. The exchange is built by the core team, and members join the build as the society grows.
+          Because real market making is normally out of students&apos; reach: the data and infrastructure it needs do not exist outside the firms themselves. OXDAQ closes that gap. It is a live exchange with a price-time order book and instruments whose fair value is never revealed; you infer it from the order flow, the way every real desk has to. The exchange is built by the core team, and members join the build as the society grows.
         </p>
       </Section>
 
@@ -47,8 +47,7 @@ export default function Oxdaq() {
             <h4>2 · Compete</h4>
             <p className="note">
               Rounds run live. Your algorithm trades against other members and
-              an ecosystem of bots, from market makers to noise traders, on
-              instruments that never stand still.
+              an ecosystem of bots, from market makers to noise traders.
             </p>
           </div>
           <div className="panel">
