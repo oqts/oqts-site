@@ -148,10 +148,12 @@ export default function EventSignupForm({ event }: { event: string }) {
         <input name="cv" type="file" accept="application/pdf" required />
       </label>
       <p className="form-note">
-        We store what you submit here, including your CV, solely to choose and
-        seat guests for this event, and we delete it within 30 days of the
-        event. We do not pass it to sponsors. Contact oqts@oqts.org to have
-        your data removed at any time.
+        We store what you submit here, including your CV, to choose and seat
+        guests for this event, and we delete it within 30 days of the event.
+        We do not pass it to sponsors. If you later join the society you can
+        choose, from your member account, to add it to the CV book we send
+        them: that is your decision to make and nothing happens without it.
+        Contact oqts@oqts.org to have your data removed at any time.
       </p>
       <button className="btn" type="submit" disabled={state === 'busy'}>
         {state === 'busy' ? 'Submitting…' : 'Request a place'}
