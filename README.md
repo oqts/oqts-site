@@ -12,7 +12,7 @@ Vercel.
   needed assets into the gitignored `public/brand/` before every dev/build.
   To take a brand update: bump the submodule and commit the new pin.
 - **Content that changes lives in `data/`.** `society.yml` (structure),
-  `sponsors.yml` (tiers) and `events.yml` (programme) are the single sources
+  and `sponsors.yml` (tiers) are the single sources
   of truth, edited only via this repository; loaders in `lib/data.ts`
   validate on load and fail the build on a bad edit.
 - **Forms post to `/api/signup` and `/api/apply`**, which proxy server-side

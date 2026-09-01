@@ -15,7 +15,7 @@ npm run dev          # binds 0.0.0.0:8002, runs sync-brand first
 npm run screenshot   # every route at phone/desktop/min width
 ```
 
-## Three sources of truth, none of them here
+## Four sources of truth, none of them here
 
 1. **Styling comes from `oqts-design`**, pinned as the submodule
    `vendor/oqts-design`. `scripts/sync-brand.mjs` copies what ships into
@@ -23,16 +23,24 @@ npm run screenshot   # every route at phone/desktop/min width
    ships. Never edit `public/brand/`, never hand-code a hex value, and
    never add a style rule that belongs in the design repo. To take a
    brand update, bump the submodule pin and commit it.
-2. **Content lives in `data/`.** `society.yml`, `sponsors.yml` and
-   `events.yml` are edited only here. Loaders in `lib/data.ts` validate
-   on load and **fail the build on a bad edit**, which is the intended
-   behaviour: do not soften it to a warning.
+2. **Content lives in `data/`.** `society.yml` and `sponsors.yml` are
+   edited only here. Loaders in `lib/data.ts` validate on load and
+   **fail the build on a bad edit**, which is the intended behaviour: do
+   not soften it to a warning.
 3. **Society hierarchy comes from the GitHub org**, read-only via API.
    Never fork a copy into `data/`.
+4. **Events come from the platform, not this repo.** `data/events.yml`
+   was deleted on 2026-09-01. `lib/events.ts` fetches `/events` from the
+   platform API server-side and revalidates every 5 minutes, so
+   publishing an event is a back-office edit, not a deploy. That loader
+   **never throws**: an events page that 500s because the API blinked is
+   worse than one rendering its own empty state, so callers check `ok`
+   to tell "no events" from "could not reach the API". Do not add a
+   second copy of event data here.
 
 ## Forms and the API
 
-`app/api/{signup,apply,hit,confirm,unsubscribe}/route.ts` proxy
+`app/api/{signup,apply,event-signup,hit,confirm,unsubscribe}/route.ts` proxy
 **server-side** to the platform API with a shared secret. The secret
 never reaches the browser. Env: `SIGNUP_UPSTREAM_URL`,
 `SIGNUP_SHARED_SECRET` (`.env.local` locally, project settings on

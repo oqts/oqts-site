@@ -4,7 +4,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'yaml';
-import type { Events, Society, SocietyEvent, Sponsors } from './types';
+import type { Society, Sponsors } from './types';
 
 const DATA = join(process.cwd(), 'data');
 
@@ -60,22 +60,4 @@ export function getSponsors(): Sponsors {
 
 export function getAllSponsors() {
   return getSponsors().tiers.flatMap((t) => t.sponsors);
-}
-
-const TAGS = new Set(['talk', 'social', 'competition', 'workshop']);
-
-export function getEvents(): { upcoming: SocietyEvent[]; past: SocietyEvent[] } {
-  const e = load('events.yml') as Events;
-  if (!Array.isArray(e.events)) fail('events.yml', 'events must be a list');
-  for (const ev of e.events) {
-    if (!ev.title || !ev.location || !ev.description) fail('events.yml', `events need title, location, description (${ev.title ?? '?'})`);
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(ev.date ?? '') || Number.isNaN(Date.parse(ev.date))) {
-      fail('events.yml', `bad ISO date on "${ev.title}": ${ev.date}`);
-    }
-    if (!TAGS.has(ev.tag)) fail('events.yml', `bad tag on "${ev.title}": ${ev.tag}`);
-  }
-  const today = new Date().toISOString().slice(0, 10);
-  const upcoming = e.events.filter((ev) => ev.date >= today).sort((a, b) => a.date.localeCompare(b.date));
-  const past = e.events.filter((ev) => ev.date < today).sort((a, b) => b.date.localeCompare(a.date));
-  return { upcoming, past };
 }
