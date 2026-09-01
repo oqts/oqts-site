@@ -40,13 +40,13 @@ export type SponsorTier = {
 export type Sponsors = { tiers: SponsorTier[] };
 
 export type EventTag = 'talk' | 'social' | 'competition' | 'workshop';
+// Shape as served by the platform API (lib/events.ts). `time` is free
+// text because the committee writes things like "18:30 for 19:00".
 export type SocietyEvent = {
   title: string;
   date: string; // ISO YYYY-MM-DD
-  time?: string;
+  time?: string | null;
   location: string;
   tag: EventTag;
   description: string;
-  url?: string;
 };
-export type Events = { events: SocietyEvent[] };

@@ -1,19 +1,21 @@
 import type { Metadata } from 'next';
 import Btn from '../../components/Btn';
-import CloseRule from '../../components/CloseRule';
 import EventList from '../../components/EventList';
 import Section from '../../components/Section';
-import { getEvents } from '../../lib/data';
+import { getEvents } from '../../lib/events';
 
 export const metadata: Metadata = {
   title: 'Events',
   description: 'Upcoming talks, competitions and socials of the Oxford Quantitative Trading Society.',
 };
 
-export const revalidate = 86400; // re-split upcoming/past daily
+// Events come from the platform API and are revalidated there
+// (lib/events.ts), so this page needs no revalidate of its own.
 
-export default function Events() {
-  const { upcoming, past } = getEvents();
+export default async function Events() {
+  const { ok, upcoming, past } = await getEvents();
+  const open = upcoming.find((e) => e.signups_open);
+
   return (
     <div className="wrap">
       <div className="ground g2" aria-hidden="true" />
@@ -25,11 +27,11 @@ export default function Events() {
             Talks, workshops, OXDAQ competition rounds, and socials.
           </p>
           <div className="btn-row">
-            <Btn href="/join#mailing-list">Get event emails</Btn>
-            <span className="btn secondary" aria-disabled="true">Instagram</span>
+            {open && <Btn href={`/events/${open.slug}`}>{open.title}: sign up</Btn>}
+            <Btn href="/join#mailing-list" secondary>Get event emails</Btn>
           </div>
         </div>
-              </section>
+      </section>
 
       <Section eyebrow="Upcoming" title="Next up">
         {upcoming.length > 0 ? (
@@ -37,8 +39,9 @@ export default function Events() {
         ) : (
           <div className="panel" style={{ maxWidth: 560 }}>
             <p className="note" style={{ marginBottom: 'var(--oqts-space-4)' }}>
-              The Michaelmas programme is announced in September. Join the
-              mailing list and it will land in your inbox.
+              {ok
+                ? 'Nothing is scheduled just now. Join the mailing list and the next programme will land in your inbox.'
+                : 'The programme is briefly unavailable. Please try again shortly, or join the mailing list below.'}
             </p>
             <Btn href="/join#mailing-list" secondary>Join the mailing list</Btn>
           </div>
