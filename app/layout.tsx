@@ -4,6 +4,7 @@ import '../styles/site.css';
 import Masthead from '../components/Masthead';
 import Footer from '../components/Footer';
 import Track from '../components/Track';
+import { OG_DEFAULTS, OG_DEFAULT_IMAGE } from '../lib/og';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://oqts.org'),
@@ -14,10 +15,8 @@ export const metadata: Metadata = {
   description:
     'The Oxford Quantitative Trading Society teaches quantitative trading by doing: markets education, the OXDAQ trading competition, and a community of Oxford students who build and trade.',
   openGraph: {
-    siteName: 'Oxford Quantitative Trading Society',
-    images: ['/brand/favicon/og-card.png'],
-    locale: 'en_GB',
-    type: 'website',
+    ...OG_DEFAULTS,
+    images: [OG_DEFAULT_IMAGE],
   },
   twitter: { card: 'summary_large_image' },
   icons: {

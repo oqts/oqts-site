@@ -4,7 +4,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'yaml';
-import type { Society, Sponsors } from './types';
+import type { Society, Sponsors, Venue, Venues } from './types';
 
 const DATA = join(process.cwd(), 'data');
 
@@ -60,4 +60,20 @@ export function getSponsors(): Sponsors {
 
 export function getAllSponsors() {
   return getSponsors().tiers.flatMap((t) => t.sponsors);
+}
+
+/** Venue photographs. Unlike the loaders above this one does not
+ *  validate: /events/[slug] is a dynamic route, so throwing here would
+ *  surface a bad edit as a 500 on a live event page rather than as a
+ *  failed build. scripts/check-venues.mjs is the gate, and it runs in
+ *  prebuild and predev. */
+function getVenues(): Venue[] {
+  return (load('venues.yml') as Venues).venues ?? [];
+}
+
+/** The venue whose name appears in an event's free-text location, or null.
+ *  Null is ordinary: most events are somewhere we have no photograph of. */
+export function venueForLocation(location: string): Venue | null {
+  const hay = location.toLowerCase();
+  return getVenues().find((v) => v.match.some((m) => hay.includes(m.toLowerCase()))) ?? null;
 }
