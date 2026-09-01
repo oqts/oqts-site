@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/sync-brand.mjs",
+    "predev": "node scripts/sync-brand.mjs && node scripts/check-venues.mjs",
     "dev": "next dev --turbopack --hostname 0.0.0.0 --port 8002",
-    "prebuild": "node scripts/sync-brand.mjs",
+    "prebuild": "node scripts/sync-brand.mjs && node scripts/check-venues.mjs",
     "build": "next build",
     "start": "next start --hostname 0.0.0.0 --port 8002",
     "lint": "eslint",

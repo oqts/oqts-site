@@ -45,3 +45,6 @@ next-env.d.ts
 
 # playwright output
 /.screenshots/
+
+# venue source photographs: derived into public/venues/ by scripts/fetch-venue-photos.mjs
+/.venue-src/

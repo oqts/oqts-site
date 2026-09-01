@@ -1,0 +1,34 @@
+# Venue photographs.
+#
+# A photograph belongs to the room, not to the event. Every future dinner
+# in the Divinity School reuses this one entry, and events stay in the
+# platform back office exactly as they are: no image field to fill in, no
+# per-event code, nothing to keep in step. See lib/data.ts.
+#
+# `match` is lower-cased substring matching against the event's free-text
+# location as the committee typed it, so "The Divinity School, Bodleian
+# Libraries" and "Divinity School" both find this entry. First venue with
+# a hit wins. No hit means no photograph, silently: an event at a venue
+# we have no picture of is the normal case, not an error.
+#
+# The credit lines are licence conditions, not decoration. The images are
+# CC BY-SA 3.0 and the crops in public/venues/ are adaptations, so they
+# carry the same licence and the same obligation to name the
+# photographer. Do not drop a credit, and keep these in step with
+# scripts/fetch-venue-photos.mjs, which derives the files.
+venues:
+  - key: divinity-school
+    match:
+      - divinity school
+    image: /venues/divinity-school-1600.webp
+    image_small: /venues/divinity-school-800.webp
+    og_image: /venues/divinity-school-og.jpg
+    width: 1600
+    height: 1067
+    alt: >-
+      The Divinity School in Oxford, looking east along the hall beneath
+      its carved fan vault, oak benches down either side of a flagstone
+      floor.
+    caption: The Divinity School, Bodleian Libraries, Oxford.
+    credit: Photo by David Iliff, CC BY-SA 3.0
+    credit_url: https://commons.wikimedia.org/wiki/File:Divinity_School_Interior_3,_Bodleian_Library,_Oxford,_UK_-_Diliff.jpg

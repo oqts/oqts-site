@@ -109,6 +109,12 @@ section{padding-top:var(--oqts-space-8)}
 figure{margin:0}
 figcaption{font:400 var(--oqts-micro)/1.5 var(--oqts-display);color:var(--oqts-ink-2);
   margin-top:var(--oqts-space-3);letter-spacing:.03em}
+/* a venue photograph carries the same 1px camel frame as a paper card
+   (brand.md §4). width/height on the img reserve the box, so the caption
+   below it does not jump when the photograph decodes. */
+.venue-figure img{display:block;width:100%;height:auto;
+  border:1px solid var(--oqts-accent-rule)}
+.venue-figure figcaption a{color:var(--oqts-ink-2)}
 
 /* ── components ── */
 .btn{display:inline-block;font:500 var(--oqts-body-s)/1 var(--oqts-text);

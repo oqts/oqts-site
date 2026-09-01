@@ -50,3 +50,21 @@ export type SocietyEvent = {
   tag: EventTag;
   description: string;
 };
+
+// A photograph of a room we hold events in, from data/venues.yml. Keyed
+// to events by matching the free-text location the committee typed, so
+// the platform keeps no image of its own.
+export type Venue = {
+  key: string;
+  match: string[];
+  image: string;
+  image_small: string;
+  og_image: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+  credit: string; // a licence condition: never render the photo without it
+  credit_url: string;
+};
+export type Venues = { venues: Venue[] };
