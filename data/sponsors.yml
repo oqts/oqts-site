@@ -16,6 +16,8 @@
 #                      (fetched 2026-08-11; brand-purple wordmark, dark enough for light ground)
 #   jump-trading.webp  https://www.jumptrading.com/cdn/68af4da447dcf4db12fcb35f/68af4da447dcf4db12fcb4bd_jump%20logo%20red.webp
 #                      (fetched 2026-08-22; official stacked red/black lockup, no SVG published)
+#   gsa-capital.svg    inline masthead SVG on https://www.gsacapital.com
+#                      (fetched 2026-09-02; currentColor pinned to black for the light ground)
 
 tiers:
   - name: Founder sponsor
@@ -81,6 +83,14 @@ tiers:
         blurb: >
           Proprietary trading firm applying rigorous research and technology
           to markets old and new.
+      - name: GSA Capital
+        logo: /sponsors/gsa-capital.svg
+        url: https://www.gsacapital.com
+        logo_height: 22   # ring mark + wordmark fills the box; 22 matches the tier optically
+        banner_height: 16
+        blurb: >
+          London-based quantitative trading firm, developing systematic
+          strategies across global equities, futures and currencies.
   - name: Bronze sponsors
     slug: bronze
     logo_height: 22
