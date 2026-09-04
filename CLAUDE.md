@@ -38,16 +38,17 @@ npm run screenshot   # every route at phone/desktop/min width
    worse than one rendering its own empty state, so callers check `ok`
    to tell "no events" from "could not reach the API". Do not add a
    second copy of event data here.
-5. **Team bios come from the platform too.** The `bio:` field was
-   removed from `society.yml` on 2026-09-04, the same move for the same
-   reason: a committee member writes their own description at
-   `platform.oqts.org/account` and it reaches the team page through
-   `lib/team.ts`, so fixing your own paragraph is not a pull request.
-   `society.yml` still owns everything else about a person: who is on
-   the team, their role, course, links, and the order they appear in.
-   The loader returns `{}` rather than throwing, so a card renders
-   without its paragraph if the API blinks. A `bio:` added back into
-   `society.yml` is not read by anything.
+5. **Team profiles come from the platform too.** `bio:` and `course:`
+   were removed from `society.yml` on 2026-09-04, the same move for the
+   same reason: a committee member writes their own description and
+   degree at `platform.oqts.org/account` and they reach the team page
+   through `lib/team.ts`, so fixing your own paragraph, or saying you
+   have graduated, is not a pull request. `society.yml` still owns what
+   the society decides rather than the person: who is on the team, their
+   committee role, their links, and the order they appear in. The loader
+   returns `{}` rather than throwing, so a card renders without those
+   fields if the API blinks. Either field added back into `society.yml`
+   is not read by anything.
 
 ## Forms and the API
 
