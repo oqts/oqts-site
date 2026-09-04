@@ -11,49 +11,47 @@ society:
     instagram: ""
 
 # Every person below also takes optional profile fields:
-#   course: MPhys Physics          # shown on the card under the role
 #   links: { linkedin: "https://..." }   # rendered in the open profile
 # (year: is also supported but currently unused; cards read more compact
 # without it and it would need bumping every Michaelmas)
 #
-# BIOS ARE NOT HERE ANY MORE (moved 2026-09-04). Each person writes their
-# own on the platform, at platform.oqts.org/account, and the site fetches
-# them through lib/team.ts, the same move events made on 2026-09-01, so
-# that fixing your own paragraph is not a pull request. A bio added back
-# into this file will simply not be read.
+# BIO AND COURSE ARE NOT HERE ANY MORE (moved 2026-09-04). Each person
+# writes their own description and degree on the platform, at
+# platform.oqts.org/account, and the site fetches them through
+# lib/team.ts: the same move events made on 2026-09-01, so that fixing
+# your own paragraph, or saying you have graduated, is not a pull
+# request. Both fields added back into this file will simply not be read.
+#
+# What stays here is what the society decides rather than the person:
+# who is on the team, their committee role, their links, and the order
+# they appear in.
 structure:
   founders:
     - name: Niko Dahl
       role: President · Chief Investment Officer
-      course: MPhys Physics
       links:
         linkedin: "https://www.linkedin.com/in/niko-dahl-205611252"
     - name: Alec Mitchell-Thomson
       role: Vice President · Head of Research & Technology
-      course: MEng Engineering Science
       links:
         linkedin: "https://www.linkedin.com/in/alecmitchell-thomson"
         github: "https://github.com/amitchell-thomson"
   core:
     - name: Andrej Ljubic
-      course: MMath Mathematics
       links:
         github: "https://github.com/ir0nstone"
         website: "https://ir0nstone.gitbook.io"
     - name: Bembe Mackintosh
-      course: DPhil Condensed Matter Physics
       links:
         linkedin: "https://www.linkedin.com/in/cameron-bembe-m"
         scholar: "https://scholar.google.com/citations?user=1o-Muu0AAAAJ&hl=en"
     - name: Aleksandra Perelman
-      course: MSc Mathematical & Computational Finance
       links:
         linkedin: "https://www.linkedin.com/in/aleksandra-tchernaya-perelman-857488246"
     - name: Alexandre Hadji-Thomas
-      # course and links still to add: not recorded anywhere I could read
-      # them from. His description is his own to write, on the platform.
+      # links still to add. His degree and description are his own to
+      # write, on the platform.
     - name: Vid Homsak
-      course: DPhil Particle Physics
       links:
         linkedin: "https://www.linkedin.com/in/vid-homsak"
         github: "https://github.com/vidh2000"

@@ -4,30 +4,39 @@ import CloseRule from '../../components/CloseRule';
 import OrgTree from '../../components/OrgTree';
 import Section from '../../components/Section';
 import { getSociety } from '../../lib/data';
-import { getBios } from '../../lib/team';
+import { getProfiles } from '../../lib/team';
 
 export const metadata: Metadata = {
   title: 'Team & structure',
   description: 'The founders, core team and research structure of the Oxford Quantitative Trading Society.',
 };
 
-// The structure is society.yml, edited in GitHub. The paragraph on each
-// card is the person's own, written on the platform and fetched here, so
-// the two are merged before the tree is drawn rather than inside it:
-// OrgTree and PersonCard should not need to know where a bio came from.
+// The structure is society.yml, edited in GitHub. The paragraph and the
+// degree on each card are the person's own, written on the platform and
+// fetched here, so the two sources are merged before the tree is drawn
+// rather than inside it: OrgTree and PersonCard should not need to know
+// where either came from.
 //
-// A bio in society.yml is no longer read. The field was removed there
-// when this landed, so there is nothing to fall back to and nothing to
-// disagree with.
+// bio: and course: in society.yml are no longer read. Both fields were
+// removed there when this landed, so there is nothing to fall back to
+// and nothing to disagree with.
 export default async function Team() {
   const { structure } = getSociety();
-  const bios = await getBios();
-  const withBio = <T extends { name: string }>(people: T[]) =>
-    people.map((p) => (bios[p.name] ? { ...p, bio: bios[p.name] } : p));
+  const profiles = await getProfiles();
+  const merge = <T extends { name: string }>(people: T[]) =>
+    people.map((p) => {
+      const mine = profiles[p.name];
+      if (!mine) return p;
+      return {
+        ...p,
+        ...(mine.bio ? { bio: mine.bio } : {}),
+        ...(mine.course ? { course: mine.course } : {}),
+      };
+    });
   const structureWithBios = {
     ...structure,
-    founders: withBio(structure.founders),
-    core: withBio(structure.core),
+    founders: merge(structure.founders),
+    core: merge(structure.core),
   };
   return (
     <div className="wrap">
