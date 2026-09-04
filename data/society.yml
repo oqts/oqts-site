@@ -12,111 +12,48 @@ society:
 
 # Every person below also takes optional profile fields:
 #   course: MPhys Physics          # shown on the card under the role
-#   bio: >                         # adding a bio makes the card clickable and
-#     A short paragraph with       # opens their profile dialog; blank line
-#     **key phrases** in bold.     # inside = paragraph break
 #   links: { linkedin: "https://..." }   # rendered in the open profile
 # (year: is also supported but currently unused; cards read more compact
 # without it and it would need bumping every Michaelmas)
+#
+# BIOS ARE NOT HERE ANY MORE (moved 2026-09-04). Each person writes their
+# own on the platform, at platform.oqts.org/account, and the site fetches
+# them through lib/team.ts, the same move events made on 2026-09-01, so
+# that fixing your own paragraph is not a pull request. A bio added back
+# into this file will simply not be read.
 structure:
   founders:
     - name: Niko Dahl
       role: President · Chief Investment Officer
       course: MPhys Physics
-      bio: >
-        Niko is a second-year physicist and the president and chief
-        investment officer of OQTS.
-        Before Oxford, he took a year out to work at the Institute for
-        Functional Intelligent Materials in Singapore, working directly under
-        **Professor Sir Konstantin Novoselov** to refine a novel experimental
-        technique he had previously developed. That research is what pulled
-        him towards quantitative work, and he has spent this summer in
-        **Quant Research at Systematica Investments**. He also runs a small
-        personal semi-systematic equity strategy. Outside of that, Niko cooks
-        (he is an accredited pasta chef), plays cricket, and is happiest
-        doing something out on the water.
       links:
         linkedin: "https://www.linkedin.com/in/niko-dahl-205611252"
     - name: Alec Mitchell-Thomson
       role: Vice President · Head of Research & Technology
       course: MEng Engineering Science
-      bio: >
-        Alec reads Engineering Science at New College, **ranked 7th of 180 in
-        first-year examinations**, and spent summer 2026 as a **Quant Trading
-        Intern at Brevan Howard**, then as a **Machine Learning Researcher**
-        at the Oxford Quantum Device Lab. Personal research spans a real-time
-        pipeline turning ship-tracking data from the global LNG fleet into
-        macro trading signals, and a hidden Markov model for macro regime
-        detection. Within OQTS, Alec is vice president and head of research
-        and technology, and is building **OXDAQ, the society's exchange
-        simulator**, where members run and test their own trading
-        algorithms live.
       links:
         linkedin: "https://www.linkedin.com/in/alecmitchell-thomson"
         github: "https://github.com/amitchell-thomson"
   core:
     - name: Andrej Ljubic
       course: MMath Mathematics
-      bio: >
-        Andrej reads Mathematics at Oxford and works in cybersecurity
-        research. He **represented the UK at the 2025 European Cybersecurity
-        Challenge**, ranked third internationally and first in Europe in that
-        year's CSAW undergraduate finals, and spent the summer as a
-        vulnerability research intern at Interrupt Labs. He designed **Hack
-        The Box's Coding and Secure Coding challenge categories**, delivered
-        to over 3.8 million members, and writes a technical blog drawing
-        **more than 20,000 visits a month**. Andrej has built convolutional
-        neural networks from scratch in NumPy and has competed in IMC
-        Prosperity and Quantihack.
       links:
         github: "https://github.com/ir0nstone"
         website: "https://ir0nstone.gitbook.io"
     - name: Bembe Mackintosh
       course: DPhil Condensed Matter Physics
-      bio: >
-        Bembe is a DPhil student in Condensed Matter Physics, studying
-        **ultrafast charge-carrier dynamics in low-dimensional
-        semiconductors**. His research uses multidimensional spectroscopy and
-        quantitative modelling to resolve stochastic processes in these
-        systems from complex experimental data. He graduated in the **top 5
-        of his cohort at the University of Bristol**, with the prize for best
-        Master's research; using time-dependent density functional theory and
-        femtosecond resolved measurements to model the dynamics of exciton
-        state coupling in organic semiconductor systems. His work has
-        resulted in publications in leading physical science journals
-        including **PNAS and JACS**.
       links:
         linkedin: "https://www.linkedin.com/in/cameron-bembe-m"
         scholar: "https://scholar.google.com/citations?user=1o-Muu0AAAAJ&hl=en"
     - name: Aleksandra Perelman
       course: MSc Mathematical & Computational Finance
-      bio: >
-        Aleksandra is a Mathematical and Computational Finance MSc candidate
-        at the University of Oxford, where she holds one of four **Squarepoint
-        Scholarships**. She currently works as a **Technology & Investment
-        Analyst at Launchbay Capital**. Her independent research includes
-        ongoing work applying **tensor network methods to derivatives
-        pricing**, alongside a PCA-based statistical arbitrage strategy
-        combining factor decomposition with OU mean reversion. Her
-        undergraduate thesis benchmarked quantum-inspired machine learning
-        against classical models for short-term asset price prediction. She
-        previously interned on UBS's Natural Resources investment banking
-        team. She is fluent in English, Spanish, and Russian, with native
-        proficiency in Belarusian.
       links:
         linkedin: "https://www.linkedin.com/in/aleksandra-tchernaya-perelman-857488246"
+    - name: Alexandre Hadji-Thomas
+      # course and links still to add: not recorded anywhere I could read
+      # them from. His description is his own to write, on the platform.
     - name: Vid Homsak
       course: DPhil Particle Physics
-      bio: >
-        Vid is a DPhil student in particle physics and a **Clarendon
-        Scholar**, building machine learning for the ATLAS experiment at
-        CERN: transformer-based classifiers and a tagger calibration method
-        now used across the collaboration's flavour-tagging analyses. Vid
-        graduated in the top 3% of the MSci Physics with Theoretical Physics
-        cohort at Imperial College London, with a **first-authored paper in
-        Physical Review D**. Since 2024 Vid has built and run a live
-        systematic portfolio of ten strategies across twenty crypto pairs,
-        **trading real capital since June 2025**.
       links:
         linkedin: "https://www.linkedin.com/in/vid-homsak"
         github: "https://github.com/vidh2000"
