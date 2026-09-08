@@ -147,13 +147,21 @@ export default function EventSignupForm({ event }: { event: string }) {
         <span>CV (PDF, up to 4 MB)</span>
         <input name="cv" type="file" accept="application/pdf" required />
       </label>
+      {/* This paragraph is the promise the platform is then held to, so
+          it says what actually happens and nothing more. It used to read
+          "We do not pass it to sponsors", which stopped being true when
+          the committee decided the CV bank should be able to include
+          event signups: most people attach a CV here because they want
+          it seen by the firms in the room. The retention line is
+          unchanged and is still enforced by deploy/retention.sh. */}
       <p className="form-note">
         We store what you submit here, including your CV, to choose and seat
         guests for this event, and we delete it within 30 days of the event.
-        We do not pass it to sponsors. If you later join the society you can
-        choose, from your member account, to add it to the CV book we send
-        them: that is your decision to make and nothing happens without it.
-        Contact oqts@oqts.org to have your data removed at any time.
+        We may share it with the sponsors who support the society, which is
+        usually why people attach one. If you would rather we did not, or you
+        want your data removed at any point, email oqts@oqts.org and we will.
+        If you later join the society you can also add your CV to the CV book
+        from your member account.
       </p>
       <button className="btn" type="submit" disabled={state === 'busy'}>
         {state === 'busy' ? 'Submitting…' : 'Request a place'}
