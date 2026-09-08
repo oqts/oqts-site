@@ -18,6 +18,9 @@
 #                      (fetched 2026-08-22; official stacked red/black lockup, no SVG published)
 #   gsa-capital.svg    inline masthead SVG on https://www.gsacapital.com
 #                      (fetched 2026-09-02; currentColor pinned to black for the light ground)
+#   susquehanna.svg    https://sig.com/media/u5da23wc/white_susquehanna.svg
+#                      (fetched 2026-09-08; recoloured white -> black for light ground;
+#                      -light kept beside it)
 
 tiers:
   - name: Founder sponsor
@@ -91,6 +94,13 @@ tiers:
         blurb: >
           London-based quantitative trading firm, developing systematic
           strategies across global equities, futures and currencies.
+      - name: Susquehanna
+        logo: /sponsors/susquehanna.svg
+        url: https://sig.com
+        banner_height: 17
+        blurb: >
+          Global quantitative trading firm and one of the largest options
+          market makers, trading equities, derivatives and commodities.
   - name: Bronze sponsors
     slug: bronze
     logo_height: 22
