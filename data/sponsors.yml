@@ -21,6 +21,8 @@
 #   susquehanna.svg    https://sig.com/media/u5da23wc/white_susquehanna.svg
 #                      (fetched 2026-09-08; recoloured white -> black for light ground;
 #                      -light kept beside it)
+#   imc.svg            inline masthead SVG on https://www.imc.com
+#                      (fetched 2026-09-10; currentColor pinned to black for the light ground)
 
 tiers:
   - name: Founder sponsor
@@ -38,6 +40,14 @@ tiers:
     slug: gold
     logo_height: 38
     sponsors:
+      - name: IMC
+        logo: /sponsors/imc.svg
+        url: https://www.imc.com
+        logo_height: 30   # ring grid + wordmark fills the box; 30 matches the tier optically
+        banner_height: 16
+        blurb: >
+          Technology-driven market maker, trading and providing liquidity in
+          options, futures and equities on exchanges worldwide.
       - name: Jane Street
         logo: /sponsors/jane-street.svg
         url: https://www.janestreet.com
