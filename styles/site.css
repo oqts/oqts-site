@@ -156,6 +156,19 @@ form .field{max-width:none}
 .form-status{font:400 var(--oqts-body-s)/1.5 var(--oqts-text);margin-top:var(--oqts-space-3)}
 .form-status.err{color:var(--oqts-status-critical)}
 .form-status.ok{color:var(--oqts-ink)}
+/* Application form: the written answers and the project-lead opt-in
+   are their own sections of the one form, each opened by a hairline and
+   a label, not a box: the form already sits in a panel. */
+.form-section{border:0;border-top:1px solid var(--oqts-hairline);margin:var(--oqts-space-5) 0 0;
+  padding:var(--oqts-space-4) 0 0;min-width:0}
+.form-section legend{padding:0 var(--oqts-space-3) 0 0;font:400 var(--oqts-label)/1.3 var(--oqts-display);
+  letter-spacing:var(--oqts-track-label);text-transform:uppercase;color:var(--oqts-ink)}
+.form-section .field>span:first-child{color:var(--oqts-ink);max-width:68ch}
+/* the live word count under each answer, red only once over */
+.field .wordcount{font:400 var(--oqts-micro)/1.4 var(--oqts-display);color:var(--oqts-ink-2);
+  margin:var(--oqts-space-2) 0 0;text-align:right;font-variant-numeric:tabular-nums}
+.field .wordcount.over{color:var(--oqts-status-critical)}
+.field textarea[aria-invalid]{border-color:var(--oqts-status-critical)}
 
 table{width:100%;border-collapse:collapse;font:400 var(--oqts-data)/1.5 var(--oqts-display);
   font-variant-numeric:tabular-nums}
