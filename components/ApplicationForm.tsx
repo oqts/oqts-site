@@ -1,16 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import type { OpenForm } from '../lib/applicationForm';
 
 const MAX_CV_BYTES = 4 * 1024 * 1024; // Vercel's request-body ceiling is 4.5 MB
 
-type State = 'idle' | 'busy' | 'ok' | 'dup' | 'invalid' | 'toolarge' | 'offline';
+type State = 'idle' | 'busy' | 'ok' | 'dup' | 'invalid' | 'toolarge' | 'closed' | 'offline';
 
 const MESSAGES: Record<Exclude<State, 'idle' | 'busy'>, string> = {
   ok: 'Application received. Thank you; we will reply by email.',
   dup: 'We already have an application under that email address.',
   invalid: 'Something in the form was rejected. Please check each field and try again.',
   toolarge: 'That CV is over 4 MB. Please export a smaller PDF.',
+  closed: 'Applications have closed. Join the mailing list below to hear about the next round.',
   offline: 'Applications are briefly offline. Email your CV to oqts@oqts.org instead.',
 };
 
@@ -41,30 +43,51 @@ const YEARS = [
   'Other',
 ];
 
-export default function ApplicationForm() {
+/** THE word-count rule, mirrored by count_words in the platform API
+ *  (signup-api/app/main.py): whitespace-separated runs. If the two ever
+ *  disagree, an answer this form accepted is refused on submit. */
+function countWords(text: string): number {
+  const t = text.trim();
+  return t ? t.split(/\s+/).length : 0;
+}
+
+// Same ceiling as the API's CHARS_PER_WORD, so one enormous "word"
+// cannot get past a word limit.
+const CHARS_PER_WORD = 25;
+
+export default function ApplicationForm({ form }: { form: OpenForm }) {
   const [state, setState] = useState<State>('idle');
+  const [lead, setLead] = useState(false);
+  const [words, setWords] = useState<Record<string, number>>({});
+  const asked = form.questions.filter((q) => q.section === 'all' || lead);
+  const leadQuestions = form.questions.filter((q) => q.section === 'lead');
+  const over = asked.some((q) => (words[q.key] ?? 0) > q.word_limit);
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const cv = (form.elements.namedItem('cv') as HTMLInputElement).files?.[0];
+    if (over) return; // the button is disabled too; this is the Enter key
+    const el = e.currentTarget;
+    const cv = (el.elements.namedItem('cv') as HTMLInputElement).files?.[0];
     if (cv && cv.size > MAX_CV_BYTES) {
       setState('toolarge');
       return;
     }
     setState('busy');
     try {
-      const body = new FormData(form);
+      const body = new FormData(el);
       // Send the WORDING, not a boolean, and only when it was agreed to.
       // The API stores whatever arrives here verbatim, so an unticked box
       // must send nothing at all rather than a falsy flag.
       body.delete('cv_book_opt_in');
-      if ((form.elements.namedItem('cv_book_opt_in') as HTMLInputElement)?.checked) {
+      if ((el.elements.namedItem('cv_book_opt_in') as HTMLInputElement)?.checked) {
         body.set('cv_book_consent', CV_BOOK_CONSENT);
       }
       const res = await fetch('/api/apply', { method: 'POST', body });
       if (res.ok) setState('ok');
-      else if (res.status === 409) setState('dup');
+      else if (res.status === 409) {
+        const err = (await res.json().catch(() => ({}))) as { error?: string };
+        setState(err.error === 'applications_closed' ? 'closed' : 'dup');
+      }
       else if (res.status === 413) setState('toolarge');
       else if (res.status === 400) setState('invalid');
       else setState('offline');
@@ -72,6 +95,30 @@ export default function ApplicationForm() {
       setState('offline');
     }
   }
+
+  const question = (q: OpenForm['questions'][number], n: number) => {
+    const count = words[q.key] ?? 0;
+    const tooMany = count > q.word_limit;
+    return (
+      <label className="field" key={q.key}>
+        <span>
+          {n}. {q.prompt}
+        </span>
+        <textarea
+          name={q.key}
+          required
+          rows={6}
+          maxLength={q.word_limit * CHARS_PER_WORD}
+          aria-describedby={`${q.key}-count`}
+          aria-invalid={tooMany || undefined}
+          onChange={(e) => setWords((w) => ({ ...w, [q.key]: countWords(e.target.value) }))}
+        />
+        <span id={`${q.key}-count`} className={`wordcount${tooMany ? ' over' : ''}`} aria-live="polite">
+          {count} / {q.word_limit} words{tooMany ? `: ${count - q.word_limit} over the limit` : ''}
+        </span>
+      </label>
+    );
+  };
 
   if (state === 'ok') return <p className="form-status ok">{MESSAGES.ok}</p>;
 
@@ -114,10 +161,38 @@ export default function ApplicationForm() {
           </select>
         </label>
       </div>
-      <label className="field">
-        <span>Why do you want to join the society?</span>
-        <textarea name="why_join" required maxLength={2000} />
-      </label>
+
+      <fieldset className="form-section">
+        <legend>Written answers</legend>
+        <p className="form-note">
+          Your answers are stored apart from your CV, so they can be read
+          without your name or CV beside them. Word limits are firm: the
+          form will not submit an answer over its limit.
+        </p>
+        {form.questions
+          .filter((q) => q.section === 'all')
+          .map((q, i) => question(q, i + 1))}
+      </fieldset>
+
+      <fieldset className="form-section">
+        <legend>Applying as project lead</legend>
+        <p className="form-note">
+          {form.intake_leads > 0
+            ? `This round we are taking ${form.intake_researchers} researchers and ${form.intake_leads} project leads. `
+            : ''}
+          {form.lead_blurb}
+        </p>
+        <label className="check">
+          <input
+            type="checkbox"
+            name="applies_as_lead"
+            checked={lead}
+            onChange={(e) => setLead(e.target.checked)}
+          />
+          <span>I am applying as a project lead</span>
+        </label>
+        {lead && leadQuestions.map((q, i) => question(q, i + 1))}
+      </fieldset>
       <label className="field">
         <span>CV (PDF, up to 4 MB)</span>
         <input name="cv" type="file" accept="application/pdf" required />
@@ -138,7 +213,7 @@ export default function ApplicationForm() {
         Ticking it makes no difference to how your application is judged.
         Contact oqts@oqts.org to have your data removed at any time.
       </p>
-      <button className="btn" type="submit" disabled={state === 'busy'}>
+      <button className="btn" type="submit" disabled={state === 'busy' || over}>
         {state === 'busy' ? 'Submitting…' : 'Submit application'}
       </button>
       {state !== 'idle' && state !== 'busy' && (
