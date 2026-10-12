@@ -52,7 +52,7 @@ npm run screenshot   # every route at phone/desktop/min width
 
 ## Forms and the API
 
-`app/api/{signup,apply,event-signup,hit,confirm,unsubscribe}/route.ts` proxy
+`app/api/{signup,apply,event-signup,hit,confirm,unsubscribe,rsvp}/route.ts` proxy
 **server-side** to the platform API with a shared secret. The secret
 never reaches the browser. Env: `SIGNUP_UPSTREAM_URL`,
 `SIGNUP_SHARED_SECRET` (`.env.local` locally, project settings on
