@@ -20,7 +20,17 @@ const MESSAGES: Record<Exclude<State, 'idle' | 'busy' | 'saved'>, string> = {
   offline: 'RSVPs are briefly offline. Please try again shortly, or email oqts@oqts.org.',
 };
 
-export default function RsvpForm({ token, initial }: { token: string; initial: Rsvp }) {
+export default function RsvpForm({
+  token,
+  initial,
+  preview = false,
+}: {
+  token: string;
+  initial: Rsvp;
+  /** The committee's preview: behaves exactly like the real form but
+   *  never posts, so looking at it cannot answer for anybody. */
+  preview?: boolean;
+}) {
   const [state, setState] = useState<State>('idle');
   const [attending, setAttending] = useState<boolean | null>(initial.attending);
   const [saved, setSaved] = useState<Rsvp>(initial);
@@ -35,6 +45,11 @@ export default function RsvpForm({ token, initial }: { token: string; initial: R
       meal: going ? String(form.get('meal') ?? '') : null,
       allergies: going ? String(form.get('allergies') ?? '') : null,
     };
+    if (preview) {
+      setSaved({ attending: body.attending, meal: body.meal as Rsvp['meal'], allergies: body.allergies || null });
+      setState('saved');
+      return;
+    }
     setState('busy');
     try {
       const res = await fetch('/api/rsvp', {
@@ -67,6 +82,9 @@ export default function RsvpForm({ token, initial }: { token: string; initial: R
               } meal${saved.allergies ? ', and we have passed on your allergies' : ''}.`
             : 'Thank you for letting us know. We are sorry you cannot make it.'}
         </p>
+        {preview && (
+          <p className="form-note">This is a preview. Nothing was saved.</p>
+        )}
         <p className="form-note">
           If anything changes, open this same link again and update your answer
           before the day of the dinner.

@@ -16,6 +16,8 @@ export type PublicEvent = SocietyEvent & {
   slug: string;
   signup_blurb: string | null;
   signups_open: boolean;
+  /** Printed on the dinner RSVP page and its preview. */
+  dress_code?: string | null;
 };
 
 /** Never throws. An events page that 500s because the API is briefly

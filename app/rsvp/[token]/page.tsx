@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import CloseRule from '../../../components/CloseRule';
+import { getEvent } from '../../../lib/events';
 import RsvpForm, { type Rsvp } from '../../../components/RsvpForm';
 
 // A dinner guest's personal RSVP page. They reach it from the link the
@@ -73,9 +74,42 @@ function Shell({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default async function RsvpPage({ params }: { params: Promise<{ token: string }> }) {
+// The committee's preview: /rsvp/preview?event={slug}. Rendered from
+// the PUBLIC event (published only) with a made-up guest, and the form
+// in preview mode never posts. It exists so the committee can see what a
+// guest sees without opening a real guest's link, where pressing the
+// button would answer for them.
+async function previewOf(slug: string): Promise<Lookup | 'unknown'> {
+  const ev = slug ? await getEvent(slug) : null;
+  if (!ev) return 'unknown';
+  return {
+    name: 'Guest',
+    invited: true,
+    open: true,
+    attending: null,
+    meal: null,
+    allergies: null,
+    event: {
+      slug: ev.slug,
+      title: ev.title,
+      date: ev.date,
+      time: ev.time ?? null,
+      location: ev.location,
+      dress_code: ev.dress_code ?? null,
+    },
+  };
+}
+
+export default async function RsvpPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ token: string }>;
+  searchParams: Promise<{ event?: string }>;
+}) {
   const { token } = await params;
-  const r = await lookup(token);
+  const preview = token === 'preview';
+  const r = preview ? await previewOf((await searchParams).event ?? '') : await lookup(token);
 
   if (r === 'unknown' || r === 'offline') {
     return (
@@ -104,7 +138,7 @@ export default async function RsvpPage({ params }: { params: Promise<{ token: st
     <Shell>
       <section>
         <div className="plate">
-          <p className="eyebrow">Dinner RSVP</p>
+          <p className="eyebrow">{preview ? 'Dinner RSVP · preview' : 'Dinner RSVP'}</p>
           <h1>{ev.title}</h1>
           <p className="eyebrow" style={{ color: 'var(--oqts-ink)' }}>
             {whenLine(ev.date, ev.time)} · {ev.location}
@@ -130,6 +164,7 @@ export default async function RsvpPage({ params }: { params: Promise<{ token: st
             )}
             {r.open ? (
               <RsvpForm
+                preview={preview}
                 token={token}
                 initial={{ attending: r.attending, meal: r.meal, allergies: r.allergies }}
               />
