@@ -46,7 +46,7 @@ export default async function Join() {
           <p style={{ marginBottom: 0 }}>
             Applications for the live-fund cohort opened on 16th of October
             2026 and are reviewed on a rolling basis, as they arrive. Apply
-            below. Worth preparing: a one-page CV, and honest answers. Polish
+            below. Worth preparing: your CV, and honest answers. Polish
             matters less than evidence of interest.
           </p>
         </div>
