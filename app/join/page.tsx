@@ -41,14 +41,13 @@ export default async function Join() {
         </div>
               </section>
 
-      <Section eyebrow="Timeline" title="Applications open September 2026" close={false}>
+      <Section eyebrow="Timeline" title="Applications opened 16th of October 2026 and are reviewed on a rolling basis" close={false}>
         <div className="bracketed">
           <p style={{ marginBottom: 0 }}>
-            Applications for the live-fund cohort open in early September 2026,
-            ahead of Michaelmas term. Apply below, or, if you are not ready
-            yet, join the mailing list and we will email you the moment the
-            round opens. Worth preparing: a one-page CV, and honest answers.
-            Polish matters less than evidence of interest.
+            Applications for the live-fund cohort opened on 16th of October
+            2026 and are reviewed on a rolling basis, as they arrive. Apply
+            below. Worth preparing: a one-page CV, and honest answers. Polish
+            matters less than evidence of interest.
           </p>
         </div>
         <CloseRule />
