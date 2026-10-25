@@ -51,7 +51,11 @@ async function lookup(token: string): Promise<Lookup | 'unknown' | 'offline'> {
     });
     if (res.status === 404) return 'unknown';
     if (!res.ok) return 'offline';
-    return (await res.json()) as Lookup;
+    const r = (await res.json()) as Lookup;
+    // An API from before drinks RSVPs sends no kind; every guest it
+    // invited was a dinner guest.
+    if (r.kind === undefined) r.kind = r.invited ? 'dinner' : null;
+    return r;
   } catch {
     return 'offline';
   }
