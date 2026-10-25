@@ -2,6 +2,10 @@
 
 import { useState } from 'react';
 
+/** Which RSVP the guest answers, from their category: drinks and dinner,
+ *  or drinks only. */
+export type RsvpKind = 'dinner' | 'drinks';
+
 export type Rsvp = {
   attending: boolean | null;
   meal: 'standard' | 'vegan' | null;
@@ -13,7 +17,7 @@ type State = 'idle' | 'busy' | 'saved' | 'closed' | 'revoked' | 'invalid' | 'slo
 const MESSAGES: Record<Exclude<State, 'idle' | 'busy' | 'saved'>, string> = {
   // Both of these can change between the page loading and the submit,
   // so they are real states, not defensive branches.
-  closed: 'RSVPs for this dinner have closed. Email oqts@oqts.org if your plans have changed.',
+  closed: 'RSVPs for this event have closed. Email oqts@oqts.org if your plans have changed.',
   revoked: 'This invitation no longer applies. Email oqts@oqts.org if you think that is a mistake.',
   invalid: 'Something in the form was rejected. Please check your answers and try again.',
   slow: 'Too many attempts from your network just now. Please wait a minute and send it again.',
@@ -21,10 +25,12 @@ const MESSAGES: Record<Exclude<State, 'idle' | 'busy' | 'saved'>, string> = {
 };
 
 export default function RsvpForm({
+  kind,
   token,
   initial,
   preview = false,
 }: {
+  kind: RsvpKind;
   token: string;
   initial: Rsvp;
   /** The committee's preview: behaves exactly like the real form but
@@ -39,11 +45,15 @@ export default function RsvpForm({
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const going = form.get('attending') === 'yes';
+    const dinner = kind === 'dinner';
     const body = {
       token,
       attending: going,
-      meal: going ? String(form.get('meal') ?? '') : null,
-      allergies: going ? String(form.get('allergies') ?? '') : null,
+      meal: going && dinner ? String(form.get('meal') ?? '') : null,
+      allergies: going && dinner ? String(form.get('allergies') ?? '') : null,
+      // The box is required, so a yes that reaches here has it ticked;
+      // the API refuses a drinks yes without it all the same.
+      bod_card: going && !dinner ? form.get('bod_card') === 'yes' : null,
     };
     if (preview) {
       setSaved({ attending: body.attending, meal: body.meal as Rsvp['meal'], allergies: body.allergies || null });
@@ -76,18 +86,20 @@ export default function RsvpForm({
     return (
       <div>
         <p className="form-status ok">
-          {saved.attending
-            ? `Thank you, you are confirmed for dinner with a ${
-                saved.meal === 'vegan' ? 'vegan' : 'standard'
-              } meal${saved.allergies ? ', and we have passed on your allergies' : ''}.`
-            : 'Thank you for letting us know. We are sorry you cannot make it.'}
+          {!saved.attending
+            ? 'Thank you for letting us know. We are sorry you cannot make it.'
+            : kind === 'drinks'
+              ? 'Thank you, you are confirmed for drinks. Please remember to bring your Bod card.'
+              : `Thank you, you are confirmed for dinner with a ${
+                  saved.meal === 'vegan' ? 'vegan' : 'standard'
+                } meal${saved.allergies ? ', and we have passed on your allergies' : ''}.`}
         </p>
         {preview && (
           <p className="form-note">This is a preview. Nothing was saved.</p>
         )}
         <p className="form-note">
           If anything changes, open this same link again and update your answer
-          before the day of the dinner.
+          before the day of the {kind === 'drinks' ? 'event' : 'dinner'}.
         </p>
         <button className="btn secondary" type="button" onClick={() => {
             setAttending(saved.attending);
@@ -102,7 +114,7 @@ export default function RsvpForm({
   return (
     <form onSubmit={submit}>
       <fieldset className="form-section" style={{ marginTop: 0 }}>
-        <legend>Will you be at dinner?</legend>
+        <legend>{kind === 'drinks' ? 'Will you be at drinks?' : 'Will you be at dinner?'}</legend>
         <label className="check">
           <input
             type="radio"
@@ -126,7 +138,23 @@ export default function RsvpForm({
         </label>
       </fieldset>
 
-      {attending && (
+      {attending && kind === 'drinks' && (
+        <fieldset className="form-section">
+          <legend>Bod card</legend>
+          <label className="check">
+            <input
+              type="checkbox"
+              name="bod_card"
+              value="yes"
+              required
+              defaultChecked={saved.attending === true}
+            />
+            <span>I will bring my Bod card on the night</span>
+          </label>
+        </fieldset>
+      )}
+
+      {attending && kind === 'dinner' && (
         <>
           <fieldset className="form-section">
             <legend>Meal</legend>
