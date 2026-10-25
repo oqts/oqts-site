@@ -140,12 +140,12 @@ export default async function EventPage({
           </Section>
         </>
       ) : (
-        <Section eyebrow="Signup" title={isPast ? 'This event has passed' : 'Signups are closed'}>
+        <Section eyebrow="Signup" title={isPast ? 'This event has passed' : 'Event applications are now closed'}>
           <div className="panel" style={{ maxWidth: 560 }}>
             <p className="note" style={{ marginBottom: 'var(--oqts-space-4)' }}>
               {isPast
                 ? 'This event has already taken place. Join the mailing list to hear about the next one.'
-                : 'Signups for this event are not open. Join the mailing list and we will email you when they are.'}
+                : 'Event applications are now closed. Join the mailing list to hear about the next one.'}
             </p>
             <Btn href="/join#mailing-list" secondary>Join the mailing list</Btn>
           </div>
