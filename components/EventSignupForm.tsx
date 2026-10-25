@@ -22,11 +22,13 @@ const MESSAGES: Record<Exclude<State, 'idle' | 'busy'>, string> = {
   // submitted, so this is a real state a real person will see, not a
   // defensive branch: the room filling up while someone types is exactly
   // when it happens.
-  closed: 'Signups for this event have just closed. Join the mailing list and we will tell you about the next one.',
+  closed: 'Event applications are now closed. Join the mailing list and we will tell you about the next one.',
   gone: 'This event is no longer listed. Please check the events page.',
   invalid: 'Something in the form was rejected. Please check each field and try again.',
   toolarge: 'That CV is over 4 MB. Please export a smaller PDF.',
-  offline: 'Signups are briefly offline. Email oqts@oqts.org with your CV instead.',
+  // Never "email us your CV": that sent people round the form, and a
+  // CV by email is one more copy outside the 30-day retention.
+  offline: 'Something went wrong sending the form. Please try again in a few minutes.',
 };
 
 // The qualification, not the year of study: an event guest list is
