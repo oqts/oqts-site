@@ -23,6 +23,12 @@
 #                      -light kept beside it)
 #   imc.svg            inline masthead SVG on https://www.imc.com
 #                      (fetched 2026-09-10; currentColor pinned to black for the light ground)
+#   qrt.svg            https://www.qube-rt.com/img/qrt.svg
+#                      (fetched 2026-10-28; recoloured white -> black for light ground;
+#                      -light kept beside it)
+#   tower-research.png https://commons.wikimedia.org/wiki/File:Tower_Research_Capital_Logo.png
+#                      (fetched 2026-10-28; current tower-mark lockup, public domain on
+#                      Commons; tower-research.com is behind a bot check)
 
 tiers:
   - name: Founder sponsor
@@ -111,6 +117,21 @@ tiers:
         blurb: >
           Global quantitative trading firm and one of the largest options
           market makers, trading equities, derivatives and commodities.
+      - name: QRT
+        logo: /sponsors/qrt.svg
+        url: https://www.qube-rt.com
+        banner_height: 18
+        blurb: >
+          Qube Research & Technologies, a global quantitative and systematic
+          investment manager operating across asset classes.
+      - name: Tower Research Capital
+        logo: /sponsors/tower-research.png
+        url: https://www.tower-research.com
+        logo_height: 32   # stacked mark + two-line wordmark; the tier cap is for wordmarks
+        banner_height: 22
+        blurb: >
+          Quantitative trading and technology firm, running automated
+          strategies on markets around the world.
   - name: Bronze sponsors
     slug: bronze
     logo_height: 22
