@@ -157,8 +157,9 @@ export default function EventSignupForm({ event }: { event: string }) {
           it seen by the firms in the room. The retention line is
           unchanged and is still enforced by deploy/retention.sh. */}
       <p className="form-note">
-        We store what you submit here, including your CV, to choose and seat
-        guests for this event, and we delete it within 30 days of the event.
+        We store what you submit here, including your CV, to select people
+        for oversubscribed events, and we delete it within 30 days of the
+        event.
         We may share it with the sponsors who support the society, which is
         usually why people attach one. If you would rather we did not, or you
         want your data removed at any point, email oqts@oqts.org and we will.
