@@ -83,7 +83,8 @@ function Shell({ children }: { children: React.ReactNode }) {
 }
 
 // The committee's preview: /rsvp/preview?event={slug}, with &kind=drinks
-// for what a drinks-only guest sees. Rendered from
+// for what a drinks-only guest sees and &kind=attend for a guest at an
+// event without a dinner. Rendered from
 // the PUBLIC event (published only) with a made-up guest, and the form
 // in preview mode never posts. It exists so the committee can see what a
 // guest sees without opening a real guest's link, where pressing the
@@ -121,7 +122,10 @@ export default async function RsvpPage({
   const preview = token === 'preview';
   const sp = await searchParams;
   const r = preview
-    ? await previewOf(sp.event ?? '', sp.kind === 'drinks' ? 'drinks' : 'dinner')
+    ? await previewOf(
+        sp.event ?? '',
+        sp.kind === 'drinks' || sp.kind === 'attend' ? sp.kind : 'dinner',
+      )
     : await lookup(token);
 
   if (r === 'unknown' || r === 'offline') {
@@ -147,7 +151,8 @@ export default async function RsvpPage({
   const ev = r.event;
   const first = r.name.split(/\s+/)[0];
   const drinks = r.kind === 'drinks';
-  const label = drinks ? 'Drinks RSVP' : 'Dinner RSVP';
+  const attend = r.kind === 'attend';
+  const label = drinks ? 'Drinks RSVP' : attend ? 'RSVP' : 'Dinner RSVP';
 
   return (
     <Shell>
@@ -165,7 +170,9 @@ export default async function RsvpPage({
                 ? `${first}, RSVPs for this event have closed.`
                 : drinks
                   ? `${first}, you are invited to drinks. Please let us know whether you can come, and confirm that you will bring your Bod card.`
-                  : `${first}, you are invited to drinks and dinner. Please let us know whether you can come, which meal you would like, and about any allergies.`}
+                  : attend
+                    ? `${first}, you have a place. Please let us know whether you can come.`
+                    : `${first}, you are invited to drinks and dinner. Please let us know whether you can come, which meal you would like, and about any allergies.`}
           </p>
         </div>
       </section>
@@ -193,7 +200,9 @@ export default async function RsvpPage({
                   : r.attending
                     ? drinks
                       ? 'We have you down as attending. Please bring your Bod card.'
-                      : `We have you down as attending, with a ${r.meal === 'vegan' ? 'vegan' : 'standard'} meal.`
+                      : attend
+                        ? 'We have you down as attending.'
+                        : `We have you down as attending, with a ${r.meal === 'vegan' ? 'vegan' : 'standard'} meal.`
                     : 'We have you down as not attending.'}{' '}
                 If something has changed, email oqts@oqts.org.
               </p>

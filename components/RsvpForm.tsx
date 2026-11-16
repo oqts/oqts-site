@@ -3,8 +3,9 @@
 import { useState } from 'react';
 
 /** Which RSVP the guest answers, from their category: drinks and dinner,
- *  or drinks only. */
-export type RsvpKind = 'dinner' | 'drinks';
+ *  drinks only, or `attend` for a guest accepted at an event without a
+ *  dinner, who is asked only whether they are coming. */
+export type RsvpKind = 'dinner' | 'drinks' | 'attend';
 
 export type Rsvp = {
   attending: boolean | null;
@@ -53,7 +54,7 @@ export default function RsvpForm({
       allergies: going && dinner ? String(form.get('allergies') ?? '') : null,
       // The box is required, so a yes that reaches here has it ticked;
       // the API refuses a drinks yes without it all the same.
-      bod_card: going && !dinner ? form.get('bod_card') === 'yes' : null,
+      bod_card: going && kind === 'drinks' ? form.get('bod_card') === 'yes' : null,
     };
     if (preview) {
       setSaved({ attending: body.attending, meal: body.meal as Rsvp['meal'], allergies: body.allergies || null });
@@ -90,7 +91,9 @@ export default function RsvpForm({
             ? 'Thank you for letting us know. We are sorry you cannot make it.'
             : kind === 'drinks'
               ? 'Thank you, you are confirmed for drinks. Please remember to bring your Bod card.'
-              : `Thank you, you are confirmed for dinner with a ${
+              : kind === 'attend'
+                ? 'Thank you, you are confirmed. We look forward to seeing you.'
+                : `Thank you, you are confirmed for dinner with a ${
                   saved.meal === 'vegan' ? 'vegan' : 'standard'
                 } meal${saved.allergies ? ', and we have passed on your allergies' : ''}.`}
         </p>
@@ -99,7 +102,7 @@ export default function RsvpForm({
         )}
         <p className="form-note">
           If anything changes, open this same link again and update your answer
-          before the day of the {kind === 'drinks' ? 'event' : 'dinner'}.
+          before the day of the {kind === 'dinner' ? 'dinner' : 'event'}.
         </p>
         <button className="btn secondary" type="button" onClick={() => {
             setAttending(saved.attending);
@@ -114,7 +117,13 @@ export default function RsvpForm({
   return (
     <form onSubmit={submit}>
       <fieldset className="form-section" style={{ marginTop: 0 }}>
-        <legend>{kind === 'drinks' ? 'Will you be at drinks?' : 'Will you be at dinner?'}</legend>
+        <legend>
+          {kind === 'drinks'
+            ? 'Will you be at drinks?'
+            : kind === 'attend'
+              ? 'Will you be there?'
+              : 'Will you be at dinner?'}
+        </legend>
         <label className="check">
           <input
             type="radio"
