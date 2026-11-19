@@ -6,7 +6,12 @@ Read `../.github/CLAUDE.md` first. Human overview is `README.md`.
 
 Public. The society's marketing site at oqts.org. Next.js App Router,
 TypeScript, deployed on Vercel. Nothing sensitive lives here: it is
-public marketing on zero-ops hosting, by design (`ARCHITECTURE.md`).
+public marketing on zero-ops hosting, by design
+(`../oqts-infra/docs/architecture.md`).
+
+**Being folded into the Django rewrite** with oqts-platform, per
+`../oqts-platform/docs/MIGRATION.md`. Change this repo only for live
+fixes.
 
 ```bash
 git clone --recurse-submodules ...   # the submodule is not optional
