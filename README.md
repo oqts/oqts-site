@@ -4,6 +4,9 @@ The public website of the **Oxford Quantitative Trading Society**, live at
 [oqts.org](https://oqts.org). Next.js (App Router) + TypeScript, deployed on
 Vercel.
 
+Being folded, with `oqts-platform`, into a single Django app; see
+`oqts-platform/docs/MIGRATION.md`.
+
 ## How it fits together
 
 - **Brand assets are consumed, never defined here.** The design system lives
